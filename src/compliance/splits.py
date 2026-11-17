@@ -10,9 +10,9 @@ once for final reporting:
     val_thresh  -> calibrate the decision threshold (used for F1)
     test        -> report final AUROC / pairwise accuracy / F1, once
 
-Reusing one split for two of these decisions is the double-dipping bug
-(see ClaudeCode_Handoff_Brief.md, Bug 1): picking the anchor layer AND the
-threshold from the same slice inflates the reported F1, and evaluating on
+Reusing one split for two of these decisions is a double-dipping bug:
+picking the anchor layer AND the threshold from the same slice inflates
+the reported F1, and evaluating on
 data that informed any calibration decision inflates AUROC / pairwise
 accuracy. Every script that needs a split should go through this module
 rather than rolling its own train_test_split calls, so there is exactly
@@ -24,8 +24,8 @@ from typing import List, Sequence, Tuple, TypeVar
 
 T = TypeVar("T")
 
-# Extends the handoff brief's 60/20/20 (train/val_layer/val_thresh) example
-# evenly to carve out a genuinely held-out 20% test slice as a 4th group.
+# Splits data into four disjoint groups (40/20/20/20) so that a genuinely
+# held-out test slice exists alongside the three calibration groups above.
 DEFAULT_TRAIN_FRAC = 0.40
 DEFAULT_VAL_LAYER_FRAC = 0.20
 DEFAULT_VAL_THRESH_FRAC = 0.20

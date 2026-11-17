@@ -1,0 +1,603 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:06:22.425423+05:30",
+    "script": "scripts/run_ifeval_probe.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "split_fractions": {
+      "train": 0.4,
+      "val_layer": 0.2,
+      "val_thresh": 0.2,
+      "test": 0.2
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0"
+  },
+  "category": "combination",
+  "n_instances": 65,
+  "n_unique_keys": 65,
+  "label": "loose",
+  "split_source": "src.compliance.splits.three_way_split(n_unique_keys, 42) \u2014 GROUPED by prompt key to prevent shared-activation leakage",
+  "split_key_indices": {
+    "train": [
+      44,
+      55,
+      7,
+      23,
+      46,
+      39,
+      20,
+      60,
+      54,
+      9,
+      29,
+      18,
+      41,
+      36,
+      16,
+      22,
+      51,
+      42,
+      30,
+      19,
+      31,
+      11,
+      25,
+      40,
+      49,
+      63
+    ],
+    "val_layer": [
+      33,
+      24,
+      56,
+      4,
+      58,
+      21,
+      50,
+      10,
+      0,
+      61,
+      28,
+      45,
+      26
+    ],
+    "val_thresh": [
+      53,
+      12,
+      35,
+      48,
+      38,
+      32,
+      59,
+      13,
+      52,
+      1,
+      2,
+      27,
+      37
+    ],
+    "test": [
+      5,
+      34,
+      57,
+      43,
+      6,
+      62,
+      8,
+      64,
+      15,
+      17,
+      47,
+      3,
+      14
+    ]
+  },
+  "split_instance_indices": {
+    "train": [
+      7,
+      9,
+      11,
+      16,
+      18,
+      19,
+      20,
+      22,
+      23,
+      25,
+      29,
+      30,
+      31,
+      36,
+      39,
+      40,
+      41,
+      42,
+      44,
+      46,
+      49,
+      51,
+      54,
+      55,
+      60,
+      63
+    ],
+    "val_layer": [
+      0,
+      4,
+      10,
+      21,
+      24,
+      26,
+      28,
+      33,
+      45,
+      50,
+      56,
+      58,
+      61
+    ],
+    "val_thresh": [
+      1,
+      2,
+      12,
+      13,
+      27,
+      32,
+      35,
+      37,
+      38,
+      48,
+      52,
+      53,
+      59
+    ],
+    "test": [
+      3,
+      5,
+      6,
+      8,
+      14,
+      15,
+      17,
+      34,
+      43,
+      47,
+      57,
+      62,
+      64
+    ]
+  },
+  "class_counts": {
+    "train": {
+      "n": 26,
+      "n_viol": 22,
+      "n_comp": 4
+    },
+    "val_layer": {
+      "n": 13,
+      "n_viol": 9,
+      "n_comp": 4
+    },
+    "val_thresh": {
+      "n": 13,
+      "n_viol": 12,
+      "n_comp": 1
+    },
+    "test": {
+      "n": 13,
+      "n_viol": 11,
+      "n_comp": 2
+    }
+  },
+  "items": [
+    {
+      "local_idx": 0,
+      "key": 1012,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 1,
+      "key": 1098,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 2,
+      "key": 1107,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 3,
+      "key": 1129,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 4,
+      "key": 1139,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 5,
+      "key": 1180,
+      "instruction_id": "combination:two_responses",
+      "violating": 0
+    },
+    {
+      "local_idx": 6,
+      "key": 1281,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 7,
+      "key": 1332,
+      "instruction_id": "combination:two_responses",
+      "violating": 0
+    },
+    {
+      "local_idx": 8,
+      "key": 1480,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 9,
+      "key": 1518,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 10,
+      "key": 1546,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 11,
+      "key": 1561,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 12,
+      "key": 1582,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 13,
+      "key": 1591,
+      "instruction_id": "combination:two_responses",
+      "violating": 0
+    },
+    {
+      "local_idx": 14,
+      "key": 16,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 15,
+      "key": 1627,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 16,
+      "key": 1656,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 17,
+      "key": 1686,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 0
+    },
+    {
+      "local_idx": 18,
+      "key": 1746,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 19,
+      "key": 1793,
+      "instruction_id": "combination:two_responses",
+      "violating": 0
+    },
+    {
+      "local_idx": 20,
+      "key": 1906,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 21,
+      "key": 1922,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 22,
+      "key": 1944,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 23,
+      "key": 2063,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 24,
+      "key": 2071,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 0
+    },
+    {
+      "local_idx": 25,
+      "key": 2192,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 26,
+      "key": 2305,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 27,
+      "key": 2337,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 28,
+      "key": 2355,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 29,
+      "key": 2359,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 0
+    },
+    {
+      "local_idx": 30,
+      "key": 2383,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 31,
+      "key": 2436,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 32,
+      "key": 2465,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 33,
+      "key": 247,
+      "instruction_id": "combination:two_responses",
+      "violating": 0
+    },
+    {
+      "local_idx": 34,
+      "key": 2482,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 35,
+      "key": 2577,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 36,
+      "key": 2585,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 37,
+      "key": 2596,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 38,
+      "key": 2683,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 39,
+      "key": 2704,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 40,
+      "key": 2713,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 41,
+      "key": 2739,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 42,
+      "key": 288,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 43,
+      "key": 2904,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 44,
+      "key": 2912,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 45,
+      "key": 2918,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 46,
+      "key": 322,
+      "instruction_id": "combination:two_responses",
+      "violating": 0
+    },
+    {
+      "local_idx": 47,
+      "key": 3224,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 48,
+      "key": 3263,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 49,
+      "key": 3272,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 50,
+      "key": 3281,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 51,
+      "key": 3287,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 52,
+      "key": 3305,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 53,
+      "key": 332,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 54,
+      "key": 3324,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 55,
+      "key": 3335,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    },
+    {
+      "local_idx": 56,
+      "key": 3369,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 0
+    },
+    {
+      "local_idx": 57,
+      "key": 3371,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 58,
+      "key": 3484,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 59,
+      "key": 3505,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 60,
+      "key": 3563,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 61,
+      "key": 3633,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 0
+    },
+    {
+      "local_idx": 62,
+      "key": 3718,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 63,
+      "key": 374,
+      "instruction_id": "combination:repeat_prompt",
+      "violating": 1
+    },
+    {
+      "local_idx": 64,
+      "key": 3748,
+      "instruction_id": "combination:two_responses",
+      "violating": 1
+    }
+  ]
+}

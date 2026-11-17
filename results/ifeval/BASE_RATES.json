@@ -1,0 +1,554 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "c7e0987fa511dcfb18ce9d147304ff8a58d390a7",
+    "timestamp": "2026-07-17T03:49:25.941226+05:30",
+    "script": "scripts/run_ifeval_verify.py",
+    "versions": {
+      "lm_eval": "0.4.12",
+      "python": "3.12.12"
+    },
+    "verifier": "google-research/instruction_following_eval as vendored in lm_eval.tasks.ifeval (unmodified, Apache-2.0)",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0"
+  },
+  "spot_check": {
+    "n": 12,
+    "n_pass": 12,
+    "all_pass": true,
+    "failures": [],
+    "cases": [
+      {
+        "instruction_id": "punctuation:no_comma",
+        "kwargs": {},
+        "response": "I have no commas here at all",
+        "expected": true,
+        "got": true,
+        "pass": true
+      },
+      {
+        "instruction_id": "punctuation:no_comma",
+        "kwargs": {},
+        "response": "I have a comma, right here",
+        "expected": false,
+        "got": false,
+        "pass": true
+      },
+      {
+        "instruction_id": "change_case:english_lowercase",
+        "kwargs": {},
+        "response": "all of this is lowercase",
+        "expected": true,
+        "got": true,
+        "pass": true
+      },
+      {
+        "instruction_id": "change_case:english_lowercase",
+        "kwargs": {},
+        "response": "This Has Capitals",
+        "expected": false,
+        "got": false,
+        "pass": true
+      },
+      {
+        "instruction_id": "keywords:forbidden_words",
+        "kwargs": {
+          "forbidden_words": [
+            "banana"
+          ]
+        },
+        "response": "I like apples and oranges",
+        "expected": true,
+        "got": true,
+        "pass": true
+      },
+      {
+        "instruction_id": "keywords:forbidden_words",
+        "kwargs": {
+          "forbidden_words": [
+            "banana"
+          ]
+        },
+        "response": "I like banana bread",
+        "expected": false,
+        "got": false,
+        "pass": true
+      },
+      {
+        "instruction_id": "detectable_format:number_bullet_lists",
+        "kwargs": {
+          "num_bullets": 3
+        },
+        "response": "* one\n* two\n* three",
+        "expected": true,
+        "got": true,
+        "pass": true
+      },
+      {
+        "instruction_id": "detectable_format:number_bullet_lists",
+        "kwargs": {
+          "num_bullets": 3
+        },
+        "response": "* one\n* two",
+        "expected": false,
+        "got": false,
+        "pass": true
+      },
+      {
+        "instruction_id": "length_constraints:number_words",
+        "kwargs": {
+          "num_words": 5,
+          "relation": "at least"
+        },
+        "response": "one two three four five six",
+        "expected": true,
+        "got": true,
+        "pass": true
+      },
+      {
+        "instruction_id": "length_constraints:number_words",
+        "kwargs": {
+          "num_words": 5,
+          "relation": "at least"
+        },
+        "response": "one two",
+        "expected": false,
+        "got": false,
+        "pass": true
+      },
+      {
+        "instruction_id": "startend:end_checker",
+        "kwargs": {
+          "end_phrase": "the end"
+        },
+        "response": "a story and then the end",
+        "expected": true,
+        "got": true,
+        "pass": true
+      },
+      {
+        "instruction_id": "startend:end_checker",
+        "kwargs": {
+          "end_phrase": "the end"
+        },
+        "response": "a story that stops",
+        "expected": false,
+        "got": false,
+        "pass": true
+      }
+    ]
+  },
+  "degeneracy_scan": {
+    "n": 541,
+    "n_empty": 0,
+    "empty_keys": [],
+    "mean_distinct_token_ratio": 0.49134982661010373,
+    "n_low_diversity_distinct_lt_0.25": 62,
+    "low_diversity_keys": [
+      1001,
+      1129,
+      1132,
+      1154,
+      1203,
+      1216,
+      1233,
+      1251,
+      1265,
+      1375,
+      1389,
+      1402,
+      1418,
+      152,
+      1643,
+      1823,
+      1879,
+      2041,
+      2063,
+      2225
+    ],
+    "n_with_repeated_ngram_ge5": 17,
+    "repeated_ngram_keys": [
+      1005,
+      1393,
+      1466,
+      1675,
+      2063,
+      209,
+      2180,
+      2225,
+      2739,
+      30,
+      3112,
+      3223,
+      3305,
+      3311,
+      3369,
+      3680,
+      3718
+    ],
+    "n_cap_hit": 43,
+    "cap_hit_keys": [
+      1129,
+      1154,
+      1203,
+      1216,
+      1233,
+      1251,
+      1375,
+      1389,
+      1402,
+      1418,
+      152,
+      1643,
+      1823,
+      1879,
+      2041,
+      2063,
+      2225,
+      2337,
+      2355,
+      2395
+    ],
+    "mean_new_tokens": 469.68391866913123,
+    "median_new_tokens": 305,
+    "note": "cap_hit responses are truncated by max_new_tokens=2048, NOT by the model choosing to stop; a length constraint they fail may be an artifact of the cap. Reported so it can be audited."
+  },
+  "unit": "(prompt, instruction_id) instance",
+  "label_convention": "1 = COMPLIANT (follows instruction); 0 = VIOLATING",
+  "cap_hit_rate": 0.07948243992606285,
+  "overall_instance": {
+    "n": 834,
+    "n_compliant_strict": 534,
+    "n_violating_strict": 300,
+    "compliance_rate_strict": 0.6402877697841727,
+    "n_compliant_loose": 559,
+    "n_violating_loose": 275,
+    "compliance_rate_loose": 0.670263788968825
+  },
+  "prompt_level_accuracy": {
+    "n": 541,
+    "strict_prompt_acc": 0.5194085027726433,
+    "loose_prompt_acc": 0.5545286506469501
+  },
+  "per_category": {
+    "change_case": {
+      "n": 89,
+      "n_compliant_strict": 60,
+      "n_violating_strict": 29,
+      "compliance_rate_strict": 0.6741573033707865,
+      "n_compliant_loose": 62,
+      "n_violating_loose": 27,
+      "compliance_rate_loose": 0.6966292134831461
+    },
+    "combination": {
+      "n": 65,
+      "n_compliant_strict": 10,
+      "n_violating_strict": 55,
+      "compliance_rate_strict": 0.15384615384615385,
+      "n_compliant_loose": 11,
+      "n_violating_loose": 54,
+      "compliance_rate_loose": 0.16923076923076924
+    },
+    "detectable_content": {
+      "n": 53,
+      "n_compliant_strict": 38,
+      "n_violating_strict": 15,
+      "compliance_rate_strict": 0.7169811320754716,
+      "n_compliant_loose": 38,
+      "n_violating_loose": 15,
+      "compliance_rate_loose": 0.7169811320754716
+    },
+    "detectable_format": {
+      "n": 157,
+      "n_compliant_strict": 112,
+      "n_violating_strict": 45,
+      "compliance_rate_strict": 0.7133757961783439,
+      "n_compliant_loose": 115,
+      "n_violating_loose": 42,
+      "compliance_rate_loose": 0.732484076433121
+    },
+    "keywords": {
+      "n": 163,
+      "n_compliant_strict": 112,
+      "n_violating_strict": 51,
+      "compliance_rate_strict": 0.6871165644171779,
+      "n_compliant_loose": 117,
+      "n_violating_loose": 46,
+      "compliance_rate_loose": 0.7177914110429447
+    },
+    "language": {
+      "n": 31,
+      "n_compliant_strict": 25,
+      "n_violating_strict": 6,
+      "compliance_rate_strict": 0.8064516129032258,
+      "n_compliant_loose": 25,
+      "n_violating_loose": 6,
+      "compliance_rate_loose": 0.8064516129032258
+    },
+    "length_constraints": {
+      "n": 143,
+      "n_compliant_strict": 85,
+      "n_violating_strict": 58,
+      "compliance_rate_strict": 0.5944055944055944,
+      "n_compliant_loose": 96,
+      "n_violating_loose": 47,
+      "compliance_rate_loose": 0.6713286713286714
+    },
+    "punctuation": {
+      "n": 66,
+      "n_compliant_strict": 54,
+      "n_violating_strict": 12,
+      "compliance_rate_strict": 0.8181818181818182,
+      "n_compliant_loose": 56,
+      "n_violating_loose": 10,
+      "compliance_rate_loose": 0.8484848484848485
+    },
+    "startend": {
+      "n": 67,
+      "n_compliant_strict": 38,
+      "n_violating_strict": 29,
+      "compliance_rate_strict": 0.5671641791044776,
+      "n_compliant_loose": 39,
+      "n_violating_loose": 28,
+      "compliance_rate_loose": 0.582089552238806
+    }
+  },
+  "per_instruction_id": {
+    "change_case:capital_word_frequency": {
+      "n": 25,
+      "n_compliant_strict": 17,
+      "n_violating_strict": 8,
+      "compliance_rate_strict": 0.68,
+      "n_compliant_loose": 17,
+      "n_violating_loose": 8,
+      "compliance_rate_loose": 0.68
+    },
+    "change_case:english_capital": {
+      "n": 25,
+      "n_compliant_strict": 13,
+      "n_violating_strict": 12,
+      "compliance_rate_strict": 0.52,
+      "n_compliant_loose": 14,
+      "n_violating_loose": 11,
+      "compliance_rate_loose": 0.56
+    },
+    "change_case:english_lowercase": {
+      "n": 39,
+      "n_compliant_strict": 30,
+      "n_violating_strict": 9,
+      "compliance_rate_strict": 0.7692307692307693,
+      "n_compliant_loose": 31,
+      "n_violating_loose": 8,
+      "compliance_rate_loose": 0.7948717948717948
+    },
+    "combination:repeat_prompt": {
+      "n": 41,
+      "n_compliant_strict": 4,
+      "n_violating_strict": 37,
+      "compliance_rate_strict": 0.0975609756097561,
+      "n_compliant_loose": 5,
+      "n_violating_loose": 36,
+      "compliance_rate_loose": 0.12195121951219512
+    },
+    "combination:two_responses": {
+      "n": 24,
+      "n_compliant_strict": 6,
+      "n_violating_strict": 18,
+      "compliance_rate_strict": 0.25,
+      "n_compliant_loose": 6,
+      "n_violating_loose": 18,
+      "compliance_rate_loose": 0.25
+    },
+    "detectable_content:number_placeholders": {
+      "n": 27,
+      "n_compliant_strict": 19,
+      "n_violating_strict": 8,
+      "compliance_rate_strict": 0.7037037037037037,
+      "n_compliant_loose": 19,
+      "n_violating_loose": 8,
+      "compliance_rate_loose": 0.7037037037037037
+    },
+    "detectable_content:postscript": {
+      "n": 26,
+      "n_compliant_strict": 19,
+      "n_violating_strict": 7,
+      "compliance_rate_strict": 0.7307692307692307,
+      "n_compliant_loose": 19,
+      "n_violating_loose": 7,
+      "compliance_rate_loose": 0.7307692307692307
+    },
+    "detectable_format:constrained_response": {
+      "n": 10,
+      "n_compliant_strict": 9,
+      "n_violating_strict": 1,
+      "compliance_rate_strict": 0.9,
+      "n_compliant_loose": 9,
+      "n_violating_loose": 1,
+      "compliance_rate_loose": 0.9
+    },
+    "detectable_format:json_format": {
+      "n": 17,
+      "n_compliant_strict": 9,
+      "n_violating_strict": 8,
+      "compliance_rate_strict": 0.5294117647058824,
+      "n_compliant_loose": 10,
+      "n_violating_loose": 7,
+      "compliance_rate_loose": 0.5882352941176471
+    },
+    "detectable_format:multiple_sections": {
+      "n": 14,
+      "n_compliant_strict": 3,
+      "n_violating_strict": 11,
+      "compliance_rate_strict": 0.21428571428571427,
+      "n_compliant_loose": 3,
+      "n_violating_loose": 11,
+      "compliance_rate_loose": 0.21428571428571427
+    },
+    "detectable_format:number_bullet_lists": {
+      "n": 31,
+      "n_compliant_strict": 14,
+      "n_violating_strict": 17,
+      "compliance_rate_strict": 0.45161290322580644,
+      "n_compliant_loose": 16,
+      "n_violating_loose": 15,
+      "compliance_rate_loose": 0.5161290322580645
+    },
+    "detectable_format:number_highlighted_sections": {
+      "n": 48,
+      "n_compliant_strict": 42,
+      "n_violating_strict": 6,
+      "compliance_rate_strict": 0.875,
+      "n_compliant_loose": 42,
+      "n_violating_loose": 6,
+      "compliance_rate_loose": 0.875
+    },
+    "detectable_format:title": {
+      "n": 37,
+      "n_compliant_strict": 35,
+      "n_violating_strict": 2,
+      "compliance_rate_strict": 0.9459459459459459,
+      "n_compliant_loose": 35,
+      "n_violating_loose": 2,
+      "compliance_rate_loose": 0.9459459459459459
+    },
+    "keywords:existence": {
+      "n": 39,
+      "n_compliant_strict": 25,
+      "n_violating_strict": 14,
+      "compliance_rate_strict": 0.6410256410256411,
+      "n_compliant_loose": 25,
+      "n_violating_loose": 14,
+      "compliance_rate_loose": 0.6410256410256411
+    },
+    "keywords:forbidden_words": {
+      "n": 49,
+      "n_compliant_strict": 36,
+      "n_violating_strict": 13,
+      "compliance_rate_strict": 0.7346938775510204,
+      "n_compliant_loose": 39,
+      "n_violating_loose": 10,
+      "compliance_rate_loose": 0.7959183673469388
+    },
+    "keywords:frequency": {
+      "n": 42,
+      "n_compliant_strict": 32,
+      "n_violating_strict": 10,
+      "compliance_rate_strict": 0.7619047619047619,
+      "n_compliant_loose": 33,
+      "n_violating_loose": 9,
+      "compliance_rate_loose": 0.7857142857142857
+    },
+    "keywords:letter_frequency": {
+      "n": 33,
+      "n_compliant_strict": 19,
+      "n_violating_strict": 14,
+      "compliance_rate_strict": 0.5757575757575758,
+      "n_compliant_loose": 20,
+      "n_violating_loose": 13,
+      "compliance_rate_loose": 0.6060606060606061
+    },
+    "language:response_language": {
+      "n": 31,
+      "n_compliant_strict": 25,
+      "n_violating_strict": 6,
+      "compliance_rate_strict": 0.8064516129032258,
+      "n_compliant_loose": 25,
+      "n_violating_loose": 6,
+      "compliance_rate_loose": 0.8064516129032258
+    },
+    "length_constraints:nth_paragraph_first_word": {
+      "n": 12,
+      "n_compliant_strict": 7,
+      "n_violating_strict": 5,
+      "compliance_rate_strict": 0.5833333333333334,
+      "n_compliant_loose": 9,
+      "n_violating_loose": 3,
+      "compliance_rate_loose": 0.75
+    },
+    "length_constraints:number_paragraphs": {
+      "n": 27,
+      "n_compliant_strict": 2,
+      "n_violating_strict": 25,
+      "compliance_rate_strict": 0.07407407407407407,
+      "n_compliant_loose": 4,
+      "n_violating_loose": 23,
+      "compliance_rate_loose": 0.14814814814814814
+    },
+    "length_constraints:number_sentences": {
+      "n": 52,
+      "n_compliant_strict": 36,
+      "n_violating_strict": 16,
+      "compliance_rate_strict": 0.6923076923076923,
+      "n_compliant_loose": 40,
+      "n_violating_loose": 12,
+      "compliance_rate_loose": 0.7692307692307693
+    },
+    "length_constraints:number_words": {
+      "n": 52,
+      "n_compliant_strict": 40,
+      "n_violating_strict": 12,
+      "compliance_rate_strict": 0.7692307692307693,
+      "n_compliant_loose": 43,
+      "n_violating_loose": 9,
+      "compliance_rate_loose": 0.8269230769230769
+    },
+    "punctuation:no_comma": {
+      "n": 66,
+      "n_compliant_strict": 54,
+      "n_violating_strict": 12,
+      "compliance_rate_strict": 0.8181818181818182,
+      "n_compliant_loose": 56,
+      "n_violating_loose": 10,
+      "compliance_rate_loose": 0.8484848484848485
+    },
+    "startend:end_checker": {
+      "n": 26,
+      "n_compliant_strict": 15,
+      "n_violating_strict": 11,
+      "compliance_rate_strict": 0.5769230769230769,
+      "n_compliant_loose": 15,
+      "n_violating_loose": 11,
+      "compliance_rate_loose": 0.5769230769230769
+    },
+    "startend:quotation": {
+      "n": 41,
+      "n_compliant_strict": 23,
+      "n_violating_strict": 18,
+      "compliance_rate_strict": 0.5609756097560976,
+      "n_compliant_loose": 24,
+      "n_violating_loose": 17,
+      "compliance_rate_loose": 0.5853658536585366
+    }
+  }
+}

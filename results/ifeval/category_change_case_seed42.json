@@ -1,0 +1,76 @@
+{
+  "category": "change_case",
+  "n": 89,
+  "n_unique_keys": 84,
+  "n_test": 19,
+  "n_test_violating": 7,
+  "n_test_compliant": 12,
+  "n_test_pairs": 84,
+  "label": "loose",
+  "acts": "acts512",
+  "probe": 0.6071428571428571,
+  "probe_anchor_layer": 16,
+  "probe_val_layer_auroc": 0.7410714285714286,
+  "probe_threshold_val_thresh": 22.07357406616211,
+  "probe_f1_test": 0.5882352941176471,
+  "floors": {
+    "tfidf": 0.2261904761904762,
+    "length_char": 0.7619047619047619,
+    "keyword": 0.4583333333333333,
+    "format_feats": 0.35714285714285715,
+    "format_oracle": 0.8928571428571429,
+    "refusal_dir": 0.5119047619047619,
+    "yesno": 0.6190476190476191
+  },
+  "tfidf_note": null,
+  "honest_floor_name": "length_char",
+  "honest_floor": 0.7619047619047619,
+  "margin_vs_honest_floor": -0.15476190476190477,
+  "ci_lo_honest": -0.38095238095238093,
+  "ci_hi_honest": 0.0357142857142857,
+  "p_honest": 0.149,
+  "margin_vs_tfidf": 0.38095238095238093,
+  "ci_lo_tfidf": -0.047619047619047616,
+  "ci_hi_tfidf": 0.75,
+  "p_tfidf": 0.08,
+  "format_oracle_ceiling": 0.8928571428571429,
+  "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+  "classification": [
+    "mixed"
+  ],
+  "perm_null_probe_mean": 0.5174791213688272,
+  "perm_null_probe_sd": 0.1545715693833358,
+  "perm_null_tfidf_mean": 0.5007502220002221,
+  "refusal_selected": {
+    "variant": "raw",
+    "layer": 7,
+    "sign": 1.0
+  },
+  "yesno_selected": {
+    "space": "space",
+    "sign": 1.0
+  },
+  "class_counts": {
+    "train": {
+      "n": 35,
+      "n_viol": 9,
+      "n_comp": 26
+    },
+    "val_layer": {
+      "n": 18,
+      "n_viol": 4,
+      "n_comp": 14
+    },
+    "val_thresh": {
+      "n": 17,
+      "n_viol": 7,
+      "n_comp": 10
+    },
+    "test": {
+      "n": 19,
+      "n_viol": 7,
+      "n_comp": 12
+    }
+  },
+  "ceiling_note": null
+}

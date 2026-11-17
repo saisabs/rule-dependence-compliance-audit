@@ -1,0 +1,199 @@
+{
+  "lexical": {
+    "tfidf_rule_only": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.0,
+      "scenario_flip_accuracy": 0.0,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.5
+    },
+    "tfidf_scenario_only": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.0,
+      "scenario_flip_accuracy": 0.0,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.5
+    },
+    "tfidf_rule_plus_scenario": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.0,
+      "scenario_flip_accuracy": 0.0,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.5
+    }
+  },
+  "_last_updated": "2026-07-27T23:59:31.292644+05:30",
+  "_git_commit": "d3f6da32fac8d9bcb19c1a177ec1e8a3a8c7144f",
+  "reasoning_judge": {
+    "n_quadruples_scored": 200,
+    "rule_flip_accuracy": 0.0175,
+    "scenario_flip_accuracy": 0.0275,
+    "quadruple_exact_match": 0.0,
+    "quadruple_exact_match_chance": 0.0625,
+    "auroc": 0.506875,
+    "model": "meta-llama/Llama-3.1-8B-Instruct"
+  },
+  "guards": {
+    "run_guard_llamaguard3": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.005,
+      "scenario_flip_accuracy": 0.0825,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.4998375,
+      "model": "meta-llama/Llama-Guard-3-1B"
+    },
+    "run_guard_qwen3guard": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.0475,
+      "scenario_flip_accuracy": 0.13,
+      "quadruple_exact_match": 0.005,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.51546875,
+      "model": "Qwen/Qwen3Guard-Gen-8B"
+    }
+  },
+  "lpg_4b": {
+    "n_quadruples_scored": 200,
+    "rule_flip_accuracy": 0.055,
+    "scenario_flip_accuracy": 0.05,
+    "quadruple_exact_match": 0.01,
+    "quadruple_exact_match_chance": 0.0625,
+    "auroc": 0.53513125,
+    "model": "andyc03/LPG_4B",
+    "input_tokens_max": 184
+  },
+  "rachmil": {
+    "n_quadruples_scored": 200,
+    "rule_flip_accuracy": 0.0,
+    "scenario_flip_accuracy": 0.0,
+    "quadruple_exact_match": 0.0,
+    "quadruple_exact_match_chance": 0.0625,
+    "auroc": 0.498125,
+    "model": "meta-llama/Llama-3.1-8B-Instruct",
+    "rachmil_repo": "github.com/FujitsuResearch/LLM-policy-violation-detection, arXiv:2512.03994",
+    "guard_selection_distribution": {
+      "non_player_characters": 792,
+      "content_controls": 1,
+      "age_appropriate": 2,
+      "regulations": 5
+    }
+  },
+  "probe_results": {
+    "probe_omni_calibrated_frozen": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.005,
+      "scenario_flip_accuracy": 0.04,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.50063125,
+      "anchor": 14,
+      "omni_val_thresh_auroc_at_anchor": 0.9581294686277276,
+      "threshold": 0.47140783071517944
+    },
+    "meandiff_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.025,
+      "scenario_flip_accuracy": 0.075,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.50155
+    },
+    "logistic_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.0325,
+      "scenario_flip_accuracy": 0.09,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.50735625
+    },
+    "mlp_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.0125,
+      "scenario_flip_accuracy": 0.0575,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.50124375
+    },
+    "model": "meta-llama/Llama-3.2-1B-Instruct"
+  },
+  "probe_results_llama-3.1-8b-instruct": {
+    "probe_omni_calibrated_frozen": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.0425,
+      "scenario_flip_accuracy": 0.05,
+      "quadruple_exact_match": 0.0,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.5099625,
+      "anchor": 21,
+      "omni_val_thresh_auroc_at_anchor": 0.9749886776202956,
+      "threshold": -0.0883600115776062
+    },
+    "meandiff_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.0625,
+      "scenario_flip_accuracy": 0.0875,
+      "quadruple_exact_match": 0.005,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.5251125
+    },
+    "logistic_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.2025,
+      "scenario_flip_accuracy": 0.22,
+      "quadruple_exact_match": 0.07,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.61586875
+    },
+    "mlp_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.11,
+      "scenario_flip_accuracy": 0.12,
+      "quadruple_exact_match": 0.03,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.560353125
+    },
+    "model": "meta-llama/Llama-3.1-8B-Instruct"
+  },
+  "probe_results_qwen3-8b": {
+    "probe_omni_calibrated_frozen": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.115,
+      "scenario_flip_accuracy": 0.115,
+      "quadruple_exact_match": 0.035,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.540425,
+      "anchor": 24,
+      "omni_val_thresh_auroc_at_anchor": 0.9639168751716918,
+      "threshold": 17.296796798706055
+    },
+    "meandiff_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.1975,
+      "scenario_flip_accuracy": 0.175,
+      "quadruple_exact_match": 0.055,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.57913125
+    },
+    "logistic_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.21,
+      "scenario_flip_accuracy": 0.25,
+      "quadruple_exact_match": 0.065,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.6470125
+    },
+    "mlp_fit_on_crossed": {
+      "n_quadruples_scored": 200,
+      "rule_flip_accuracy": 0.2825,
+      "scenario_flip_accuracy": 0.275,
+      "quadruple_exact_match": 0.11,
+      "quadruple_exact_match_chance": 0.0625,
+      "auroc": 0.669821875
+    },
+    "model": "Qwen/Qwen3-8B"
+  }
+}

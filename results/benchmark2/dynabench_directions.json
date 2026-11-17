@@ -1,0 +1,89 @@
+{
+  "benchmark": "DynaBench",
+  "dataset_source": "montehoover/DynaBench (config=DynaBench, split=test)",
+  "dataset_revision": "0c94c96a05eb0c6a8331a0ec0c12c1ab4f17097b",
+  "n": 543,
+  "base_rate_frac_compliant": 0.5082872928176796,
+  "tokenization": {
+    "max_length": 512,
+    "median_tokens": 777.0,
+    "p95_tokens": 3635.099999999998,
+    "frac_truncated_at_512": 0.7108655616942909
+  },
+  "split_sizes": {
+    "train": 217,
+    "val_layer": 108,
+    "val_thresh": 108,
+    "test": 110
+  },
+  "refusal_direction": {
+    "auroc": 0.6259946949602122,
+    "selected_variant": "chat",
+    "selected_layer": 10,
+    "selected_sign": -1.0,
+    "selection_auroc": 0.6135116598079562
+  },
+  "probe": {
+    "auroc": 0.7844827586206897,
+    "selected_layer": 14,
+    "val_layer_auroc": 0.8285322359396434,
+    "layer_norms": [
+      0.12432897090911865,
+      0.2054586261510849,
+      0.3138262629508972,
+      0.3958730399608612,
+      0.5324286222457886,
+      0.6244679093360901,
+      0.6998410820960999,
+      0.765205979347229,
+      0.8353696465492249,
+      0.9204115271568298,
+      1.1968019008636475,
+      1.3370397090911865,
+      1.6305142641067505,
+      1.8792563676834106,
+      2.295687437057495,
+      2.903477907180786,
+      16.8726806640625
+    ],
+    "budget_null": {
+      "n_random": 200,
+      "budget_null_mean": 0.5762649204244031,
+      "budget_null_std": 0.06431521149407274,
+      "budget_null_q95": 0.6803879310344828
+    }
+  },
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "52a09ce7be8943c43403c2627a62fddb8bbf30ef",
+    "timestamp": "2026-07-25T13:05:18.799904+05:30",
+    "script": "scripts/run_benchmark2_directions.py",
+    "versions": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.14.1",
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "dtype": "float16",
+    "gpu": 0,
+    "gpu_uuid_visible": "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782",
+    "orientation": "label 1 = COMPLIANT, higher score = COMPLIANT; every AUROC asserted vs sklearn.roc_auc_score to 1e-9",
+    "refusal_recipe": "E-G6: normalise(mean_harmful - mean_harmless), walledai/AdvBench vs tatsu-lab/alpaca(input==''), seed 42, n=256/side, ZERO task supervision",
+    "refusal_identity_check": {
+      "raw": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      },
+      "chat": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      }
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "task": "E-RACHMIL-VERIFY",
+  "target": {
+    "paper": "Rachmil et al., Training-Free Policy Violation Detection via Activation-Space Whitening in LLMs",
+    "arxiv": "2512.03994",
+    "code": "github.com/FujitsuResearch/LLM-policy-violation-detection",
+    "reported_sota_f1": 0.86,
+    "metric_definition": "sklearn f1_score default => binary F1, pos_label=1=FAIL(violation); PASS->0, FAIL->1 (their utils.numeric_label / compute_f1)"
+  },
+  "benchmark": {
+    "dataset": "montehoover/DynaBench",
+    "train_config": "DynaBenchTrain (train split)",
+    "test_config": "DynaBench (test split)",
+    "train_parquet": "<redacted-path>",
+    "test_parquet": "<redacted-path>",
+    "train_parquet_sha256": "f18f8b8afbe3cac57a0f0db6f368b5bc8c611cd988e0ebe8026a9013070b1c13",
+    "test_parquet_sha256": "8ac89afe41e3b33b563eebf09c339dd9dcdbb1d22138feb4bf4349ea5027a4e4",
+    "n_train": 61496,
+    "n_test": 543,
+    "test_base_rate": {
+      "FAIL_violation": 267,
+      "PASS_compliant": 276
+    }
+  },
+  "split_correspondence": {
+    "status": "VERIFIED \u2014 benchmark's own published train/test split",
+    "same_test_rows_as_rachmil": "yes; DynaBench test = 543 rows, the set their headline F1 is reported on",
+    "leak_check": {
+      "base_id_overlap": 0,
+      "transcript_overlap": 0,
+      "disjoint": true
+    }
+  },
+  "our_supervised_bag_of_words": {
+    "features": "TF-IDF unigram (TfidfVectorizer ngram=(1,1))",
+    "classifier": "LogisticRegression(max_iter=1000)",
+    "fit_on": "DynaBenchTrain (61,496 rows)",
+    "eval_on": "DynaBench test (543 rows)",
+    "variants": {
+      "transcript_only": {
+        "f1_violation_default_0.5": 0.5114155251141552,
+        "precision_default_0.5": 0.4307692307692308,
+        "recall_default_0.5": 0.6292134831460674,
+        "accuracy_default_0.5": 0.4088397790055249,
+        "f1_violation_calibrated_threshold": 0.6125166444740346,
+        "calibrated_threshold": 0.41999999999999993,
+        "auroc_violation": 0.5284969874613256,
+        "n_test": 543
+      },
+      "policy_only": {
+        "f1_violation_default_0.5": 0.5477888730385164,
+        "precision_default_0.5": 0.4423963133640553,
+        "recall_default_0.5": 0.7191011235955056,
+        "accuracy_default_0.5": 0.4162062615101289,
+        "f1_violation_calibrated_threshold": 0.5573770491803278,
+        "calibrated_threshold": 0.36999999999999994,
+        "auroc_violation": 0.49588150681213694,
+        "n_test": 543
+      },
+      "policy_plus_transcript": {
+        "f1_violation_default_0.5": 0.612565445026178,
+        "precision_default_0.5": 0.4708249496981891,
+        "recall_default_0.5": 0.8764044943820225,
+        "accuracy_default_0.5": 0.4548802946593002,
+        "f1_violation_calibrated_threshold": 0.6181818181818182,
+        "calibrated_threshold": 0.4699999999999999,
+        "auroc_violation": 0.5726537480323508,
+        "n_test": 543
+      }
+    }
+  },
+  "within_test_reconstruction": {
+    "what": "supervised bag-of-words trained on PART of the 543 test rows and evaluated on the rest (in-distribution). This is the protocol behind the paper's App. E 0.898 number; it is NOT Rachmil's protocol (they never train on test data).",
+    "variants": {
+      "transcript_only": {
+        "f1_violation_holdout_217_110": 0.8703703703703703,
+        "f1_violation_5fold_oof_default": 0.8635437881873728,
+        "auroc_5fold_oof": 0.9684361938880747,
+        "note": "IN-DISTRIBUTION within-test split; NOT Rachmil's protocol."
+      },
+      "policy_plus_transcript": {
+        "f1_violation_holdout_217_110": 0.8571428571428571,
+        "f1_violation_5fold_oof_default": 0.8565573770491803,
+        "auroc_5fold_oof": 0.9537534603484774,
+        "note": "IN-DISTRIBUTION within-test split; NOT Rachmil's protocol."
+      }
+    }
+  },
+  "headline": {
+    "variant": "transcript_only (policy-blind)",
+    "same_split_train_DynaBenchTrain_eval_543": {
+      "our_tfidf_f1_default_0.5": 0.5114155251141552,
+      "our_tfidf_f1_calibrated": 0.6125166444740346,
+      "our_tfidf_f1_best": 0.6125166444740346,
+      "auroc": 0.5284969874613256
+    },
+    "within_test_reconstruction_f1": {
+      "f1_violation_holdout_217_110": 0.8703703703703703,
+      "f1_violation_5fold_oof_default": 0.8635437881873728,
+      "auroc_5fold_oof": 0.9684361938880747,
+      "note": "IN-DISTRIBUTION within-test split; NOT Rachmil's protocol."
+    },
+    "rachmil_reported_sota_f1": 0.86,
+    "matches_or_beats_sota_on_published_split": false
+  },
+  "verdict": "DEMOTE \u2014 on the benchmark's OWN published split (train=DynaBenchTrain -> eval=543 test rows, the identical rows Rachmil reports on), a policy-blind bag of words reaches only F1=0.613 (AUROC=0.528), far below the reported SOTA 0.86. The paper's ~0.898 reproduces ONLY under an in-distribution within-test split (train on part of the 543, test on the rest), which is NOT Rachmil's protocol. The 'matches SOTA' headline does not survive the same-split test.",
+  "provenance": {
+    "seed": 42,
+    "git_commit": "ec3bfe57e26b1b8bcf0b693a0a53791cdd6fec53",
+    "timestamp": "2026-07-19T22:38:32.069498+05:30",
+    "python": "3.12.0"
+  }
+}

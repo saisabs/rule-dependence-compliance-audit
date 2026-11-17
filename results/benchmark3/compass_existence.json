@@ -1,0 +1,33 @@
+{
+  "question": "Does COMPASS exist as a citable artifact (paper + dataset)?",
+  "verdict": "YES \u2014 EXISTS. Stays in FINAL_PLAN.",
+  "checked": "2026-07-17",
+  "receipts": {
+    "paper": {
+      "arxiv": "2601.01836",
+      "title": "COMPASS: A Framework for Evaluating Organization-Specific Policy Alignment in LLMs",
+      "authors_first": "Dasol Choi et al. (AIM Intelligence, BMW Group, Yonsei, POSTECH, SNU)",
+      "submitted": "2026-01-05",
+      "acceptance": "GitHub README announces ACL 2026 acceptance (dated 04/07/2026)",
+      "scale": "5,920 validated queries across 8 industry scenarios",
+      "license": "CC BY-NC-SA 4.0 (arXiv page)"
+    },
+    "code": "https://github.com/AIM-Intelligence/COMPASS (public, Python)",
+    "datasets_hf": [
+      "AIM-Intelligence/COMPASS-Policy-Alignment-Testbed-Dataset (created 2025-12-30, 286 downloads, arxiv:2601.01836 tag)",
+      "AIM-Intelligence/COMPASS-Policy-aware-SFT-Dataset (4,121 query-response pairs, LODO SFT)"
+    ],
+    "models_hf": [
+      "AIM-Intelligence/COMPASS_Qwen2.5-7B-Instruct_LoRA",
+      "AIM-Intelligence/COMPASS_gemma-3-4b-it_LoRA"
+    ],
+    "search_trail": [
+      "HF hub_repo_search 'COMPASS compliance' (datasets) -> 0 results",
+      "HF paper_search 'COMPASS compliance benchmark LLM policy' -> hit #1 = 2601.01836",
+      "arxiv.org/abs/2601.01836 -> resolves to the COMPASS paper",
+      "HF hub_repo_search author=AIM-Intelligence 'compass' -> 2 datasets + 2 models"
+    ],
+    "note_on_prior_audit": "context/BENCHMARK_PROVENANCE_AUDIT.md recorded COMPASS as NOT FOUND; that search used the bare name (heavily overloaded). With FINAL_PLAN's arXiv id 2601.01836 the artifact resolves immediately. The audit line is OVERTURNED.",
+    "caveat": "Existence check only \u2014 no measurements run on COMPASS in E-B3. Its labels live in model RESPONSES (refusal-behavior eval), so it is structurally closer to IFEval than to the text-classification benchmarks gauntleted here."
+  }
+}

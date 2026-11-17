@@ -1,0 +1,76 @@
+{
+  "category": "detectable_content",
+  "n": 53,
+  "n_unique_keys": 52,
+  "n_test": 12,
+  "n_test_violating": 4,
+  "n_test_compliant": 8,
+  "n_test_pairs": 32,
+  "label": "loose",
+  "acts": "acts512",
+  "probe": 0.4375,
+  "probe_anchor_layer": 3,
+  "probe_val_layer_auroc": 0.9523809523809523,
+  "probe_threshold_val_thresh": -0.03718480467796326,
+  "probe_f1_test": 0.42857142857142855,
+  "floors": {
+    "tfidf": 0.5625,
+    "length_char": 0.59375,
+    "keyword": 0.375,
+    "format_feats": 0.9375,
+    "format_oracle": 1.0,
+    "refusal_dir": 0.53125,
+    "yesno": 0.53125
+  },
+  "tfidf_note": null,
+  "honest_floor_name": "format_feats",
+  "honest_floor": 0.9375,
+  "margin_vs_honest_floor": -0.5,
+  "ci_lo_honest": -0.875,
+  "ci_hi_honest": -0.0625,
+  "p_honest": 0.033,
+  "margin_vs_tfidf": -0.125,
+  "ci_lo_tfidf": -0.53125,
+  "ci_hi_tfidf": 0.1875,
+  "p_tfidf": 0.585,
+  "format_oracle_ceiling": 1.0,
+  "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+  "classification": [
+    "form-shortcut-saturated"
+  ],
+  "perm_null_probe_mean": 0.48684894477420254,
+  "perm_null_probe_sd": 0.2146017341703343,
+  "perm_null_tfidf_mean": 0.4814188011063011,
+  "refusal_selected": {
+    "variant": "raw",
+    "layer": 1,
+    "sign": 1.0
+  },
+  "yesno_selected": {
+    "space": "space",
+    "sign": 1.0
+  },
+  "class_counts": {
+    "train": {
+      "n": 21,
+      "n_viol": 6,
+      "n_comp": 15
+    },
+    "val_layer": {
+      "n": 10,
+      "n_viol": 3,
+      "n_comp": 7
+    },
+    "val_thresh": {
+      "n": 10,
+      "n_viol": 2,
+      "n_comp": 8
+    },
+    "test": {
+      "n": 12,
+      "n_viol": 4,
+      "n_comp": 8
+    }
+  },
+  "ceiling_note": null
+}

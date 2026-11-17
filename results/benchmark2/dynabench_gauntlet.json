@@ -1,0 +1,104 @@
+{
+  "benchmark": "DynaBench",
+  "dataset_source": "montehoover/DynaBench (config=DynaBench, split=test)",
+  "dataset_revision": "0c94c96a05eb0c6a8331a0ec0c12c1ab4f17097b",
+  "n": 543,
+  "base_rate": {
+    "PASS_compliant": 276,
+    "FAIL_violating": 267,
+    "frac_compliant": 0.5082872928176796
+  },
+  "split_sizes": {
+    "train": 217,
+    "test": 110
+  },
+  "baselines": {
+    "tfidf_transcript_only": {
+      "auroc": 0.981763925729443,
+      "n_test": 110
+    },
+    "tfidf_policy_only": {
+      "auroc": 0.9477785145888594,
+      "n_test": 110
+    },
+    "tfidf_policy_plus_transcript": {
+      "auroc": 0.9648541114058355,
+      "n_test": 110
+    },
+    "length_chars": {
+      "auroc": 0.6435676392572944,
+      "train_oriented_sign": 1.0,
+      "train_auroc": 0.6503992524634726,
+      "n_test": 110
+    },
+    "length_words": {
+      "auroc": 0.5898541114058355,
+      "train_oriented_sign": 1.0,
+      "train_auroc": 0.6090299014610941,
+      "n_test": 110
+    },
+    "keyword_count": {
+      "auroc": 0.5502320954907162,
+      "train_oriented_sign": 1.0,
+      "train_auroc": 0.5146109412164459,
+      "n_test": 110
+    },
+    "policy_transcript_overlap": {
+      "auroc": 0.8388594164456233,
+      "train_oriented_sign": 1.0,
+      "train_auroc": 0.8829425756031262,
+      "n_test": 110
+    }
+  },
+  "perm_null_tfidf": {
+    "aurocs": [
+      0.493368700265252,
+      0.47745358090185674,
+      0.5324933687002652,
+      0.669761273209549,
+      0.468501326259947
+    ],
+    "mean": 0.528315649867374
+  },
+  "f1_vs_rachmil": {
+    "rachmil_reported_f1": 0.86,
+    "rachmil_citation": "arXiv:2512.03994, activation-space whitening",
+    "note": "F1 for the VIOLATION (FAIL) class. Threshold tuned on train only. Comparability caveats in the summary: their exact split and F1 averaging convention are UNVERIFIED from the dataset card alone.",
+    "tfidf": {
+      "transcript_only": {
+        "f1_violation_class_holdout": 0.8979591836734694,
+        "holdout_threshold_from_train": 0.5299999999999999,
+        "n_holdout": 110,
+        "f1_violation_class_5fold_cv_mean": 0.8748893419648137,
+        "f1_violation_class_5fold_cv_std": 0.021079187862326224,
+        "n_cv": 543
+      },
+      "policy_plus_transcript": {
+        "f1_violation_class_holdout": 0.8695652173913043,
+        "holdout_threshold_from_train": 0.6,
+        "n_holdout": 110,
+        "f1_violation_class_5fold_cv_mean": 0.8568268834840491,
+        "f1_violation_class_5fold_cv_std": 0.025322145243441646,
+        "n_cv": 543
+      }
+    }
+  },
+  "provenance": {
+    "model": "n/a (lexical/CPU gauntlet)",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T03:58:55.192453+05:30",
+    "script": "scripts/run_benchmark2_gauntlet.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "pandas": "3.0.3",
+      "python": "3.12.12"
+    },
+    "max_length": "n/a (no model)",
+    "pooling": "n/a (no model)",
+    "gpu": 0,
+    "orientation": "label 1 = COMPLIANT, score higher = COMPLIANT; every AUROC asserted against sklearn.roc_auc_score to 1e-9",
+    "tfidf_protocol": "TfidfVectorizer(ngram_range=(1,1)) + LogisticRegression(max_iter=1000); fit on train, eval on test; identical to scripts/run_trivial_gauntlet.py"
+  }
+}

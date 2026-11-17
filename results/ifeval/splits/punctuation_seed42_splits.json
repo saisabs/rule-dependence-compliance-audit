@@ -1,0 +1,611 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:06:53.383520+05:30",
+    "script": "scripts/run_ifeval_probe.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "split_fractions": {
+      "train": 0.4,
+      "val_layer": 0.2,
+      "val_thresh": 0.2,
+      "test": 0.2
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0"
+  },
+  "category": "punctuation",
+  "n_instances": 66,
+  "n_unique_keys": 66,
+  "label": "loose",
+  "split_source": "src.compliance.splits.three_way_split(n_unique_keys, 42) \u2014 GROUPED by prompt key to prevent shared-activation leakage",
+  "split_key_indices": {
+    "train": [
+      62,
+      48,
+      29,
+      25,
+      7,
+      46,
+      57,
+      31,
+      16,
+      49,
+      9,
+      33,
+      30,
+      20,
+      18,
+      53,
+      23,
+      45,
+      44,
+      60,
+      19,
+      22,
+      11,
+      39,
+      42,
+      51
+    ],
+    "val_layer": [
+      64,
+      40,
+      24,
+      58,
+      4,
+      36,
+      21,
+      52,
+      10,
+      0,
+      17,
+      28,
+      56
+    ],
+    "val_thresh": [
+      26,
+      55,
+      41,
+      12,
+      63,
+      50,
+      38,
+      32,
+      61,
+      13,
+      54,
+      1,
+      2
+    ],
+    "test": [
+      27,
+      37,
+      5,
+      34,
+      59,
+      43,
+      6,
+      47,
+      8,
+      65,
+      15,
+      35,
+      3,
+      14
+    ]
+  },
+  "split_instance_indices": {
+    "train": [
+      7,
+      9,
+      11,
+      16,
+      18,
+      19,
+      20,
+      22,
+      23,
+      25,
+      29,
+      30,
+      31,
+      33,
+      39,
+      42,
+      44,
+      45,
+      46,
+      48,
+      49,
+      51,
+      53,
+      57,
+      60,
+      62
+    ],
+    "val_layer": [
+      0,
+      4,
+      10,
+      17,
+      21,
+      24,
+      28,
+      36,
+      40,
+      52,
+      56,
+      58,
+      64
+    ],
+    "val_thresh": [
+      1,
+      2,
+      12,
+      13,
+      26,
+      32,
+      38,
+      41,
+      50,
+      54,
+      55,
+      61,
+      63
+    ],
+    "test": [
+      3,
+      5,
+      6,
+      8,
+      14,
+      15,
+      27,
+      34,
+      35,
+      37,
+      43,
+      47,
+      59,
+      65
+    ]
+  },
+  "class_counts": {
+    "train": {
+      "n": 26,
+      "n_viol": 4,
+      "n_comp": 22
+    },
+    "val_layer": {
+      "n": 13,
+      "n_viol": 0,
+      "n_comp": 13
+    },
+    "val_thresh": {
+      "n": 13,
+      "n_viol": 3,
+      "n_comp": 10
+    },
+    "test": {
+      "n": 14,
+      "n_viol": 3,
+      "n_comp": 11
+    }
+  },
+  "items": [
+    {
+      "local_idx": 0,
+      "key": 1000,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 1,
+      "key": 1001,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 2,
+      "key": 1069,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 3,
+      "key": 1107,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 4,
+      "key": 1162,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 5,
+      "key": 1187,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 6,
+      "key": 1300,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 7,
+      "key": 1348,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 8,
+      "key": 1418,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 9,
+      "key": 1508,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 10,
+      "key": 1512,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 11,
+      "key": 1546,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 12,
+      "key": 1582,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 13,
+      "key": 1627,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 14,
+      "key": 1643,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 15,
+      "key": 1738,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 16,
+      "key": 1739,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 17,
+      "key": 1825,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 18,
+      "key": 1897,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 19,
+      "key": 1928,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 20,
+      "key": 1944,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 21,
+      "key": 2063,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 22,
+      "key": 2216,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 23,
+      "key": 2230,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 24,
+      "key": 2245,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 25,
+      "key": 2275,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 26,
+      "key": 2311,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 27,
+      "key": 2324,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 28,
+      "key": 2337,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 29,
+      "key": 2374,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 30,
+      "key": 2380,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 31,
+      "key": 2417,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 32,
+      "key": 2436,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 33,
+      "key": 2439,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 34,
+      "key": 2449,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 35,
+      "key": 2571,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 36,
+      "key": 2583,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 37,
+      "key": 2596,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 38,
+      "key": 2704,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 39,
+      "key": 2713,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 40,
+      "key": 2739,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 41,
+      "key": 2798,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 42,
+      "key": 2825,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 43,
+      "key": 3084,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 44,
+      "key": 3195,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 45,
+      "key": 32,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 46,
+      "key": 3204,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 47,
+      "key": 3245,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 48,
+      "key": 3256,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 49,
+      "key": 3281,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 50,
+      "key": 331,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 51,
+      "key": 3323,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 52,
+      "key": 3335,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 53,
+      "key": 3350,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 54,
+      "key": 3376,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 55,
+      "key": 3479,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 56,
+      "key": 3505,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 57,
+      "key": 3540,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 58,
+      "key": 3615,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 59,
+      "key": 3619,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 60,
+      "key": 3631,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 61,
+      "key": 3633,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 1
+    },
+    {
+      "local_idx": 62,
+      "key": 3669,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 63,
+      "key": 3691,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 64,
+      "key": 3718,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    },
+    {
+      "local_idx": 65,
+      "key": 3724,
+      "instruction_id": "punctuation:no_comma",
+      "violating": 0
+    }
+  ]
+}

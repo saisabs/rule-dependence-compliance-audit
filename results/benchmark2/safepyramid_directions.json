@@ -1,0 +1,201 @@
+{
+  "benchmark": "SafePyramid",
+  "dataset_source": "ByteDance/SafePyramid (config=default, split=test)",
+  "dataset_revision": "011f4d3d90c6e99aa371c206e548f66af8d1169c",
+  "task_framing": "PER-RULE (forced: every row has >=1 violation, so an any-violation binary label has a 100% base rate).",
+  "rules_per_conversation_cap": 8,
+  "cap_note": "Random cap (seed 42) on rules per conversation to keep GPU extraction tractable; preserves base rate in expectation.",
+  "prompt_layout": "rule_first",
+  "max_length": 512,
+  "layout_note": "rule_first is gate-matched but DEGENERATE here: conversations are a median 1202 tokens and 100% exceed 512, so last-token pooling reads a conversation token that is near-constant within a conversation => chance by construction. rule_last places the rule at the end so the pooled token actually sees it.",
+  "split_conversations": {
+    "train": 400,
+    "val_layer": 200,
+    "test": 200
+  },
+  "levels": {
+    "L0": {
+      "n_units": 8000,
+      "frac_violated": 0.341625,
+      "split_sizes": {
+        "train": 3200,
+        "val_layer": 1600,
+        "test": 1600
+      },
+      "refusal_direction": {
+        "auroc": 0.4670305221685578,
+        "selected_variant": "chat",
+        "selected_layer": 9,
+        "selected_sign": -1.0,
+        "selection_auroc": 0.5369362024284425,
+        "auroc_grouped_by_conversation": 0.4823168498168498,
+        "n_groups_scored": 195
+      },
+      "probe": {
+        "auroc": 0.48766622695684014,
+        "selected_layer": 15,
+        "val_layer_auroc": 0.5252324730958102,
+        "layer_norms": [
+          0.030184846371412277,
+          0.05042931064963341,
+          0.07068321108818054,
+          0.09098666161298752,
+          0.10752774775028229,
+          0.12357265502214432,
+          0.13695062696933746,
+          0.15204884111881256,
+          0.16432857513427734,
+          0.18514227867126465,
+          0.22867532074451447,
+          0.2611396908760071,
+          0.31435316801071167,
+          0.36375290155410767,
+          0.45036157965660095,
+          0.5566151738166809,
+          3.029966354370117
+        ],
+        "budget_null": {
+          "n_random": 200,
+          "budget_null_mean": 0.49856825838120217,
+          "budget_null_std": 0.01967902818466829,
+          "budget_null_q95": 0.5296266320504669
+        },
+        "auroc_grouped_by_conversation": 0.4723229548229549,
+        "n_groups_scored": 195
+      }
+    },
+    "L1": {
+      "n_units": 8000,
+      "frac_violated": 0.217125,
+      "split_sizes": {
+        "train": 3200,
+        "val_layer": 1600,
+        "test": 1600
+      },
+      "refusal_direction": {
+        "auroc": 0.4931939834951523,
+        "selected_variant": "chat",
+        "selected_layer": 10,
+        "selected_sign": -1.0,
+        "selection_auroc": 0.5466944711894535,
+        "auroc_grouped_by_conversation": 0.503738630283574,
+        "n_groups_scored": 178
+      },
+      "probe": {
+        "auroc": 0.5212082483010726,
+        "selected_layer": 8,
+        "val_layer_auroc": 0.5407971967115983,
+        "layer_norms": [
+          0.03601158782839775,
+          0.06155088171362877,
+          0.08847970515489578,
+          0.1181635633111,
+          0.14263848960399628,
+          0.16153687238693237,
+          0.18643935024738312,
+          0.20580996572971344,
+          0.2249143123626709,
+          0.25568464398384094,
+          0.31828805804252625,
+          0.3571992814540863,
+          0.43621334433555603,
+          0.5058237314224243,
+          0.6036333441734314,
+          0.7286015748977661,
+          4.476114273071289
+        ],
+        "budget_null": {
+          "n_random": 200,
+          "budget_null_mean": 0.49997615088445,
+          "budget_null_std": 0.018075493905669794,
+          "budget_null_q95": 0.5288329794617029
+        },
+        "auroc_grouped_by_conversation": 0.5050294275013375,
+        "n_groups_scored": 178
+      }
+    },
+    "L2": {
+      "n_units": 8000,
+      "frac_violated": 0.207125,
+      "split_sizes": {
+        "train": 3200,
+        "val_layer": 1600,
+        "test": 1600
+      },
+      "refusal_direction": {
+        "auroc": 0.5085000710937715,
+        "selected_variant": "chat",
+        "selected_layer": 1,
+        "selected_sign": -1.0,
+        "selection_auroc": 0.5257535282909375,
+        "auroc_grouped_by_conversation": 0.5247727272727273,
+        "n_groups_scored": 165
+      },
+      "probe": {
+        "auroc": 0.5002806333083051,
+        "selected_layer": 16,
+        "val_layer_auroc": 0.5358279824542855,
+        "layer_norms": [
+          0.041071534156799316,
+          0.0672302097082138,
+          0.09215990453958511,
+          0.1233661100268364,
+          0.14533750712871552,
+          0.167658731341362,
+          0.1948438137769699,
+          0.2137509137392044,
+          0.23840360343456268,
+          0.2647568881511688,
+          0.32237380743026733,
+          0.3489656150341034,
+          0.41884613037109375,
+          0.48531681299209595,
+          0.5605958700180054,
+          0.6827244758605957,
+          3.8497018814086914
+        ],
+        "budget_null": {
+          "n_random": 200,
+          "budget_null_mean": 0.4992893429189356,
+          "budget_null_std": 0.018087737314718414,
+          "budget_null_q95": 0.5286696858653109
+        },
+        "auroc_grouped_by_conversation": 0.5183477633477633,
+        "n_groups_scored": 165
+      }
+    }
+  },
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "52a09ce7be8943c43403c2627a62fddb8bbf30ef",
+    "timestamp": "2026-07-25T13:05:18.799904+05:30",
+    "script": "scripts/run_benchmark2_directions.py",
+    "versions": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.14.1",
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "dtype": "float16",
+    "gpu": 0,
+    "gpu_uuid_visible": "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782",
+    "orientation": "label 1 = COMPLIANT, higher score = COMPLIANT; every AUROC asserted vs sklearn.roc_auc_score to 1e-9",
+    "refusal_recipe": "E-G6: normalise(mean_harmful - mean_harmless), walledai/AdvBench vs tatsu-lab/alpaca(input==''), seed 42, n=256/side, ZERO task supervision",
+    "refusal_identity_check": {
+      "raw": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      },
+      "chat": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      }
+    }
+  }
+}

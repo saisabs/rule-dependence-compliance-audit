@@ -1,0 +1,193 @@
+{
+  "experiment": "E-COMP-3 control \u2014 is LPG-4B's 0.9433 driven by the supplied policy?",
+  "why": "TF-IDF reaches 0.896 from scenario text alone, so the main run cannot distinguish 'follows the supplied policy' from 'reads the scenario well' \u2014 both predict a high AUROC. This control varies policy CONTENT only, holding scenario/format/grammar fixed, and attacks the rule<->scenario correspondence directly.",
+  "benchmark_structure_verified": "Each case carries its own rule (87 distinct across gdpr's 100 test cases); complies_cases[i] and violates_cases[i] do NOT share a rule (0/100). Recorded per domain below.",
+  "model": "andyc03/LPG_4B",
+  "model_revision": "ec876ec98141964003ef31e7b9e21b230310e5b1",
+  "base_model": "Qwen/Qwen3-4B",
+  "seed": 42,
+  "git_commit": "f731765c6927c0ac56a4fc6005aedf0273565e1b",
+  "timestamp": "2026-07-17T17:58:42.275178+05:30",
+  "script": "scripts/run_lpg_policy_control.py",
+  "gpu_check": {
+    "pid": 1700264,
+    "gpu0_uuid": "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782",
+    "pid_gpu_uuids": [
+      "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782"
+    ],
+    "cuda_visible_devices": "0",
+    "check": "PASS"
+  },
+  "scoring": "logit(unsafe)-logit(safe) at the first explicit-decode position (identical to the main arm)",
+  "conditions": {
+    "correct": "policy 0 = the case's own rule (reproduces the main run)",
+    "shuffled": "policy 0 = another case's rule from the SAME domain, derangement-permuted (identical rule distribution, rule<->scenario correspondence destroyed)",
+    "wrong": "policy 0 = an unrelated domain's rule (content wrong and off-topic)",
+    "none": "no policy block (LPG's documented no-policy input path)"
+  },
+  "per_domain": {
+    "edu_online_learning": {
+      "donor_domain_for_wrong_policy": "finance_crypto",
+      "n_test": 72,
+      "n_distinct_rules_complies": 50,
+      "pairs_sharing_a_rule": 1,
+      "derangement_complete": true,
+      "split_check": {
+        "dump_path": "results/rebuild/splits/edu_online_learning_seed42_splits.json",
+        "n_use": 356,
+        "rederived_three_way_split_matches": {
+          "train": true,
+          "val_layer": true,
+          "val_thresh": true,
+          "test": true
+        },
+        "match": true
+      },
+      "conditions": {
+        "correct": {
+          "auroc": 1.0,
+          "mean_logit_diff_violating": 6.920138888888889,
+          "mean_logit_diff_compliant": -9.088541666666666,
+          "frac_called_unsafe_violating": 0.9305555555555556,
+          "frac_called_unsafe_compliant": 0.0
+        },
+        "shuffled": {
+          "auroc": 0.996141975308642,
+          "mean_logit_diff_violating": 4.791666666666667,
+          "mean_logit_diff_compliant": -6.630208333333333,
+          "frac_called_unsafe_violating": 0.875,
+          "frac_called_unsafe_compliant": 0.0
+        },
+        "wrong": {
+          "auroc": 0.9917052469135802,
+          "mean_logit_diff_violating": 0.041666666666666664,
+          "mean_logit_diff_compliant": -8.244791666666666,
+          "frac_called_unsafe_violating": 0.5,
+          "frac_called_unsafe_compliant": 0.0
+        },
+        "none": {
+          "auroc": 0.9998070987654321,
+          "mean_logit_diff_violating": 4.324652777777778,
+          "mean_logit_diff_compliant": -9.277777777777779,
+          "frac_called_unsafe_violating": 0.8888888888888888,
+          "frac_called_unsafe_compliant": 0.0
+        }
+      },
+      "delta_correct_minus_shuffled": 0.0038580246913579863,
+      "delta_correct_minus_wrong": 0.008294753086419804,
+      "delta_correct_minus_none": 0.00019290123456794372
+    },
+    "gdpr": {
+      "donor_domain_for_wrong_policy": "finance_crypto",
+      "n_test": 100,
+      "n_distinct_rules_complies": 87,
+      "pairs_sharing_a_rule": 0,
+      "derangement_complete": true,
+      "split_check": {
+        "dump_path": "results/rebuild/splits/gdpr_seed42_splits.json",
+        "n_use": 500,
+        "rederived_three_way_split_matches": {
+          "train": true,
+          "val_layer": true,
+          "val_thresh": true,
+          "test": true
+        },
+        "match": true
+      },
+      "conditions": {
+        "correct": {
+          "auroc": 0.86335,
+          "mean_logit_diff_violating": 3.62,
+          "mean_logit_diff_compliant": -4.43125,
+          "frac_called_unsafe_violating": 0.7,
+          "frac_called_unsafe_compliant": 0.18
+        },
+        "shuffled": {
+          "auroc": 0.86335,
+          "mean_logit_diff_violating": 3.00625,
+          "mean_logit_diff_compliant": -3.9525,
+          "frac_called_unsafe_violating": 0.68,
+          "frac_called_unsafe_compliant": 0.13
+        },
+        "wrong": {
+          "auroc": 0.849,
+          "mean_logit_diff_violating": 1.66375,
+          "mean_logit_diff_compliant": -4.8625,
+          "frac_called_unsafe_violating": 0.61,
+          "frac_called_unsafe_compliant": 0.09
+        },
+        "none": {
+          "auroc": 0.8776,
+          "mean_logit_diff_violating": 2.08875,
+          "mean_logit_diff_compliant": -5.6075,
+          "frac_called_unsafe_violating": 0.62,
+          "frac_called_unsafe_compliant": 0.08
+        }
+      },
+      "delta_correct_minus_shuffled": 0.0,
+      "delta_correct_minus_wrong": 0.014349999999999974,
+      "delta_correct_minus_none": -0.014250000000000096
+    },
+    "policy_reddit": {
+      "donor_domain_for_wrong_policy": "hipaa",
+      "n_test": 100,
+      "n_distinct_rules_complies": 96,
+      "pairs_sharing_a_rule": 0,
+      "derangement_complete": true,
+      "split_check": {
+        "dump_path": "results/rebuild/splits/policy_reddit_seed42_splits.json",
+        "n_use": 500,
+        "rederived_three_way_split_matches": {
+          "train": true,
+          "val_layer": true,
+          "val_thresh": true,
+          "test": true
+        },
+        "match": true
+      },
+      "conditions": {
+        "correct": {
+          "auroc": 0.9007,
+          "mean_logit_diff_violating": 2.705,
+          "mean_logit_diff_compliant": -5.58375,
+          "frac_called_unsafe_violating": 0.68,
+          "frac_called_unsafe_compliant": 0.11
+        },
+        "shuffled": {
+          "auroc": 0.84205,
+          "mean_logit_diff_violating": -0.4,
+          "mean_logit_diff_compliant": -5.82625,
+          "frac_called_unsafe_violating": 0.42,
+          "frac_called_unsafe_compliant": 0.1
+        },
+        "wrong": {
+          "auroc": 0.85885,
+          "mean_logit_diff_violating": 0.7175,
+          "mean_logit_diff_compliant": -5.64125,
+          "frac_called_unsafe_violating": 0.54,
+          "frac_called_unsafe_compliant": 0.08
+        },
+        "none": {
+          "auroc": 0.89735,
+          "mean_logit_diff_violating": 2.41125,
+          "mean_logit_diff_compliant": -6.15875,
+          "frac_called_unsafe_violating": 0.71,
+          "frac_called_unsafe_compliant": 0.13
+        }
+      },
+      "delta_correct_minus_shuffled": 0.05864999999999998,
+      "delta_correct_minus_wrong": 0.04184999999999994,
+      "delta_correct_minus_none": 0.003349999999999964
+    }
+  },
+  "mean_auroc_by_condition": {
+    "correct": 0.92135,
+    "shuffled": 0.9005139917695474,
+    "wrong": 0.8998517489711934,
+    "none": 0.9249190329218107
+  },
+  "mean_delta_correct_minus_shuffled": 0.020836008230452657,
+  "mean_delta_correct_minus_wrong": 0.021498251028806575,
+  "mean_delta_correct_minus_none": -0.0035690329218107295,
+  "verdict": "POLICY-INSENSITIVE: breaking the rule<->scenario correspondence costs at most 0.021 AUROC (shuffled 0.021 / wrong-domain 0.021). LPG's score comes from reading the SCENARIO, not from following the supplied policy. The 0.9433 stands as a number, but the 'custom-policy channel is the dividing line' narrative is NOT supported, and TF-IDF (0.896, also scenario-only) is its true peer."
+}

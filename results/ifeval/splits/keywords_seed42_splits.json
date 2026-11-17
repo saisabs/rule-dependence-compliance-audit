@@ -1,0 +1,1372 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:06:37.247263+05:30",
+    "script": "scripts/run_ifeval_probe.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "split_fractions": {
+      "train": 0.4,
+      "val_layer": 0.2,
+      "val_thresh": 0.2,
+      "test": 0.2
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0"
+  },
+  "category": "keywords",
+  "n_instances": 163,
+  "n_unique_keys": 148,
+  "label": "loose",
+  "split_source": "src.compliance.splits.three_way_split(n_unique_keys, 42) \u2014 GROUPED by prompt key to prevent shared-activation leakage",
+  "split_key_indices": {
+    "train": [
+      140,
+      18,
+      83,
+      128,
+      130,
+      127,
+      131,
+      30,
+      135,
+      122,
+      90,
+      95,
+      86,
+      40,
+      39,
+      32,
+      81,
+      42,
+      105,
+      87,
+      104,
+      63,
+      143,
+      1,
+      118,
+      117,
+      126,
+      120,
+      78,
+      136,
+      109,
+      144,
+      113,
+      38,
+      64,
+      92,
+      98,
+      88,
+      16,
+      71,
+      82,
+      60,
+      69,
+      41,
+      65,
+      134,
+      74,
+      36,
+      110,
+      4,
+      17,
+      25,
+      61,
+      51,
+      2,
+      52,
+      14,
+      3,
+      66
+    ],
+    "val_layer": [
+      49,
+      53,
+      67,
+      123,
+      147,
+      72,
+      101,
+      133,
+      76,
+      31,
+      99,
+      21,
+      9,
+      34,
+      141,
+      106,
+      47,
+      119,
+      91,
+      100,
+      115,
+      112,
+      132,
+      85,
+      96,
+      94,
+      29,
+      84,
+      102
+    ],
+    "val_thresh": [
+      137,
+      24,
+      73,
+      46,
+      79,
+      80,
+      37,
+      145,
+      10,
+      138,
+      15,
+      68,
+      58,
+      93,
+      5,
+      33,
+      77,
+      44,
+      45,
+      12,
+      48,
+      11,
+      13,
+      116,
+      121,
+      27,
+      19,
+      125,
+      43
+    ],
+    "test": [
+      54,
+      89,
+      20,
+      124,
+      97,
+      0,
+      111,
+      103,
+      142,
+      75,
+      114,
+      56,
+      107,
+      50,
+      146,
+      129,
+      59,
+      55,
+      23,
+      7,
+      8,
+      108,
+      22,
+      139,
+      26,
+      35,
+      57,
+      62,
+      70,
+      6,
+      28
+    ]
+  },
+  "split_instance_indices": {
+    "train": [
+      1,
+      2,
+      3,
+      4,
+      15,
+      17,
+      18,
+      19,
+      20,
+      28,
+      29,
+      35,
+      37,
+      42,
+      44,
+      45,
+      46,
+      47,
+      48,
+      57,
+      58,
+      67,
+      68,
+      69,
+      71,
+      72,
+      73,
+      74,
+      77,
+      79,
+      82,
+      86,
+      89,
+      90,
+      91,
+      94,
+      95,
+      96,
+      98,
+      100,
+      103,
+      106,
+      112,
+      113,
+      117,
+      118,
+      121,
+      125,
+      126,
+      128,
+      129,
+      133,
+      134,
+      139,
+      140,
+      141,
+      142,
+      144,
+      145,
+      146,
+      149,
+      150,
+      151,
+      155,
+      158,
+      159
+    ],
+    "val_layer": [
+      9,
+      23,
+      34,
+      36,
+      39,
+      40,
+      53,
+      55,
+      59,
+      75,
+      80,
+      84,
+      92,
+      93,
+      99,
+      102,
+      104,
+      107,
+      108,
+      109,
+      110,
+      114,
+      120,
+      123,
+      127,
+      135,
+      147,
+      148,
+      156,
+      162
+    ],
+    "val_thresh": [
+      5,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      21,
+      27,
+      32,
+      38,
+      43,
+      49,
+      50,
+      51,
+      52,
+      54,
+      65,
+      76,
+      81,
+      85,
+      87,
+      88,
+      101,
+      124,
+      130,
+      131,
+      132,
+      137,
+      138,
+      152,
+      153,
+      160
+    ],
+    "test": [
+      0,
+      6,
+      7,
+      8,
+      22,
+      24,
+      25,
+      26,
+      30,
+      31,
+      33,
+      41,
+      56,
+      60,
+      61,
+      62,
+      63,
+      64,
+      66,
+      70,
+      78,
+      83,
+      97,
+      105,
+      111,
+      115,
+      116,
+      119,
+      122,
+      136,
+      143,
+      154,
+      157,
+      161
+    ]
+  },
+  "class_counts": {
+    "train": {
+      "n": 66,
+      "n_viol": 20,
+      "n_comp": 46
+    },
+    "val_layer": {
+      "n": 30,
+      "n_viol": 11,
+      "n_comp": 19
+    },
+    "val_thresh": {
+      "n": 33,
+      "n_viol": 8,
+      "n_comp": 25
+    },
+    "test": {
+      "n": 34,
+      "n_viol": 7,
+      "n_comp": 27
+    }
+  },
+  "items": [
+    {
+      "local_idx": 0,
+      "key": 1069,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 1,
+      "key": 1122,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 2,
+      "key": 1129,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 3,
+      "key": 1130,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 4,
+      "key": 1132,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 5,
+      "key": 1137,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 6,
+      "key": 1139,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 7,
+      "key": 1147,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 8,
+      "key": 1153,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 9,
+      "key": 1174,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 10,
+      "key": 1203,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 11,
+      "key": 1203,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 12,
+      "key": 1219,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 13,
+      "key": 1233,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 14,
+      "key": 1237,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 15,
+      "key": 1242,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 16,
+      "key": 1265,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 17,
+      "key": 127,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 18,
+      "key": 127,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 19,
+      "key": 1281,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 20,
+      "key": 1300,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 21,
+      "key": 1342,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 22,
+      "key": 1348,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 23,
+      "key": 1375,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 24,
+      "key": 1379,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 25,
+      "key": 1379,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 26,
+      "key": 1389,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 27,
+      "key": 1393,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 28,
+      "key": 1402,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 29,
+      "key": 1402,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 30,
+      "key": 142,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 31,
+      "key": 142,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 32,
+      "key": 1436,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 33,
+      "key": 1466,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 34,
+      "key": 1476,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 35,
+      "key": 1498,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 36,
+      "key": 1508,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 37,
+      "key": 1516,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 38,
+      "key": 1531,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 39,
+      "key": 1571,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 40,
+      "key": 1571,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 41,
+      "key": 1580,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 42,
+      "key": 1629,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 43,
+      "key": 163,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 44,
+      "key": 1658,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 45,
+      "key": 1675,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 46,
+      "key": 1691,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 47,
+      "key": 1713,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 48,
+      "key": 1733,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 49,
+      "key": 1779,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 50,
+      "key": 1825,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 51,
+      "key": 1845,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 52,
+      "key": 1857,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 53,
+      "key": 1880,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 54,
+      "key": 1883,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 55,
+      "key": 1928,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 56,
+      "key": 1936,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 57,
+      "key": 1964,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 58,
+      "key": 201,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 59,
+      "key": 2028,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 60,
+      "key": 2034,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 61,
+      "key": 2041,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 62,
+      "key": 2084,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 63,
+      "key": 2084,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 64,
+      "key": 2107,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 65,
+      "key": 2139,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 66,
+      "key": 2142,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 67,
+      "key": 2143,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 68,
+      "key": 2169,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 69,
+      "key": 2169,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 70,
+      "key": 2207,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 71,
+      "key": 2246,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 72,
+      "key": 2265,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 73,
+      "key": 2275,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 74,
+      "key": 2292,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 75,
+      "key": 2328,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 76,
+      "key": 2350,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 77,
+      "key": 2386,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 78,
+      "key": 2392,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 79,
+      "key": 2395,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 80,
+      "key": 2416,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 81,
+      "key": 2432,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 82,
+      "key": 2447,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 83,
+      "key": 2449,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 84,
+      "key": 2471,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 85,
+      "key": 2485,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 86,
+      "key": 251,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 87,
+      "key": 2534,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 88,
+      "key": 2549,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 89,
+      "key": 2567,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 90,
+      "key": 2577,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 91,
+      "key": 2583,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 92,
+      "key": 2591,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 93,
+      "key": 260,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 94,
+      "key": 2602,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 95,
+      "key": 2605,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 96,
+      "key": 2616,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 97,
+      "key": 2649,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 98,
+      "key": 2653,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 99,
+      "key": 2662,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 100,
+      "key": 2683,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 101,
+      "key": 2716,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 102,
+      "key": 2768,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 103,
+      "key": 2779,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 104,
+      "key": 2787,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 105,
+      "key": 279,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 106,
+      "key": 2811,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 107,
+      "key": 2828,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 108,
+      "key": 2871,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 109,
+      "key": 2887,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 110,
+      "key": 2912,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 111,
+      "key": 2943,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 112,
+      "key": 2957,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 113,
+      "key": 296,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 114,
+      "key": 2997,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 115,
+      "key": 301,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 116,
+      "key": 3081,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 117,
+      "key": 3091,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 118,
+      "key": 3109,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 119,
+      "key": 3114,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 120,
+      "key": 3156,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 121,
+      "key": 3166,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 122,
+      "key": 3188,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 123,
+      "key": 3195,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 124,
+      "key": 3272,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 125,
+      "key": 3305,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 126,
+      "key": 3311,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 127,
+      "key": 3315,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 128,
+      "key": 3326,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 129,
+      "key": 3326,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 130,
+      "key": 3327,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 131,
+      "key": 3327,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 132,
+      "key": 3327,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 133,
+      "key": 3345,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 134,
+      "key": 3345,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 135,
+      "key": 3362,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 136,
+      "key": 3369,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 137,
+      "key": 3371,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 138,
+      "key": 3371,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 139,
+      "key": 3376,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 140,
+      "key": 3380,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 141,
+      "key": 3386,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 142,
+      "key": 3386,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    },
+    {
+      "local_idx": 143,
+      "key": 3401,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 144,
+      "key": 3415,
+      "instruction_id": "keywords:frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 145,
+      "key": 3415,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 146,
+      "key": 3428,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 147,
+      "key": 3439,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 148,
+      "key": 3445,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 149,
+      "key": 3478,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 150,
+      "key": 3479,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 151,
+      "key": 3506,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 152,
+      "key": 3518,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 153,
+      "key": 3538,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 154,
+      "key": 3565,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 155,
+      "key": 3595,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 156,
+      "key": 3608,
+      "instruction_id": "keywords:letter_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 157,
+      "key": 3680,
+      "instruction_id": "keywords:frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 158,
+      "key": 3709,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 159,
+      "key": 371,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 160,
+      "key": 3732,
+      "instruction_id": "keywords:existence",
+      "violating": 0
+    },
+    {
+      "local_idx": 161,
+      "key": 374,
+      "instruction_id": "keywords:forbidden_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 162,
+      "key": 3748,
+      "instruction_id": "keywords:existence",
+      "violating": 1
+    }
+  ]
+}

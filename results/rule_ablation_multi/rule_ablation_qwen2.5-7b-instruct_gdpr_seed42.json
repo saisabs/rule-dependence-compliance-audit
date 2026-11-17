@@ -1,0 +1,563 @@
+{
+  "domain": "gdpr",
+  "seed": 42,
+  "n_use": 500,
+  "n_test": 100,
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "model_slug": "qwen2.5-7b-instruct",
+  "split_check": {
+    "dump_path": "results/rebuild/splits/gdpr_seed42_splits.json",
+    "n_use": 500,
+    "rederived_three_way_split_matches": {
+      "train": true,
+      "val_layer": true,
+      "val_thresh": true,
+      "test": true
+    },
+    "match": true
+  },
+  "donor_split_check": {
+    "dump_path": "results/rebuild/splits/edu_online_learning_seed42_splits.json",
+    "n_use": 356,
+    "rederived_three_way_split_matches": {
+      "train": true,
+      "val_layer": true,
+      "val_thresh": true,
+      "test": true
+    },
+    "match": true
+  },
+  "benchmark_structure_verified": {
+    "n_use": 500,
+    "n_distinct_rules_complies": 310,
+    "n_distinct_rules_violates": 342,
+    "pairs_sharing_a_rule": 0,
+    "frac_pairs_sharing_a_rule": 0.0,
+    "derangement_complete": true,
+    "donor_domain_for_wrong_rule": "edu_online_learning",
+    "n_donor_rules": 100,
+    "wrong_domain_rule_identical_for_both_classes": true
+  },
+  "token_lengths": {
+    "correct": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 142.62,
+        "std": 34.512832396081315,
+        "min": 92,
+        "p25": 117.75,
+        "median": 135.0,
+        "p75": 160.5,
+        "max": 266,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 139.64,
+        "std": 30.922328502232816,
+        "min": 87,
+        "p25": 116.75,
+        "median": 135.0,
+        "p75": 154.0,
+        "max": 247,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 142.163,
+        "std": 37.02532148408707,
+        "min": 59,
+        "p25": 117.0,
+        "median": 135.0,
+        "p75": 160.25,
+        "max": 361,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    },
+    "no_rule": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 87.65,
+        "std": 31.88679193647426,
+        "min": 40,
+        "p25": 64.75,
+        "median": 81.0,
+        "p75": 103.0,
+        "max": 206,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 85.71,
+        "std": 29.742325060425255,
+        "min": 34,
+        "p25": 67.0,
+        "median": 80.5,
+        "p75": 99.0,
+        "max": 183,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 87.002,
+        "std": 34.80545928442835,
+        "min": 3,
+        "p25": 63.0,
+        "median": 79.0,
+        "p75": 103.0,
+        "max": 301,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    },
+    "shuffled_rule": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 143.78,
+        "std": 33.41035168925942,
+        "min": 67,
+        "p25": 121.75,
+        "median": 135.5,
+        "p75": 161.0,
+        "max": 260,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 139.92,
+        "std": 30.511204499331058,
+        "min": 76,
+        "p25": 121.0,
+        "median": 136.5,
+        "p75": 155.25,
+        "max": 234,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 142.163,
+        "std": 35.9178010323572,
+        "min": 36,
+        "p25": 118.0,
+        "median": 136.0,
+        "p75": 159.0,
+        "max": 362,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    },
+    "wrong_domain_rule": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 116.97,
+        "std": 31.369875677152436,
+        "min": 65,
+        "p25": 95.0,
+        "median": 108.0,
+        "p75": 131.0,
+        "max": 234,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 115.03,
+        "std": 29.70941096689734,
+        "min": 61,
+        "p25": 95.0,
+        "median": 109.0,
+        "p75": 129.75,
+        "max": 206,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 116.13,
+        "std": 35.05012268166832,
+        "min": 38,
+        "p25": 92.0,
+        "median": 108.5,
+        "p75": 133.0,
+        "max": 326,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    },
+    "rule_only": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 54.33,
+        "std": 10.095598050635731,
+        "min": 23,
+        "p25": 51.0,
+        "median": 57.0,
+        "p75": 59.0,
+        "max": 90,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 53.39,
+        "std": 10.149773396485264,
+        "min": 24,
+        "p25": 50.75,
+        "median": 57.0,
+        "p75": 60.0,
+        "max": 76,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 54.541,
+        "std": 10.02288975296047,
+        "min": 20,
+        "p25": 52.0,
+        "median": 57.0,
+        "p75": 60.0,
+        "max": 90,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    }
+  },
+  "conditions": {
+    "correct": {
+      "anchor_layer": 25,
+      "val_layer_auroc": 0.9489,
+      "auroc": 0.8934,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "receipt_reproduction": {
+        "receipt_path": "results/rebuild/models/qwen2.5-7b-instruct/omni_ablated_gdpr_seed42.json",
+        "receipt_probe_raw_auroc": 0.8934000000000001,
+        "rederived_auroc": 0.8934,
+        "abs_diff": 1.1102230246251565e-16,
+        "within_1e-6": true,
+        "receipt_anchor_layer": 25,
+        "rederived_anchor_layer": 25,
+        "anchor_layer_matches": true,
+        "receipt_torch": "2.14.0.dev20260624+cu132",
+        "receipt_transformers": "5.12.1",
+        "note": "soft gate: receipts written under differing transformers versions per model; drift recorded, not aborted; verdict is env-consistent within-run (correct vs the other 4 conditions)."
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.6407214999999999,
+        "std": 0.06370262700823255,
+        "p05": 0.5188400000000001,
+        "median": 0.6447499999999999,
+        "p95": 0.7404099999999999,
+        "max": 0.8132
+      },
+      "margin_over_null": 0.25267850000000003,
+      "margin_ci95": [
+        0.20896100000000006,
+        0.292686
+      ],
+      "tail_p_vs_null": 0.004975124378109453,
+      "tfidf": {
+        "auroc": 0.8301,
+        "null": 0.5,
+        "margin_over_null": 0.33009999999999995
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.0,
+        "delta_ci95": [
+          0.0,
+          0.0
+        ],
+        "p_boot": 1.0,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": 0.0,
+        "delta_ci95": [
+          0.0,
+          0.0
+        ],
+        "p_boot": 1.0,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    },
+    "no_rule": {
+      "anchor_layer": 27,
+      "val_layer_auroc": 0.9412,
+      "auroc": 0.8756,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.6566915,
+        "std": 0.06358091126863472,
+        "p05": 0.54623,
+        "median": 0.66425,
+        "p95": 0.7503299999999999,
+        "max": 0.8052
+      },
+      "margin_over_null": 0.21890850000000006,
+      "margin_ci95": [
+        0.1670035,
+        0.2638085
+      ],
+      "tail_p_vs_null": 0.004975124378109453,
+      "tfidf": {
+        "auroc": 0.8347,
+        "null": 0.5,
+        "margin_over_null": 0.3347
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.017799999999999927,
+        "delta_ci95": [
+          -0.006504999999999949,
+          0.04620499999999999
+        ],
+        "p_boot": 0.179,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": -0.0046000000000000485,
+        "delta_ci95": [
+          -0.046599999999999975,
+          0.03810250000000001
+        ],
+        "p_boot": 0.866,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    },
+    "shuffled_rule": {
+      "anchor_layer": 26,
+      "val_layer_auroc": 0.9334,
+      "auroc": 0.8666,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.6364405,
+        "std": 0.06099035423532151,
+        "p05": 0.524615,
+        "median": 0.6404000000000001,
+        "p95": 0.7283,
+        "max": 0.7754
+      },
+      "margin_over_null": 0.23015950000000007,
+      "margin_ci95": [
+        0.1764545,
+        0.27706949999999997
+      ],
+      "tail_p_vs_null": 0.004975124378109453,
+      "tfidf": {
+        "auroc": 0.8536,
+        "null": 0.5,
+        "margin_over_null": 0.3536
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.026799999999999935,
+        "delta_ci95": [
+          -0.00340749999999996,
+          0.059905000000000035
+        ],
+        "p_boot": 0.08,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": -0.023500000000000076,
+        "delta_ci95": [
+          -0.07280999999999997,
+          0.02361000000000001
+        ],
+        "p_boot": 0.333,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    },
+    "wrong_domain_rule": {
+      "anchor_layer": 23,
+      "val_layer_auroc": 0.9335,
+      "auroc": 0.8727,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.6585675000000001,
+        "std": 0.05849363207862887,
+        "p05": 0.560285,
+        "median": 0.66025,
+        "p95": 0.739945,
+        "max": 0.8143
+      },
+      "margin_over_null": 0.21413249999999995,
+      "margin_ci95": [
+        0.15952999999999998,
+        0.26243749999999993
+      ],
+      "tail_p_vs_null": 0.004975124378109453,
+      "tfidf": {
+        "auroc": 0.8244,
+        "null": 0.5,
+        "margin_over_null": 0.3244
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.02069999999999994,
+        "delta_ci95": [
+          -0.00430249999999997,
+          0.04740749999999996
+        ],
+        "p_boot": 0.097,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": 0.005699999999999927,
+        "delta_ci95": [
+          -0.037899999999999934,
+          0.04840499999999997
+        ],
+        "p_boot": 0.75,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    },
+    "rule_only": {
+      "anchor_layer": 22,
+      "val_layer_auroc": 0.542,
+      "auroc": 0.58115,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.509074,
+        "std": 0.037097346589749516,
+        "p05": 0.451325,
+        "median": 0.51015,
+        "p95": 0.5660149999999998,
+        "max": 0.61695
+      },
+      "margin_over_null": 0.07207600000000003,
+      "margin_ci95": [
+        -0.0033814999999999895,
+        0.14898099999999997
+      ],
+      "tail_p_vs_null": 0.01990049751243781,
+      "tfidf": {
+        "auroc": 0.63275,
+        "null": 0.5,
+        "margin_over_null": 0.13275000000000003
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.3122499999999999,
+        "delta_ci95": [
+          0.23132249999999996,
+          0.38945124999999997
+        ],
+        "p_boot": 0.0005,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": 0.19734999999999991,
+        "delta_ci95": [
+          0.11988750000000001,
+          0.27645875000000003
+        ],
+        "p_boot": 0.0005,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    }
+  },
+  "provenance": {
+    "experiment": "E-RULE-MULTI \u2014 does rule-blindness replicate beyond the 1B?",
+    "script": "scripts/run_rule_ablation_multi.py",
+    "model_name": "Qwen/Qwen2.5-7B-Instruct",
+    "model_slug": "qwen2.5-7b-instruct",
+    "seed": 42,
+    "git_commit": "d611d900cfbe7225729bb8ba08a238f61e87ee5e",
+    "timestamp": "2026-07-17T23:28:46.988809+05:30",
+    "dtype": "bfloat16",
+    "torch_version": "2.14.0.dev20260624+cu132",
+    "transformers_version": "5.12.1",
+    "numpy_version": "2.5.0",
+    "python": "<redacted-path>",
+    "max_length": 512,
+    "extraction": "last_token",
+    "gpu_check": {
+      "pid": 1897250,
+      "gpu0_uuid": "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782",
+      "pid_gpu_uuids": [
+        "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782"
+      ],
+      "cuda_visible_devices": "0",
+      "check": "PASS"
+    },
+    "auroc_matrix_check": {
+      "validated_vs_sklearn": true,
+      "tol": 1e-12,
+      "heavy_tie_case_included": true
+    },
+    "n_random_directions": 200,
+    "B_boot": 2000,
+    "null_rng": "np.random.default_rng(np.random.SeedSequence(42).spawn(20)[sorted(ALL_SPLITS).index(domain)]); one stack of 200 unit directions per domain, SHARED across the 5 conditions",
+    "receipt_source": "results/rebuild/models/qwen2.5-7b-instruct/omni_ablated_*_seed42.json",
+    "orientation": "Probe higher = COMPLIANT on disk; all reported AUROCs are in VIOLATION orientation (Probe negated), matching compute_gate.py"
+  }
+}

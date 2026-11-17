@@ -1,0 +1,30 @@
+{
+  "experiment": "LPG-4B on DynaBench (P1.3, extends results/rebuild/benchmark2/dynabench_gauntlet.json)",
+  "dataset_source": "montehoover/DynaBench (config=DynaBench, split=test)",
+  "n": 543,
+  "base_rate_fail": 0.49171270718232046,
+  "model": "andyc03/LPG_4B",
+  "input_tokens_max": 1024,
+  "conditions": {
+    "full": {
+      "auroc": 0.6805962655376432,
+      "f1_at_own_median_threshold": 0.6125461254612546
+    },
+    "no_rule": {
+      "auroc": 0.9131588232101178,
+      "f1_at_own_median_threshold": 0.8782287822878229
+    },
+    "wrong_rule": {
+      "auroc": 0.6866552678716822,
+      "f1_at_own_median_threshold": 0.6151012891344383
+    }
+  },
+  "comparison": {
+    "tfidf_policy_only_auroc": 0.9477785145888594,
+    "tfidf_transcript_only_auroc": 0.981763925729443,
+    "rachmil_reported_f1": 0.86,
+    "note": "TF-IDF/Rachmil figures copied from results/rebuild/benchmark2/dynabench_gauntlet.json for direct comparison, not recomputed here."
+  },
+  "timestamp": "2026-07-28T01:29:42.043010+05:30",
+  "git_commit": "d3f6da32fac8d9bcb19c1a177ec1e8a3a8c7144f"
+}

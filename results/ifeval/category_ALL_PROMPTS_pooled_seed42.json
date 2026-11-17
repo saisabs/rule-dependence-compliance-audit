@@ -1,0 +1,75 @@
+{
+  "category": "ALL_PROMPTS_pooled",
+  "n": 541,
+  "n_unique_keys": 541,
+  "n_test": 109,
+  "n_test_violating": 48,
+  "n_test_compliant": 61,
+  "n_test_pairs": 2928,
+  "label": "loose",
+  "acts": "acts512",
+  "probe": 0.5672814207650273,
+  "probe_anchor_layer": 12,
+  "probe_val_layer_auroc": 0.6439393939393939,
+  "probe_threshold_val_thresh": 2.626901149749756,
+  "probe_f1_test": 0.4,
+  "floors": {
+    "tfidf": 0.5187841530054644,
+    "length_char": 0.5095628415300546,
+    "keyword": 0.5428620218579235,
+    "format_feats": 0.5891393442622951,
+    "refusal_dir": 0.5727459016393442,
+    "yesno": 0.4959016393442623
+  },
+  "tfidf_note": null,
+  "honest_floor_name": "format_feats",
+  "honest_floor": 0.5891393442622951,
+  "margin_vs_honest_floor": -0.021857923497267784,
+  "ci_lo_honest": -0.14959870218579227,
+  "ci_hi_honest": 0.11509562841530052,
+  "p_honest": 0.745,
+  "margin_vs_tfidf": 0.04849726775956287,
+  "ci_lo_tfidf": -0.10930669398907104,
+  "ci_hi_tfidf": 0.20835894808743152,
+  "p_tfidf": 0.562,
+  "format_oracle_ceiling": null,
+  "oracle_note": "UNDEFINED at the pooled prompt level: the label is a conjunction over several different instructions, so there is no single constraint margin. NOT 'at chance' \u2014 omitted.",
+  "classification": [
+    "mixed"
+  ],
+  "perm_null_probe_mean": 0.5034787275590916,
+  "perm_null_probe_sd": 0.048399882349057725,
+  "perm_null_tfidf_mean": 0.5096209758743119,
+  "refusal_selected": {
+    "variant": "chat",
+    "layer": 12,
+    "sign": 1.0
+  },
+  "yesno_selected": {
+    "space": "space",
+    "sign": 1.0
+  },
+  "class_counts": {
+    "train": {
+      "n": 216,
+      "n_viol": 108,
+      "n_comp": 108
+    },
+    "val_layer": {
+      "n": 108,
+      "n_viol": 42,
+      "n_comp": 66
+    },
+    "val_thresh": {
+      "n": 108,
+      "n_viol": 42,
+      "n_comp": 66
+    },
+    "test": {
+      "n": 109,
+      "n_viol": 48,
+      "n_comp": 61
+    }
+  },
+  "ceiling_note": null
+}

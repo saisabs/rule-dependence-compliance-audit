@@ -1,0 +1,331 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:06:45.283348+05:30",
+    "script": "scripts/run_ifeval_probe.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "split_fractions": {
+      "train": 0.4,
+      "val_layer": 0.2,
+      "val_thresh": 0.2,
+      "test": 0.2
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0"
+  },
+  "category": "language",
+  "n_instances": 31,
+  "n_unique_keys": 31,
+  "label": "loose",
+  "split_source": "src.compliance.splits.three_way_split(n_unique_keys, 42) \u2014 GROUPED by prompt key to prevent shared-activation leakage",
+  "split_key_indices": {
+    "train": [
+      19,
+      14,
+      10,
+      24,
+      27,
+      6,
+      5,
+      12,
+      11,
+      15,
+      9,
+      26
+    ],
+    "val_layer": [
+      30,
+      22,
+      16,
+      28,
+      1,
+      13
+    ],
+    "val_thresh": [
+      18,
+      2,
+      17,
+      21,
+      29,
+      4
+    ],
+    "test": [
+      25,
+      7,
+      8,
+      23,
+      0,
+      3,
+      20
+    ]
+  },
+  "split_instance_indices": {
+    "train": [
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      19,
+      24,
+      26,
+      27
+    ],
+    "val_layer": [
+      1,
+      13,
+      16,
+      22,
+      28,
+      30
+    ],
+    "val_thresh": [
+      2,
+      4,
+      17,
+      18,
+      21,
+      29
+    ],
+    "test": [
+      0,
+      3,
+      7,
+      8,
+      20,
+      23,
+      25
+    ]
+  },
+  "class_counts": {
+    "train": {
+      "n": 12,
+      "n_viol": 4,
+      "n_comp": 8
+    },
+    "val_layer": {
+      "n": 6,
+      "n_viol": 0,
+      "n_comp": 6
+    },
+    "val_thresh": {
+      "n": 6,
+      "n_viol": 1,
+      "n_comp": 5
+    },
+    "test": {
+      "n": 7,
+      "n_viol": 1,
+      "n_comp": 6
+    }
+  },
+  "items": [
+    {
+      "local_idx": 0,
+      "key": 1108,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 1,
+      "key": 1154,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 2,
+      "key": 1259,
+      "instruction_id": "language:response_language",
+      "violating": 1
+    },
+    {
+      "local_idx": 3,
+      "key": 1477,
+      "instruction_id": "language:response_language",
+      "violating": 1
+    },
+    {
+      "local_idx": 4,
+      "key": 1582,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 5,
+      "key": 1739,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 6,
+      "key": 2225,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 7,
+      "key": 2299,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 8,
+      "key": 2309,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 9,
+      "key": 240,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 10,
+      "key": 2464,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 11,
+      "key": 2596,
+      "instruction_id": "language:response_language",
+      "violating": 1
+    },
+    {
+      "local_idx": 12,
+      "key": 2685,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 13,
+      "key": 2724,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 14,
+      "key": 3063,
+      "instruction_id": "language:response_language",
+      "violating": 1
+    },
+    {
+      "local_idx": 15,
+      "key": 3112,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 16,
+      "key": 3130,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 17,
+      "key": 3191,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 18,
+      "key": 3195,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 19,
+      "key": 3241,
+      "instruction_id": "language:response_language",
+      "violating": 1
+    },
+    {
+      "local_idx": 20,
+      "key": 3305,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 21,
+      "key": 3311,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 22,
+      "key": 3335,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 23,
+      "key": 3494,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 24,
+      "key": 3502,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 25,
+      "key": 3567,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 26,
+      "key": 3623,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 27,
+      "key": 3653,
+      "instruction_id": "language:response_language",
+      "violating": 1
+    },
+    {
+      "local_idx": 28,
+      "key": 3669,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 29,
+      "key": 3682,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    },
+    {
+      "local_idx": 30,
+      "key": 3744,
+      "instruction_id": "language:response_language",
+      "violating": 0
+    }
+  ]
+}

@@ -1,0 +1,1217 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:06:45.286262+05:30",
+    "script": "scripts/run_ifeval_probe.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "split_fractions": {
+      "train": 0.4,
+      "val_layer": 0.2,
+      "val_thresh": 0.2,
+      "test": 0.2
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0"
+  },
+  "category": "length_constraints",
+  "n_instances": 143,
+  "n_unique_keys": 133,
+  "label": "loose",
+  "split_source": "src.compliance.splits.three_way_split(n_unique_keys, 42) \u2014 GROUPED by prompt key to prevent shared-activation leakage",
+  "split_key_indices": {
+    "train": [
+      26,
+      49,
+      98,
+      47,
+      107,
+      21,
+      1,
+      104,
+      31,
+      72,
+      9,
+      16,
+      123,
+      39,
+      87,
+      7,
+      90,
+      30,
+      63,
+      51,
+      56,
+      112,
+      50,
+      32,
+      102,
+      59,
+      55,
+      18,
+      131,
+      81,
+      74,
+      108,
+      36,
+      2,
+      67,
+      110,
+      96,
+      14,
+      92,
+      52,
+      109,
+      61,
+      84,
+      82,
+      34,
+      101,
+      60,
+      38,
+      117,
+      41,
+      95,
+      106,
+      129
+    ],
+    "val_layer": [
+      42,
+      88,
+      22,
+      79,
+      66,
+      23,
+      103,
+      40,
+      65,
+      17,
+      76,
+      85,
+      78,
+      100,
+      73,
+      113,
+      80,
+      8,
+      24,
+      46,
+      37,
+      130,
+      10,
+      124,
+      15,
+      68
+    ],
+    "val_thresh": [
+      58,
+      5,
+      33,
+      111,
+      44,
+      45,
+      12,
+      48,
+      115,
+      125,
+      93,
+      122,
+      19,
+      99,
+      43,
+      118,
+      105,
+      20,
+      97,
+      0,
+      127,
+      119,
+      128,
+      132,
+      53,
+      121
+    ],
+    "test": [
+      89,
+      83,
+      91,
+      25,
+      71,
+      116,
+      77,
+      64,
+      29,
+      27,
+      120,
+      3,
+      4,
+      54,
+      75,
+      11,
+      69,
+      114,
+      126,
+      86,
+      13,
+      94,
+      35,
+      57,
+      62,
+      70,
+      6,
+      28
+    ]
+  },
+  "split_instance_indices": {
+    "train": [
+      1,
+      2,
+      7,
+      9,
+      14,
+      16,
+      18,
+      21,
+      22,
+      28,
+      32,
+      33,
+      34,
+      36,
+      38,
+      40,
+      41,
+      44,
+      52,
+      54,
+      55,
+      56,
+      57,
+      60,
+      61,
+      62,
+      65,
+      66,
+      67,
+      69,
+      73,
+      78,
+      80,
+      87,
+      88,
+      90,
+      93,
+      96,
+      98,
+      101,
+      102,
+      104,
+      107,
+      108,
+      111,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      120,
+      125,
+      131,
+      138,
+      141
+    ],
+    "val_layer": [
+      8,
+      10,
+      15,
+      17,
+      23,
+      24,
+      25,
+      26,
+      39,
+      42,
+      43,
+      45,
+      50,
+      51,
+      71,
+      72,
+      74,
+      79,
+      82,
+      84,
+      85,
+      86,
+      91,
+      94,
+      106,
+      109,
+      110,
+      121,
+      132,
+      139,
+      140
+    ],
+    "val_thresh": [
+      0,
+      5,
+      12,
+      19,
+      20,
+      35,
+      46,
+      47,
+      48,
+      49,
+      53,
+      58,
+      64,
+      99,
+      103,
+      105,
+      112,
+      119,
+      123,
+      126,
+      127,
+      129,
+      130,
+      133,
+      134,
+      136,
+      137,
+      142
+    ],
+    "test": [
+      3,
+      4,
+      6,
+      11,
+      13,
+      27,
+      29,
+      30,
+      31,
+      37,
+      59,
+      63,
+      68,
+      70,
+      75,
+      76,
+      77,
+      81,
+      83,
+      89,
+      92,
+      95,
+      97,
+      100,
+      122,
+      124,
+      128,
+      135
+    ]
+  },
+  "class_counts": {
+    "train": {
+      "n": 56,
+      "n_viol": 18,
+      "n_comp": 38
+    },
+    "val_layer": {
+      "n": 31,
+      "n_viol": 11,
+      "n_comp": 20
+    },
+    "val_thresh": {
+      "n": 28,
+      "n_viol": 9,
+      "n_comp": 19
+    },
+    "test": {
+      "n": 28,
+      "n_viol": 9,
+      "n_comp": 19
+    }
+  },
+  "items": [
+    {
+      "local_idx": 0,
+      "key": 1000,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 1,
+      "key": 1069,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 2,
+      "key": 1072,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 3,
+      "key": 1082,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 4,
+      "key": 1092,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 5,
+      "key": 1174,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 6,
+      "key": 1216,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 7,
+      "key": 1217,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 8,
+      "key": 1236,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 9,
+      "key": 1248,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 10,
+      "key": 1251,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 11,
+      "key": 1258,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 12,
+      "key": 1262,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 13,
+      "key": 1265,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 14,
+      "key": 1268,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 15,
+      "key": 1300,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 16,
+      "key": 1342,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 17,
+      "key": 136,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 18,
+      "key": 1375,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 19,
+      "key": 1377,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 20,
+      "key": 1381,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 21,
+      "key": 1392,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 22,
+      "key": 1392,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 23,
+      "key": 1418,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 24,
+      "key": 1418,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 25,
+      "key": 143,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 26,
+      "key": 1476,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 27,
+      "key": 152,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 28,
+      "key": 1535,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 29,
+      "key": 1601,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 30,
+      "key": 1609,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 31,
+      "key": 164,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 32,
+      "key": 1643,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 33,
+      "key": 1653,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 34,
+      "key": 1670,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 35,
+      "key": 1781,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 36,
+      "key": 179,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 37,
+      "key": 1793,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 38,
+      "key": 181,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 1
+    },
+    {
+      "local_idx": 39,
+      "key": 1813,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 40,
+      "key": 1823,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 41,
+      "key": 1834,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 42,
+      "key": 1837,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 43,
+      "key": 1837,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 44,
+      "key": 1845,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 45,
+      "key": 1858,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 46,
+      "key": 1879,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 47,
+      "key": 1879,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 48,
+      "key": 1880,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 49,
+      "key": 1883,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 50,
+      "key": 19,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 51,
+      "key": 19,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 52,
+      "key": 1908,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 53,
+      "key": 1943,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 54,
+      "key": 1954,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 55,
+      "key": 1964,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 56,
+      "key": 1967,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 57,
+      "key": 1980,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 58,
+      "key": 2035,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 59,
+      "key": 2041,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 60,
+      "key": 2069,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 61,
+      "key": 2069,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 62,
+      "key": 209,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 63,
+      "key": 2118,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 64,
+      "key": 2139,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 65,
+      "key": 2143,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 66,
+      "key": 2162,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 67,
+      "key": 2180,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 68,
+      "key": 2215,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 69,
+      "key": 2243,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 70,
+      "key": 2246,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 71,
+      "key": 2250,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 72,
+      "key": 2266,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 73,
+      "key": 2284,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 74,
+      "key": 2303,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 75,
+      "key": 2323,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 76,
+      "key": 2357,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 77,
+      "key": 2386,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 78,
+      "key": 2391,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 79,
+      "key": 2416,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 80,
+      "key": 2439,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 81,
+      "key": 2467,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 82,
+      "key": 2549,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 83,
+      "key": 2571,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 84,
+      "key": 2589,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 85,
+      "key": 2590,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 1
+    },
+    {
+      "local_idx": 86,
+      "key": 260,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 87,
+      "key": 2617,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 88,
+      "key": 2637,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 89,
+      "key": 2674,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 90,
+      "key": 2749,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 91,
+      "key": 2751,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 92,
+      "key": 2780,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 93,
+      "key": 2787,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 94,
+      "key": 2844,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 95,
+      "key": 2859,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 96,
+      "key": 286,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 97,
+      "key": 2880,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 98,
+      "key": 2909,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 99,
+      "key": 292,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 100,
+      "key": 2921,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 0
+    },
+    {
+      "local_idx": 101,
+      "key": 2941,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 102,
+      "key": 2943,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 103,
+      "key": 296,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 104,
+      "key": 2977,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 0
+    },
+    {
+      "local_idx": 105,
+      "key": 30,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 106,
+      "key": 3041,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 107,
+      "key": 3063,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 108,
+      "key": 3073,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 1
+    },
+    {
+      "local_idx": 109,
+      "key": 3089,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 110,
+      "key": 3089,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 111,
+      "key": 3098,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 112,
+      "key": 3114,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 113,
+      "key": 3243,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 114,
+      "key": 3256,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 115,
+      "key": 3276,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 116,
+      "key": 3276,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 117,
+      "key": 3287,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 118,
+      "key": 3294,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 119,
+      "key": 3315,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 0
+    },
+    {
+      "local_idx": 120,
+      "key": 332,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 121,
+      "key": 3329,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 122,
+      "key": 3351,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 0
+    },
+    {
+      "local_idx": 123,
+      "key": 3362,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 124,
+      "key": 337,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 125,
+      "key": 340,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 126,
+      "key": 3415,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 127,
+      "key": 3425,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 128,
+      "key": 3429,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 1
+    },
+    {
+      "local_idx": 129,
+      "key": 343,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 130,
+      "key": 3434,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 131,
+      "key": 3442,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 132,
+      "key": 349,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 133,
+      "key": 3534,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 134,
+      "key": 3534,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 135,
+      "key": 3538,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 1
+    },
+    {
+      "local_idx": 136,
+      "key": 3565,
+      "instruction_id": "length_constraints:number_paragraphs",
+      "violating": 1
+    },
+    {
+      "local_idx": 137,
+      "key": 3569,
+      "instruction_id": "length_constraints:number_words",
+      "violating": 0
+    },
+    {
+      "local_idx": 138,
+      "key": 3624,
+      "instruction_id": "length_constraints:nth_paragraph_first_word",
+      "violating": 0
+    },
+    {
+      "local_idx": 139,
+      "key": 3672,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 140,
+      "key": 3672,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 141,
+      "key": 3691,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    },
+    {
+      "local_idx": 142,
+      "key": 3739,
+      "instruction_id": "length_constraints:number_sentences",
+      "violating": 0
+    }
+  ]
+}

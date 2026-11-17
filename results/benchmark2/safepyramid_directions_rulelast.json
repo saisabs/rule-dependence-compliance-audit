@@ -1,0 +1,207 @@
+{
+  "benchmark": "SafePyramid",
+  "dataset_source": "ByteDance/SafePyramid (config=default, split=test)",
+  "dataset_revision": "011f4d3d90c6e99aa371c206e548f66af8d1169c",
+  "task_framing": "PER-RULE (forced: every row has >=1 violation, so an any-violation binary label has a 100% base rate).",
+  "rules_per_conversation_cap": 8,
+  "cap_note": "Random cap (seed 42) on rules per conversation to keep GPU extraction tractable; preserves base rate in expectation.",
+  "prompt_layout": "rule_last",
+  "max_length": 512,
+  "layout_note": "rule_first is gate-matched but DEGENERATE here: conversations are a median 1202 tokens and 100% exceed 512, so last-token pooling reads a conversation token that is near-constant within a conversation => chance by construction. rule_last places the rule at the end so the pooled token actually sees it.",
+  "split_conversations": {
+    "train": 400,
+    "val_layer": 200,
+    "test": 200
+  },
+  "levels": {
+    "L0": {
+      "n_units": 8000,
+      "frac_violated": 0.341625,
+      "split_sizes": {
+        "train": 3200,
+        "val_layer": 1600,
+        "test": 1600
+      },
+      "refusal_direction": {
+        "auroc": 0.6788436507477694,
+        "selected_variant": "raw",
+        "selected_layer": 11,
+        "selected_sign": 1.0,
+        "selection_auroc": 0.6471770084151064,
+        "auroc_grouped_by_conversation": 0.7178785103785104,
+        "n_groups_scored": 195
+      },
+      "probe": {
+        "auroc": 0.8176640722035068,
+        "selected_layer": 2,
+        "val_layer_auroc": 0.8208368517601841,
+        "layer_norms": [
+          0.0,
+          0.018533948808908463,
+          0.025265958160161972,
+          0.033532578498125076,
+          0.053821761161088943,
+          0.08244550973176956,
+          0.1250118911266327,
+          0.1681671142578125,
+          0.23907630145549774,
+          0.314296692609787,
+          0.3704189658164978,
+          0.37620869278907776,
+          0.4734415113925934,
+          0.5902436971664429,
+          0.7047854661941528,
+          0.8674719333648682,
+          4.866305351257324
+        ],
+        "budget_null": {
+          "n_random": 200,
+          "budget_null_mean": 0.6124787196210437,
+          "budget_null_std": 0.033175894977687935,
+          "budget_null_q95": 0.6725415227974654,
+          "budget_null_grouped_mean": 0.6730443681318681,
+          "budget_null_grouped_std": 0.04458170410866197
+        },
+        "auroc_grouped_by_conversation": 0.8772069597069598,
+        "n_groups_scored": 195
+      }
+    },
+    "L1": {
+      "n_units": 8000,
+      "frac_violated": 0.217125,
+      "split_sizes": {
+        "train": 3200,
+        "val_layer": 1600,
+        "test": 1600
+      },
+      "refusal_direction": {
+        "auroc": 0.68933506489937,
+        "selected_variant": "chat",
+        "selected_layer": 1,
+        "selected_sign": -1.0,
+        "selection_auroc": 0.7062796252407051,
+        "auroc_grouped_by_conversation": 0.6911717495987159,
+        "n_groups_scored": 178
+      },
+      "probe": {
+        "auroc": 0.7005765015494767,
+        "selected_layer": 9,
+        "val_layer_auroc": 0.7140446785661383,
+        "layer_norms": [
+          0.0,
+          0.042200490832328796,
+          0.0563354454934597,
+          0.0805869773030281,
+          0.13684049248695374,
+          0.19127675890922546,
+          0.25604140758514404,
+          0.29945340752601624,
+          0.3795051872730255,
+          0.5102860331535339,
+          0.6046770811080933,
+          0.6247480511665344,
+          0.704566478729248,
+          0.8131420016288757,
+          0.9594378471374512,
+          1.2249661684036255,
+          7.25753116607666
+        ],
+        "budget_null": {
+          "n_random": 200,
+          "budget_null_mean": 0.6312654804523143,
+          "budget_null_std": 0.037945370675676604,
+          "budget_null_q95": 0.6931488619992258,
+          "budget_null_grouped_mean": 0.6554534176029964,
+          "budget_null_grouped_std": 0.04760699623692413
+        },
+        "auroc_grouped_by_conversation": 0.7177200374531835,
+        "n_groups_scored": 178
+      }
+    },
+    "L2": {
+      "n_units": 8000,
+      "frac_violated": 0.207125,
+      "split_sizes": {
+        "train": 3200,
+        "val_layer": 1600,
+        "test": 1600
+      },
+      "refusal_direction": {
+        "auroc": 0.655137834608448,
+        "selected_variant": "chat",
+        "selected_layer": 14,
+        "selected_sign": -1.0,
+        "selection_auroc": 0.6584200868827693,
+        "auroc_grouped_by_conversation": 0.711017316017316,
+        "n_groups_scored": 165
+      },
+      "probe": {
+        "auroc": 0.7234851414017696,
+        "selected_layer": 16,
+        "val_layer_auroc": 0.7527576703764529,
+        "layer_norms": [
+          0.0,
+          0.030773134902119637,
+          0.0587870292365551,
+          0.09420523047447205,
+          0.15869221091270447,
+          0.23986706137657166,
+          0.29943886399269104,
+          0.37885117530822754,
+          0.46778225898742676,
+          0.5619581341743469,
+          0.6623057126998901,
+          0.6941273212432861,
+          0.7623114585876465,
+          0.8544699549674988,
+          1.0187888145446777,
+          1.3276125192642212,
+          8.13461971282959
+        ],
+        "budget_null": {
+          "n_random": 200,
+          "budget_null_mean": 0.6523046106181666,
+          "budget_null_std": 0.037373824214906884,
+          "budget_null_q95": 0.7074639729195094,
+          "budget_null_grouped_mean": 0.6797113816738818,
+          "budget_null_grouped_std": 0.04209351160347572
+        },
+        "auroc_grouped_by_conversation": 0.733109668109668,
+        "n_groups_scored": 165
+      }
+    }
+  },
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "52a09ce7be8943c43403c2627a62fddb8bbf30ef",
+    "timestamp": "2026-07-25T13:15:03.058349+05:30",
+    "script": "scripts/run_benchmark2_directions.py",
+    "versions": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.14.1",
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "dtype": "float16",
+    "gpu": 0,
+    "gpu_uuid_visible": "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782",
+    "orientation": "label 1 = COMPLIANT, higher score = COMPLIANT; every AUROC asserted vs sklearn.roc_auc_score to 1e-9",
+    "refusal_recipe": "E-G6: normalise(mean_harmful - mean_harmless), walledai/AdvBench vs tatsu-lab/alpaca(input==''), seed 42, n=256/side, ZERO task supervision",
+    "refusal_identity_check": {
+      "raw": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      },
+      "chat": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      }
+    }
+  }
+}

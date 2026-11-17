@@ -1,0 +1,167 @@
+{
+  "benchmark": "CompliBench",
+  "n_units": 2713,
+  "grouping": "conversation; split identical to gauntlet",
+  "guideline_used": "guideline_FAIR (judge-facing original), not the leaking generation metadata",
+  "layouts": {
+    "rule_last_1024": {
+      "max_length": 1024,
+      "tokenization": {
+        "max_length": 1024,
+        "median_tokens": 320.0,
+        "p95_tokens": 902.0,
+        "frac_truncated": 0.0
+      },
+      "split_sizes": {
+        "train": 1136,
+        "val_layer": 517,
+        "val_thresh": 525,
+        "test": 535
+      },
+      "refusal_direction": {
+        "auroc": 0.578834314322441,
+        "selected_variant": "chat",
+        "selected_layer": 15,
+        "selected_sign": -1.0,
+        "selection_auroc": 0.5858466602268255,
+        "auroc_grouped_by_conversation": 0.590734572738883,
+        "n_groups_scored": 58
+      },
+      "probe": {
+        "auroc": 0.7004093092483593,
+        "selected_layer": 10,
+        "val_layer_auroc": 0.7092411720510894,
+        "layer_norms": [
+          0.0,
+          0.018040750175714493,
+          0.027377378195524216,
+          0.04548354819417,
+          0.0705803632736206,
+          0.11387498676776886,
+          0.2008596956729889,
+          0.2609313428401947,
+          0.2940324544906616,
+          0.30040404200553894,
+          0.33587852120399475,
+          0.3443076014518738,
+          0.39280521869659424,
+          0.4956853687763214,
+          0.5959566831588745,
+          0.7699962854385376,
+          4.372778415679932
+        ],
+        "budget_null": {
+          "n_random": 200,
+          "budget_null_mean": 0.5493758879642785,
+          "budget_null_std": 0.040613739396985066,
+          "budget_null_q95": 0.6170725931939652
+        },
+        "auroc_grouped_by_conversation": 0.7143880305518236,
+        "n_groups_scored": 58
+      }
+    },
+    "rule_last_512_gate_matched": {
+      "max_length": 512,
+      "tokenization": {
+        "max_length": 512,
+        "median_tokens": 320.0,
+        "p95_tokens": 483.0,
+        "frac_truncated": 0.0
+      },
+      "split_sizes": {
+        "train": 1136,
+        "val_layer": 517,
+        "val_thresh": 525,
+        "test": 535
+      },
+      "refusal_direction": {
+        "auroc": 0.5903693931398417,
+        "selected_variant": "chat",
+        "selected_layer": 15,
+        "selected_sign": -1.0,
+        "selection_auroc": 0.6047189724875675,
+        "auroc_grouped_by_conversation": 0.599029083942877,
+        "n_groups_scored": 58
+      },
+      "probe": {
+        "auroc": 0.7147351329409377,
+        "selected_layer": 10,
+        "val_layer_auroc": 0.7284175879217202,
+        "layer_norms": [
+          0.0,
+          0.016999615356326103,
+          0.02562906965613365,
+          0.04268968105316162,
+          0.0672907903790474,
+          0.11084867268800735,
+          0.2016000896692276,
+          0.2627200782299042,
+          0.2949065566062927,
+          0.2979224622249603,
+          0.3384169340133667,
+          0.3451186716556549,
+          0.3993167579174042,
+          0.507795512676239,
+          0.6105663776397705,
+          0.8019769191741943,
+          4.655709743499756
+        ],
+        "budget_null": {
+          "n_random": 200,
+          "budget_null_mean": 0.5509168019755092,
+          "budget_null_std": 0.03915319741875337,
+          "budget_null_q95": 0.6122293823151344
+        },
+        "auroc_grouped_by_conversation": 0.7272845449569587,
+        "n_groups_scored": 58
+      }
+    }
+  },
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "52a09ce7be8943c43403c2627a62fddb8bbf30ef",
+    "timestamp": "2026-07-25T13:04:28.920636+05:30",
+    "script": "scripts/run_benchmark3_directions.py",
+    "versions": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.14.1",
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "pooling": "last_token",
+    "dtype": "float16",
+    "gpu": 0,
+    "gpu_uuid_visible": "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782",
+    "orientation": "label 1 = COMPLIANT, higher score = COMPLIANT; every AUROC asserted vs sklearn to 1e-9",
+    "refusal_recipe": "E-G6: normalise(mean_harmful - mean_harmless), walledai/AdvBench vs tatsu-lab/alpaca(input==''), seed 42, n=256/side, ZERO task supervision",
+    "datasets": {
+      "aireg_hf_repo": "camlsys/AIReg-Bench",
+      "aireg_hf_revision": "c656725c22568ef5fa489ea3940d3b6d7ff4b2ff",
+      "aireg_hf_license": "cc-by-4.0",
+      "aireg_github": "https://github.com/camlsys/aireg-bench",
+      "aireg_github_commit": "846d5cc075ad424a2d31dd20e34a7c5fe836f157",
+      "aireg_note": "HF repo lacks the 300 documentation .txt files described in its own README; texts taken from the official GitHub repo.",
+      "complibench_hf": "NOT ON HF HUB (search 'CompliBench', 0 repos, 2026-07-17)",
+      "complibench_github": "https://github.com/UCSB-NLP-Chang/CompliBench",
+      "complibench_github_commit": "593543022f67914e7ec9a312b7fa39c8a75e508a",
+      "complibench_license": "Apache-2.0",
+      "flexbench_hf_repo": "Tommy-DING/FlexBench",
+      "flexbench_hf_revision": "8f73c40bc3f2c272af8ee8d33a4003029ba4282a",
+      "flexbench_hf_license": "apache-2.0"
+    },
+    "refusal_identity_check": {
+      "raw": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      },
+      "chat": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      }
+    }
+  }
+}

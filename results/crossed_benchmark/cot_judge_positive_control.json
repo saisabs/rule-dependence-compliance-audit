@@ -1,0 +1,16 @@
+{
+  "n_quadruples_fully_parsed": 39,
+  "n_quadruples_with_unparsed_cell": 1,
+  "rule_flip_accuracy": 0.7948717948717948,
+  "scenario_flip_accuracy": 0.782051282051282,
+  "quadruple_exact_match": 0.7435897435897436,
+  "quadruple_exact_match_chance": 0.0625,
+  "auroc_binary_verdict": 0.8489062500000001,
+  "n_rows_scored": 160,
+  "n_quadruples_attempted": 40,
+  "n_unparsed_cells_total": 1,
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "protocol": "chain-of-thought generation (max_new_tokens=300), final Verdict: line parsed",
+  "timestamp": "2026-07-27T23:47:12.701933+05:30",
+  "git_commit": "d3f6da32fac8d9bcb19c1a177ec1e8a3a8c7144f"
+}

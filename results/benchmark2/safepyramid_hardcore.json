@@ -1,0 +1,309 @@
+{
+  "benchmark": "SafePyramid",
+  "analysis": "HARD CORE \u2014 distractor-stripped subsets + policy-inclusive features + surface-matched flip pairs",
+  "dataset_revision": "011f4d3d90c6e99aa371c206e548f66af8d1169c",
+  "why": "The pooled TF-IDF-rule-only 0.90 is nearly EQUAL to the rubric's own rule_type oracle (0.89-0.91), i.e. it is mostly 'distractors are worded distinctively and are never violated'. The hard core removes that padding.",
+  "levels": {
+    "L0": {
+      "rule_type_counts": {
+        "distractor": 8380,
+        "decisive": 7734
+      },
+      "subsets": {
+        "all": {
+          "n_units": 16114,
+          "n_train": 6452,
+          "n_test": 3230,
+          "frac_violated": 0.34404865334491747,
+          "features": {
+            "tfidf_rule_only": {
+              "auroc_pooled": 0.920186246564706,
+              "auroc_grouped": 0.9341297022422023,
+              "n_groups": 200
+            },
+            "tfidf_rule_plus_conversation": {
+              "auroc_pooled": 0.6887164005271709,
+              "auroc_grouped": 0.9023121161246163,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule": {
+              "auroc_pooled": 0.5880971962553168,
+              "auroc_grouped": 0.9077444587819588,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule_plus_conversation": {
+              "auroc_pooled": 0.5607638356780171,
+              "auroc_grouped": 0.9022889536389536,
+              "n_groups": 200
+            }
+          }
+        },
+        "no_distractor": {
+          "n_units": 7734,
+          "n_train": 3107,
+          "n_test": 1556,
+          "frac_violated": 0.7168347556245152,
+          "features": {
+            "tfidf_rule_only": {
+              "auroc_pooled": 0.9051999196302994,
+              "auroc_grouped": 0.9108571839789458,
+              "n_groups": 193
+            },
+            "tfidf_rule_plus_conversation": {
+              "auroc_pooled": 0.7868434800080368,
+              "auroc_grouped": 0.8906509581380047,
+              "n_groups": 193
+            },
+            "tfidf_policy_plus_rule": {
+              "auroc_pooled": 0.6846011653606591,
+              "auroc_grouped": 0.90212085697837,
+              "n_groups": 193
+            },
+            "tfidf_policy_plus_rule_plus_conversation": {
+              "auroc_pooled": 0.6537512557765723,
+              "auroc_grouped": 0.8960697836993173,
+              "n_groups": 193
+            }
+          }
+        }
+      }
+    },
+    "L1": {
+      "rule_type_counts": {
+        "distractor": 8380,
+        "decisive": 7734,
+        "conditional": 7040,
+        "exception": 5563
+      },
+      "subsets": {
+        "all": {
+          "n_units": 28717,
+          "n_train": 11505,
+          "n_test": 5742,
+          "frac_violated": 0.22018316676533065,
+          "features": {
+            "tfidf_rule_only": {
+              "auroc_pooled": 0.9015625758708763,
+              "auroc_grouped": 0.9068428266431279,
+              "n_groups": 200
+            },
+            "tfidf_rule_plus_conversation": {
+              "auroc_pooled": 0.7793115625670423,
+              "auroc_grouped": 0.8466572009878902,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule": {
+              "auroc_pooled": 0.5951117746302799,
+              "auroc_grouped": 0.8158992033864538,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule_plus_conversation": {
+              "auroc_pooled": 0.5823519596426532,
+              "auroc_grouped": 0.8056387110963956,
+              "n_groups": 200
+            }
+          }
+        },
+        "no_distractor": {
+          "n_units": 20337,
+          "n_train": 8160,
+          "n_test": 4068,
+          "frac_violated": 0.3109111471701824,
+          "features": {
+            "tfidf_rule_only": {
+              "auroc_pooled": 0.8786040930172219,
+              "auroc_grouped": 0.8763411583329915,
+              "n_groups": 200
+            },
+            "tfidf_rule_plus_conversation": {
+              "auroc_pooled": 0.8405832824514671,
+              "auroc_grouped": 0.8696894975725334,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule": {
+              "auroc_pooled": 0.6636159168818276,
+              "auroc_grouped": 0.8681358890457892,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule_plus_conversation": {
+              "auroc_pooled": 0.63827942675761,
+              "auroc_grouped": 0.866589058892788,
+              "n_groups": 200
+            }
+          }
+        },
+        "exception_conditional_only": {
+          "n_units": 12603,
+          "n_train": 5053,
+          "n_test": 2512,
+          "frac_violated": 0.11505197175275728,
+          "features": {
+            "tfidf_rule_only": {
+              "auroc_pooled": 0.9527834083439264,
+              "auroc_grouped": 0.9564478056665555,
+              "n_groups": 192
+            },
+            "tfidf_rule_plus_conversation": {
+              "auroc_pooled": 0.8723020317482131,
+              "auroc_grouped": 0.9370996191308691,
+              "n_groups": 192
+            },
+            "tfidf_policy_plus_rule": {
+              "auroc_pooled": 0.6868598128088972,
+              "auroc_grouped": 0.9223448426573425,
+              "n_groups": 192
+            },
+            "tfidf_policy_plus_rule_plus_conversation": {
+              "auroc_pooled": 0.6558298036636581,
+              "auroc_grouped": 0.9138386786824286,
+              "n_groups": 192
+            }
+          }
+        }
+      }
+    },
+    "L2": {
+      "rule_type_counts": {
+        "conditional": 9994,
+        "distractor": 8306,
+        "decisive": 7834,
+        "exception": 6790
+      },
+      "subsets": {
+        "all": {
+          "n_units": 32924,
+          "n_train": 13200,
+          "n_test": 6581,
+          "frac_violated": 0.2045620216255619,
+          "features": {
+            "tfidf_rule_only": {
+              "auroc_pooled": 0.903546149891947,
+              "auroc_grouped": 0.9128975945408316,
+              "n_groups": 200
+            },
+            "tfidf_rule_plus_conversation": {
+              "auroc_pooled": 0.8029900967176072,
+              "auroc_grouped": 0.8709898722491692,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule": {
+              "auroc_pooled": 0.564958449309074,
+              "auroc_grouped": 0.8460349674362528,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule_plus_conversation": {
+              "auroc_pooled": 0.5651439818404483,
+              "auroc_grouped": 0.8454256536512027,
+              "n_groups": 200
+            }
+          }
+        },
+        "no_distractor": {
+          "n_units": 24618,
+          "n_train": 9857,
+          "n_test": 4937,
+          "frac_violated": 0.25924120562190267,
+          "features": {
+            "tfidf_rule_only": {
+              "auroc_pooled": 0.922252315046163,
+              "auroc_grouped": 0.9279763888406665,
+              "n_groups": 200
+            },
+            "tfidf_rule_plus_conversation": {
+              "auroc_pooled": 0.8758393873183373,
+              "auroc_grouped": 0.9118465057342156,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule": {
+              "auroc_pooled": 0.5999642016493949,
+              "auroc_grouped": 0.9101778342812925,
+              "n_groups": 200
+            },
+            "tfidf_policy_plus_rule_plus_conversation": {
+              "auroc_pooled": 0.5984680804502235,
+              "auroc_grouped": 0.9110168030179853,
+              "n_groups": 200
+            }
+          }
+        },
+        "exception_conditional_only": {
+          "n_units": 16784,
+          "n_train": 6732,
+          "n_test": 3362,
+          "frac_violated": 0.05171591992373689,
+          "features": {
+            "tfidf_rule_only": {
+              "auroc_pooled": 0.8960486986950499,
+              "auroc_grouped": 0.9195243247800793,
+              "n_groups": 115
+            },
+            "tfidf_rule_plus_conversation": {
+              "auroc_pooled": 0.723983013778523,
+              "auroc_grouped": 0.9050492225875859,
+              "n_groups": 115
+            },
+            "tfidf_policy_plus_rule": {
+              "auroc_pooled": 0.5783844864037326,
+              "auroc_grouped": 0.7495357892320809,
+              "n_groups": 115
+            },
+            "tfidf_policy_plus_rule_plus_conversation": {
+              "auroc_pooled": 0.5762757891667274,
+              "auroc_grouped": 0.7220363864609389,
+              "n_groups": 115
+            }
+          }
+        }
+      }
+    }
+  },
+  "flip_pair_hard_core": {
+    "n_flip_pairs": 4023,
+    "n_units_in_flip_pairs": 8046,
+    "frac_violated": 0.5,
+    "definition": "(conversation, rule_text) pairs carrying BOTH labels across levels. Conversation byte-identical; rule wording identical; label flips ONLY via the policy's waiver / exception structure.",
+    "analytic_expectation": "Any (conversation, rule_text)-only feature is EXACTLY 0.5 within-pair by construction. Only POLICY-inclusive features can deviate.",
+    "features_pooled_and_within_pair": {
+      "tfidf_rule_only": {
+        "auroc_pooled": 0.5,
+        "auroc_within_matched_pair": 0.5,
+        "n_pairs_scored": 784,
+        "n_test": 1568
+      },
+      "tfidf_rule_plus_conversation": {
+        "auroc_pooled": 0.5,
+        "auroc_within_matched_pair": 0.5,
+        "n_pairs_scored": 784,
+        "n_test": 1568
+      },
+      "tfidf_policy_plus_rule": {
+        "auroc_pooled": 0.6035880232194919,
+        "auroc_within_matched_pair": 0.5727040816326531,
+        "n_pairs_scored": 784,
+        "n_test": 1568
+      },
+      "tfidf_policy_plus_rule_plus_conversation": {
+        "auroc_pooled": 0.5957641347355268,
+        "auroc_within_matched_pair": 0.5727040816326531,
+        "n_pairs_scored": 784,
+        "n_test": 1568
+      }
+    },
+    "level_pair_composition": {
+      "L0": 4023,
+      "L1": 4023
+    }
+  },
+  "provenance": {
+    "seed": 42,
+    "git_commit": "fb8f91ffa880e84cf438341bc8daf8d05371f46a",
+    "timestamp": "2026-07-17T04:35:41.157977+05:30",
+    "script": "scripts/run_benchmark2_safepyramid_hardcore.py",
+    "dataset_source": "ByteDance/SafePyramid (config=default, split=test)",
+    "dataset_revision": "011f4d3d90c6e99aa371c206e548f66af8d1169c",
+    "gpu": 0,
+    "max_length": "n/a (lexical)",
+    "pooling": "n/a (lexical)",
+    "orientation": "label 1 = COMPLIANT (rule NOT violated); every AUROC asserted vs sklearn.roc_auc_score to 1e-9"
+  }
+}

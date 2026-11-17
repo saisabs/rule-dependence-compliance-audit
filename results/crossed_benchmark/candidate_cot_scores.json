@@ -1,0 +1,122 @@
+{
+  "gdpr_t02": {
+    "R0xSa": {
+      "reasoning": "To determine compliance, I will follow the steps outlined:\n\n(1) What category does the scenario fall under?\nThe scenario involves a subject access request for a single case file, which is considered a standard access request.\n\n(2) What is the numeric threshold the rule sets for that category?\nFor standard access requests, the rule sets a threshold of 90 days.\n\n(3) What is the actual numeric value in the scenario?\nThe request was logged on March 3 and a substantive written response was sent 45 days later. This means the response was sent on April 17 (March 3 + 45 days).\n\n(4) Does the value exceed the threshold?\nSince 45 days is less than 90 days, the value does not exceed the threshold.\n\nVerdict: COMPLIANT",
+      "raw_verdict": "COMPLIANT",
+      "true_label": 0,
+      "predicted_violation": false,
+      "correct": true
+    },
+    "R0xSb": {
+      "reasoning": "To determine compliance, I will follow the steps outlined:\n\n(1) What category does the scenario fall under?\nThe scenario involves a subject access request that is complex, as it involves records held by multiple business units and spans a long period of time. Therefore, it falls under the category of a complex access request.\n\n(2) What is the numeric threshold the rule sets for that category?\nThe rule sets a 30-day threshold for complex access requests.\n\n(3) What is the actual numeric value in the scenario?\nThe request was logged on March 3 and a substantive written response was sent 45 days later. This means that 45 days have passed since the request was logged.\n\n(4) Does the value exceed the threshold?\n45 days exceeds the 30-day threshold set for complex access requests.\n\nVerdict: VIOLATION",
+      "raw_verdict": "VIOLATION",
+      "true_label": 1,
+      "predicted_violation": true,
+      "correct": true
+    },
+    "R1xSa": {
+      "reasoning": "To determine compliance, I will follow the steps as instructed:\n\n(1) What category does the scenario fall under?\nThe scenario involves a subject access request for a single case file, which is considered a standard access request.\n\n(2) What is the numeric threshold the rule sets for that category?\nFor standard access requests, the rule sets a threshold of 30 days.\n\n(3) What is the actual numeric value in the scenario?\nThe request was logged on March 3 and a substantive written response was sent 45 days later. This means the response was sent on April 17 (March 3 + 45 days).\n\n(4) Does the value exceed the threshold?\nSince 45 days is greater than 30 days, the value exceeds the threshold.\n\nVerdict: VIOLATION",
+      "raw_verdict": "VIOLATION",
+      "true_label": 1,
+      "predicted_violation": true,
+      "correct": true
+    },
+    "R1xSb": {
+      "reasoning": "To determine compliance, I will follow the steps outlined:\n\n(1) What category does the scenario fall under?\nThe scenario involves a subject access request that is complex, as it involves records held by multiple business units and spans a long period of time. Therefore, it falls under the category of a complex access request.\n\n(2) What is the numeric threshold the rule sets for that category?\nThe rule sets a 90-day threshold for complex access requests.\n\n(3) What is the actual numeric value in the scenario?\nThe request was logged on March 3 and a substantive written response was sent 45 days later. This means that 45 days have passed since the request was logged.\n\n(4) Does the value exceed the threshold?\nSince 45 days is less than 90 days, the value does not exceed the threshold.\n\nVerdict: COMPLIANT",
+      "raw_verdict": "COMPLIANT",
+      "true_label": 0,
+      "predicted_violation": false,
+      "correct": true
+    }
+  },
+  "hipaa_t25": {
+    "R0xSa": {
+      "reasoning": "To determine compliance, let's break down the scenario step by step:\n\n(1) The scenario falls under the category of a facility located within the declared disaster area.\n\n(2) According to the rule, the threshold for this category is 24 hours after the disaster declaration.\n\n(3) The scenario states that the relaxed procedures remained in effect for 48 hours after the disaster declaration.\n\n(4) Comparing the threshold (24 hours) to the actual value in the scenario (48 hours), we see that the value exceeds the threshold.\n\nVerdict: VIOLATION",
+      "raw_verdict": "VIOLATION",
+      "true_label": 1,
+      "predicted_violation": true,
+      "correct": true
+    },
+    "R0xSb": {
+      "reasoning": "To determine compliance, I will follow the steps as instructed:\n\n(1) The scenario falls under the category of an affiliated facility located outside the declared disaster area.\n\n(2) According to the rule, the numeric threshold for this category is 72 hours.\n\n(3) The actual numeric value in the scenario is 48 hours, which is the time the relaxed procedures remained in effect.\n\n(4) Since 48 hours is less than 72 hours, the value does not exceed the threshold.\n\nVerdict: COMPLIANT",
+      "raw_verdict": "COMPLIANT",
+      "true_label": 0,
+      "predicted_violation": false,
+      "correct": true
+    },
+    "R1xSa": {
+      "reasoning": "To determine compliance, I will follow the steps as instructed:\n\n(1) The scenario falls under the category of a facility located within the declared disaster area.\n\n(2) According to the rule, the numeric threshold for this category is 72 hours.\n\n(3) The actual numeric value in the scenario is 48 hours, which is the time the relaxed procedures remained in effect.\n\n(4) Since 48 hours is less than 72 hours, the value does not exceed the threshold.\n\nVerdict: COMPLIANT",
+      "raw_verdict": "COMPLIANT",
+      "true_label": 0,
+      "predicted_violation": false,
+      "correct": true
+    },
+    "R1xSb": {
+      "reasoning": "To determine compliance, let's break down the scenario step by step:\n\n(1) The scenario falls under the category of an affiliated facility located outside the declared disaster area.\n\n(2) According to the rule, the threshold for this category is 24 hours after the disaster declaration.\n\n(3) The actual numeric value in the scenario is 48 hours, which is the time the relaxed procedures remained in effect.\n\n(4) Since 48 hours exceeds the threshold of 24 hours, the hospital's actions do not meet the rule's requirements.\n\nVerdict: VIOLATION",
+      "raw_verdict": "VIOLATION",
+      "true_label": 1,
+      "predicted_violation": true,
+      "correct": true
+    }
+  },
+  "ccpa_t21": {
+    "R0xSa": {
+      "reasoning": "To determine compliance, I will follow the steps as instructed:\n\n(1) The scenario falls under the category of \"single-disclosed-business-purpose\" because the data was collected for a single purpose, which is billing accuracy.\n\n(2) The numeric threshold set by the rule for a single-disclosed-business-purpose is 2 business units.\n\n(3) The actual numeric value in the scenario is 4 business units, which is the number of business units granted access to the data set.\n\n(4) Since 4 exceeds the threshold of 2, the scenario does not meet the rule's requirements.\n\nVerdict: VIOLATION",
+      "raw_verdict": "VIOLATION",
+      "true_label": 1,
+      "predicted_violation": true,
+      "correct": true
+    },
+    "R0xSb": {
+      "reasoning": "To determine compliance, I will follow the steps:\n\n(1) The scenario falls under the category of \"multiple-disclosed-business-purpose\" because it involves collecting personal information for multiple purposes (billing, personalization, and fraud review).\n\n(2) The numeric threshold set by the rule for the \"multiple-disclosed-business-purpose\" category is 6 business units.\n\n(3) The actual numeric value in the scenario is 4 business units.\n\n(4) Since 4 is less than 6, the value does not exceed the threshold.\n\nVerdict: COMPLIANT",
+      "raw_verdict": "COMPLIANT",
+      "true_label": 0,
+      "predicted_violation": false,
+      "correct": true
+    },
+    "R1xSa": {
+      "reasoning": "To determine compliance, I will follow the steps as outlined:\n\n(1) The scenario falls under the category of \"single-disclosed-business-purpose\" because the data was collected for a single purpose, which is billing accuracy.\n\n(2) The numeric threshold set by the rule for a single-disclosed-business-purpose is 6 business units.\n\n(3) The actual numeric value in the scenario is 4 business units.\n\n(4) Since 4 is less than 6, the value does not exceed the threshold.\n\nVerdict: COMPLIANT",
+      "raw_verdict": "COMPLIANT",
+      "true_label": 0,
+      "predicted_violation": false,
+      "correct": true
+    },
+    "R1xSb": {
+      "reasoning": "To determine compliance, I will follow the steps:\n\n(1) The scenario falls under the category of \"multiple-disclosed-business-purpose\" because it involves collecting loyalty-program data under multiple purposes (billing, personalization, and fraud review).\n\n(2) The numeric threshold set by the rule for the \"multiple-disclosed-business-purpose\" category is 2 business units.\n\n(3) The actual numeric value in the scenario is 4 business units, which is the number of business units granted access to the data set.\n\n(4) The value (4) exceeds the threshold (2).\n\nVerdict: VIOLATION",
+      "raw_verdict": "VIOLATION",
+      "true_label": 1,
+      "predicted_violation": true,
+      "correct": true
+    }
+  },
+  "policy_openai_t06": {
+    "R0xSa": {
+      "reasoning": "To determine compliance, I will follow the steps you provided:\n\n(1) What category does the scenario fall under?\nThe scenario falls under the \"registered-red-teaming-research-exemption\" category.\n\n(2) What is the numeric threshold the rule sets for that category?\nThe rule sets a threshold of 180 days for the \"registered-red-teaming-research-exemption\" category.\n\n(3) What is the actual numeric value in the scenario?\nThe scenario states that the oldest entries in the Thornset archive had been stored for 90 days.\n\n(4) Does the value exceed the threshold?\nNo, the value (90 days) is less than the threshold (180 days).\n\nVerdict: COMPLIANT",
+      "raw_verdict": "COMPLIANT",
+      "true_label": 0,
+      "predicted_violation": false,
+      "correct": true
+    },
+    "R0xSb": {
+      "reasoning": "To determine compliance, I will follow the steps:\n\n(1) The scenario falls under the category of \"ordinary-commercial-deployment terms\" because it mentions \"ordinary commercial-deployment terms\" in the context of the customer-support archive named Brightline.\n\n(2) The numeric threshold the rule sets for this category is 30 days, which is the maximum time allowed before deletion is required.\n\n(3) The actual numeric value in the scenario is 90 days, which is the time the oldest entries in the Brightline archive have been stored without deletion.\n\n(4) Since 90 days exceeds the threshold of 30 days, the scenario does not meet the rule's requirements.\n\nVerdict: VIOLATION",
+      "raw_verdict": "VIOLATION",
+      "true_label": 1,
+      "predicted_violation": true,
+      "correct": true
+    },
+    "R1xSa": {
+      "reasoning": "To determine compliance, I will follow the steps you provided:\n\n(1) The scenario falls under the category of \"registered-red-teaming-research-exemption\" terms.\n\n(2) The numeric threshold the rule sets for this category is 30 days.\n\n(3) The actual numeric value in the scenario is 90 days.\n\n(4) The value of 90 days exceeds the threshold of 30 days.\n\nVerdict: VIOLATION",
+      "raw_verdict": "VIOLATION",
+      "true_label": 1,
+      "predicted_violation": true,
+      "correct": true
+    },
+    "R1xSb": {
+      "reasoning": "To determine compliance, I will follow the steps you provided:\n\n(1) The scenario falls under the category of \"ordinary-commercial-deployment terms\" because it mentions that Vantpoint Labs generates model outputs under these terms for the Brightline archive.\n\n(2) The numeric threshold the rule sets for this category is 180 days, which is the maximum time allowed before deletion is required.\n\n(3) The actual numeric value in the scenario is 90 days, which is the time the oldest entries in the Brightline archive have been stored without deletion.\n\n(4) Since 90 days is less than 180 days, the value does not exceed the threshold.\n\nVerdict: COMPLIANT",
+      "raw_verdict": "COMPLIANT",
+      "true_label": 0,
+      "predicted_violation": false,
+      "correct": true
+    }
+  }
+}

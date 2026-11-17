@@ -1,0 +1,790 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:06:14.825808+05:30",
+    "script": "scripts/run_ifeval_probe.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "split_fractions": {
+      "train": 0.4,
+      "val_layer": 0.2,
+      "val_thresh": 0.2,
+      "test": 0.2
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0"
+  },
+  "category": "change_case",
+  "n_instances": 89,
+  "n_unique_keys": 84,
+  "label": "loose",
+  "split_source": "src.compliance.splits.three_way_split(n_unique_keys, 42) \u2014 GROUPED by prompt key to prevent shared-activation leakage",
+  "split_key_indices": {
+    "train": [
+      61,
+      57,
+      39,
+      30,
+      56,
+      65,
+      79,
+      19,
+      62,
+      26,
+      72,
+      73,
+      20,
+      50,
+      15,
+      33,
+      70,
+      82,
+      8,
+      12,
+      66,
+      36,
+      52,
+      49,
+      80,
+      47,
+      1,
+      40,
+      41,
+      43,
+      32,
+      23,
+      18
+    ],
+    "val_layer": [
+      45,
+      67,
+      7,
+      34,
+      68,
+      2,
+      16,
+      38,
+      42,
+      22,
+      46,
+      24,
+      5,
+      6,
+      58,
+      76
+    ],
+    "val_thresh": [
+      9,
+      60,
+      21,
+      75,
+      44,
+      10,
+      59,
+      48,
+      0,
+      55,
+      51,
+      77,
+      37,
+      63,
+      78,
+      53
+    ],
+    "test": [
+      25,
+      71,
+      64,
+      29,
+      27,
+      74,
+      83,
+      4,
+      54,
+      11,
+      69,
+      13,
+      17,
+      28,
+      31,
+      35,
+      3,
+      14,
+      81
+    ]
+  },
+  "split_instance_indices": {
+    "train": [
+      1,
+      9,
+      14,
+      17,
+      20,
+      21,
+      22,
+      25,
+      28,
+      32,
+      34,
+      35,
+      38,
+      41,
+      42,
+      43,
+      45,
+      49,
+      51,
+      52,
+      54,
+      58,
+      59,
+      63,
+      64,
+      67,
+      68,
+      73,
+      75,
+      76,
+      77,
+      78,
+      84,
+      85,
+      87
+    ],
+    "val_layer": [
+      2,
+      3,
+      6,
+      7,
+      8,
+      18,
+      24,
+      26,
+      36,
+      40,
+      44,
+      47,
+      48,
+      60,
+      69,
+      70,
+      71,
+      81
+    ],
+    "val_thresh": [
+      0,
+      10,
+      11,
+      12,
+      23,
+      39,
+      46,
+      50,
+      53,
+      55,
+      57,
+      61,
+      62,
+      65,
+      80,
+      82,
+      83
+    ],
+    "test": [
+      4,
+      5,
+      13,
+      15,
+      16,
+      19,
+      27,
+      29,
+      30,
+      31,
+      33,
+      37,
+      56,
+      66,
+      72,
+      74,
+      79,
+      86,
+      88
+    ]
+  },
+  "class_counts": {
+    "train": {
+      "n": 35,
+      "n_viol": 9,
+      "n_comp": 26
+    },
+    "val_layer": {
+      "n": 18,
+      "n_viol": 4,
+      "n_comp": 14
+    },
+    "val_thresh": {
+      "n": 17,
+      "n_viol": 7,
+      "n_comp": 10
+    },
+    "test": {
+      "n": 19,
+      "n_viol": 7,
+      "n_comp": 12
+    }
+  },
+  "items": [
+    {
+      "local_idx": 0,
+      "key": 1019,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 1,
+      "key": 1021,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 2,
+      "key": 1040,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 3,
+      "key": 1040,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 4,
+      "key": 1051,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 5,
+      "key": 1087,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 1
+    },
+    {
+      "local_idx": 6,
+      "key": 1122,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 7,
+      "key": 1132,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 8,
+      "key": 1153,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 9,
+      "key": 1219,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 10,
+      "key": 1287,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 11,
+      "key": 1314,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 12,
+      "key": 1314,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 13,
+      "key": 1361,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 14,
+      "key": 1389,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 15,
+      "key": 1436,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 16,
+      "key": 1516,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 17,
+      "key": 152,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 1
+    },
+    {
+      "local_idx": 18,
+      "key": 1535,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 19,
+      "key": 1566,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 20,
+      "key": 1571,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 21,
+      "key": 1592,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 22,
+      "key": 1593,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 23,
+      "key": 1645,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 24,
+      "key": 1653,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 25,
+      "key": 1667,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 1
+    },
+    {
+      "local_idx": 26,
+      "key": 1670,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 27,
+      "key": 1779,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 28,
+      "key": 1781,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 29,
+      "key": 1813,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 30,
+      "key": 1834,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 31,
+      "key": 1843,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 32,
+      "key": 1967,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 33,
+      "key": 1996,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 34,
+      "key": 1999,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 35,
+      "key": 202,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 36,
+      "key": 2100,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 37,
+      "key": 218,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 1
+    },
+    {
+      "local_idx": 38,
+      "key": 2180,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 39,
+      "key": 2216,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 40,
+      "key": 2247,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 41,
+      "key": 2275,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 42,
+      "key": 2341,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 43,
+      "key": 2372,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 44,
+      "key": 2391,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 45,
+      "key": 24,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 46,
+      "key": 2416,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 47,
+      "key": 2422,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 48,
+      "key": 2517,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 49,
+      "key": 2531,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 50,
+      "key": 2563,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 51,
+      "key": 2571,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 52,
+      "key": 2728,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 53,
+      "key": 2736,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 54,
+      "key": 2765,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 1
+    },
+    {
+      "local_idx": 55,
+      "key": 279,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 56,
+      "key": 2817,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 57,
+      "key": 2820,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 58,
+      "key": 2849,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 59,
+      "key": 2853,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 60,
+      "key": 2870,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 61,
+      "key": 2908,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 62,
+      "key": 2943,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 1
+    },
+    {
+      "local_idx": 63,
+      "key": 296,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 64,
+      "key": 3035,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 65,
+      "key": 3069,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 1
+    },
+    {
+      "local_idx": 66,
+      "key": 3098,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 67,
+      "key": 3150,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 68,
+      "key": 3186,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 69,
+      "key": 3188,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 70,
+      "key": 3188,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 71,
+      "key": 3204,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 72,
+      "key": 3276,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 73,
+      "key": 331,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 74,
+      "key": 3380,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 1
+    },
+    {
+      "local_idx": 75,
+      "key": 3407,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 76,
+      "key": 3407,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 77,
+      "key": 3414,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 78,
+      "key": 3414,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 79,
+      "key": 3424,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 80,
+      "key": 3434,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 81,
+      "key": 3455,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 0
+    },
+    {
+      "local_idx": 82,
+      "key": 3456,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 83,
+      "key": 3513,
+      "instruction_id": "change_case:capital_word_frequency",
+      "violating": 1
+    },
+    {
+      "local_idx": 84,
+      "key": 3534,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 85,
+      "key": 3572,
+      "instruction_id": "change_case:english_capital",
+      "violating": 0
+    },
+    {
+      "local_idx": 86,
+      "key": 3608,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    },
+    {
+      "local_idx": 87,
+      "key": 3617,
+      "instruction_id": "change_case:english_capital",
+      "violating": 1
+    },
+    {
+      "local_idx": 88,
+      "key": 3703,
+      "instruction_id": "change_case:english_lowercase",
+      "violating": 0
+    }
+  ]
+}

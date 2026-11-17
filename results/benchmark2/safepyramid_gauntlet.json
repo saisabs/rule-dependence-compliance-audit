@@ -1,0 +1,282 @@
+{
+  "benchmark": "SafePyramid",
+  "dataset_source": "ByteDance/SafePyramid (config=default, split=test)",
+  "dataset_revision": "011f4d3d90c6e99aa371c206e548f66af8d1169c",
+  "task_framing": "PER-RULE. unit = (conversation, rule in rubric); label 1 = rule NOT violated (compliant). FORCED, not chosen: every one of the 3000 rows has >=1 violation, so an any-violation binary label has a 100% base rate and AUROC is undefined.",
+  "metric_mismatch_warning": "The paper's 54.0/35.3/12.9% is EXACT-SET-MATCH accuracy for an LLM predicting the net violated-rule set in context. The AUROC here is a different metric on a different unit. A high TF-IDF AUROC does NOT rebut their 12.9%, and a collapse does NOT by itself prove the benchmark is non-degenerate at their task.",
+  "n_conversations": 1000,
+  "split_conversations": {
+    "train": 400,
+    "test": 200
+  },
+  "levels": {
+    "L0": {
+      "n_units": 16114,
+      "n_conversations": 1000,
+      "rules_per_conversation": 16.114,
+      "base_rate": {
+        "compliant_not_violated": 10570,
+        "violated": 5544,
+        "frac_violated": 0.34404865334491747
+      },
+      "rule_type_counts": {
+        "distractor": 8380,
+        "decisive": 7734
+      },
+      "split_sizes": {
+        "train": 6452,
+        "test": 3230
+      },
+      "baselines": {
+        "tfidf_rule_only": {
+          "auroc_pooled": 0.920186246564706,
+          "auroc_grouped_by_conversation": 0.9341297022422023,
+          "n_groups_scored": 200,
+          "n_test": 3230
+        },
+        "tfidf_conversation_only": {
+          "auroc_pooled": 0.5190162884863593,
+          "auroc_grouped_by_conversation": 0.5,
+          "n_groups_scored": 200,
+          "n_test": 3230
+        },
+        "tfidf_rule_plus_conversation": {
+          "auroc_pooled": 0.6887164005271709,
+          "auroc_grouped_by_conversation": 0.9023121161246163,
+          "n_groups_scored": 200,
+          "n_test": 3230
+        },
+        "length_chars_rule": {
+          "auroc_pooled": 0.6589142683462572,
+          "auroc_grouped_by_conversation": 0.6764320367132868,
+          "n_groups_scored": 200,
+          "train_oriented_sign": -1.0,
+          "train_auroc": 0.36691977101700385
+        },
+        "length_words_rule": {
+          "auroc_pooled": 0.6677568510061538,
+          "auroc_grouped_by_conversation": 0.683903136909387,
+          "n_groups_scored": 200,
+          "train_oriented_sign": -1.0,
+          "train_auroc": 0.3569466739710204
+        },
+        "keyword_count_rule": {
+          "auroc_pooled": 0.49375708768811105,
+          "auroc_grouped_by_conversation": 0.4940253246753247,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.5002525204267101
+        },
+        "rule_conversation_overlap": {
+          "auroc_pooled": 0.7153060859615247,
+          "auroc_grouped_by_conversation": 0.7582750892625892,
+          "n_groups_scored": 200,
+          "train_oriented_sign": -1.0,
+          "train_auroc": 0.2895047690635139
+        }
+      },
+      "perm_null_tfidf": {
+        "aurocs": [
+          0.5024136451405278,
+          0.5039210027141802,
+          0.5033105675939832,
+          0.5027716478853574,
+          0.49938913919282946
+        ],
+        "mean": 0.5023612005053757
+      },
+      "oracle_rule_type_metadata": {
+        "auroc_pooled": 0.8940677966101696,
+        "note": "DIAGNOSTIC ONLY \u2014 rubric annotation, not model input."
+      }
+    },
+    "L1": {
+      "n_units": 28717,
+      "n_conversations": 1000,
+      "rules_per_conversation": 28.717,
+      "base_rate": {
+        "compliant_not_violated": 22394,
+        "violated": 6323,
+        "frac_violated": 0.22018316676533065
+      },
+      "rule_type_counts": {
+        "distractor": 8380,
+        "decisive": 7734,
+        "conditional": 7040,
+        "exception": 5563
+      },
+      "split_sizes": {
+        "train": 11505,
+        "test": 5742
+      },
+      "baselines": {
+        "tfidf_rule_only": {
+          "auroc_pooled": 0.9015625758708763,
+          "auroc_grouped_by_conversation": 0.9068428266431279,
+          "n_groups_scored": 200,
+          "n_test": 5742
+        },
+        "tfidf_conversation_only": {
+          "auroc_pooled": 0.5073957274819653,
+          "auroc_grouped_by_conversation": 0.5,
+          "n_groups_scored": 200,
+          "n_test": 5742
+        },
+        "tfidf_rule_plus_conversation": {
+          "auroc_pooled": 0.7793115625670423,
+          "auroc_grouped_by_conversation": 0.8466572009878902,
+          "n_groups_scored": 200,
+          "n_test": 5742
+        },
+        "length_chars_rule": {
+          "auroc_pooled": 0.5570498666438299,
+          "auroc_grouped_by_conversation": 0.5465595772163252,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.5637836189321711
+        },
+        "length_words_rule": {
+          "auroc_pooled": 0.5618470690335584,
+          "auroc_grouped_by_conversation": 0.5520558310375503,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.5683972917197232
+        },
+        "keyword_count_rule": {
+          "auroc_pooled": 0.6401867780955096,
+          "auroc_grouped_by_conversation": 0.6384330857301638,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.6369631248246457
+        },
+        "rule_conversation_overlap": {
+          "auroc_pooled": 0.48778067258124747,
+          "auroc_grouped_by_conversation": 0.48217581465836434,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.5031598338364787
+        }
+      },
+      "perm_null_tfidf": {
+        "aurocs": [
+          0.4654802190554975,
+          0.46906163341664603,
+          0.4735137254001789,
+          0.49320417663931854,
+          0.5390135439722217
+        ],
+        "mean": 0.4880546596967726
+      },
+      "oracle_rule_type_metadata": {
+        "auroc_pooled": 0.9031961337746461,
+        "note": "DIAGNOSTIC ONLY \u2014 rubric annotation, not model input."
+      }
+    },
+    "L2": {
+      "n_units": 32924,
+      "n_conversations": 1000,
+      "rules_per_conversation": 32.924,
+      "base_rate": {
+        "compliant_not_violated": 26189,
+        "violated": 6735,
+        "frac_violated": 0.2045620216255619
+      },
+      "rule_type_counts": {
+        "conditional": 9994,
+        "distractor": 8306,
+        "decisive": 7834,
+        "exception": 6790
+      },
+      "split_sizes": {
+        "train": 13200,
+        "test": 6581
+      },
+      "baselines": {
+        "tfidf_rule_only": {
+          "auroc_pooled": 0.903546149891947,
+          "auroc_grouped_by_conversation": 0.9128975945408316,
+          "n_groups_scored": 200,
+          "n_test": 6581
+        },
+        "tfidf_conversation_only": {
+          "auroc_pooled": 0.5305516920853398,
+          "auroc_grouped_by_conversation": 0.5,
+          "n_groups_scored": 200,
+          "n_test": 6581
+        },
+        "tfidf_rule_plus_conversation": {
+          "auroc_pooled": 0.8029900967176072,
+          "auroc_grouped_by_conversation": 0.8709898722491692,
+          "n_groups_scored": 200,
+          "n_test": 6581
+        },
+        "length_chars_rule": {
+          "auroc_pooled": 0.6447168787898064,
+          "auroc_grouped_by_conversation": 0.63776419644202,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.6531892926743569
+        },
+        "length_words_rule": {
+          "auroc_pooled": 0.6463791499830658,
+          "auroc_grouped_by_conversation": 0.6357690179873419,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.6551440479975061
+        },
+        "keyword_count_rule": {
+          "auroc_pooled": 0.7143807626117707,
+          "auroc_grouped_by_conversation": 0.7144128269288131,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.7183808150875471
+        },
+        "rule_conversation_overlap": {
+          "auroc_pooled": 0.6120981823829197,
+          "auroc_grouped_by_conversation": 0.6135669171216683,
+          "n_groups_scored": 200,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.6232869626325008
+        }
+      },
+      "perm_null_tfidf": {
+        "aurocs": [
+          0.4702375733319121,
+          0.5341690750078654,
+          0.48983897782033803,
+          0.49391181087200575,
+          0.5155904633700044
+        ],
+        "mean": 0.5007495800804251
+      },
+      "oracle_rule_type_metadata": {
+        "auroc_pooled": 0.9128944822768438,
+        "note": "DIAGNOSTIC ONLY \u2014 rubric annotation, not model input."
+      }
+    }
+  },
+  "matched_pair_test": {
+    "n_conversation_rule_pairs": 61641,
+    "n_pairs_with_both_labels_across_levels": 4023,
+    "explanation": "These pairs share an identical conversation AND identical rule text but carry opposite labels at different levels \u2014 the label flips purely because of rule INTERACTIONS (waivers/tightenings) introduced by the level. Any feature computed from (conversation, rule_text) alone assigns both members the same score and is therefore EXACTLY at chance on this contrast, by construction. This is an analytic fact, not an empirical estimate."
+  },
+  "conversation_identical_across_levels": true,
+  "provenance": {
+    "model": "n/a (lexical/CPU gauntlet)",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T03:58:55.192453+05:30",
+    "script": "scripts/run_benchmark2_gauntlet.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "pandas": "3.0.3",
+      "python": "3.12.12"
+    },
+    "max_length": "n/a (no model)",
+    "pooling": "n/a (no model)",
+    "gpu": 0,
+    "orientation": "label 1 = COMPLIANT, score higher = COMPLIANT; every AUROC asserted against sklearn.roc_auc_score to 1e-9",
+    "tfidf_protocol": "TfidfVectorizer(ngram_range=(1,1)) + LogisticRegression(max_iter=1000); fit on train, eval on test; identical to scripts/run_trivial_gauntlet.py"
+  }
+}

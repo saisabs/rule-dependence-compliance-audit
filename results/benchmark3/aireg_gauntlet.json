@@ -1,0 +1,353 @@
+{
+  "benchmark": "AIReg-Bench",
+  "n_docs": 300,
+  "unit": "documentation excerpt (.txt file)",
+  "grouping": "group = (use, system); system outlines are shared across the 5 articles, so a row-level split would leak the same fictional system across train/test. 20 group keys, three_way_split(20, 42).",
+  "structure": "5 articles x 10 uses x 2 systems x 3 profiles (Compliance / Violation_1 / Violation_2)",
+  "tracks": {
+    "expert": {
+      "label": "median human compliance score > 3 (120-excerpt expert subset; PRIMARY)",
+      "n": 120,
+      "base_rate": {
+        "compliant": 44,
+        "violating": 76,
+        "frac_compliant": 0.36666666666666664
+      },
+      "split_sizes": {
+        "train": 30,
+        "val_layer": 45,
+        "val_thresh": 15,
+        "test": 30
+      },
+      "train_class_counts": {
+        "0": 19,
+        "1": 11
+      },
+      "test_class_counts": {
+        "0": 19,
+        "1": 11
+      },
+      "baselines": {
+        "tfidf_doc_only": {
+          "auroc": 0.9569377990430621,
+          "auroc_grouped_by_system": 0.9537037037037037,
+          "n_groups_scored": 2,
+          "n_test": 30,
+          "ci95_boot_by_system": [
+            0.9074074074074074,
+            1.0
+          ]
+        },
+        "tfidf_article_only": {
+          "auroc": 0.5,
+          "auroc_grouped_by_system": 0.5,
+          "n_groups_scored": 2,
+          "n_test": 30,
+          "ci95_boot_by_system": [
+            0.49999999999999994,
+            0.5
+          ]
+        },
+        "tfidf_article_plus_doc": {
+          "auroc": 0.8325358851674641,
+          "auroc_grouped_by_system": 0.8581481481481482,
+          "n_groups_scored": 2,
+          "n_test": 30,
+          "ci95_boot_by_system": [
+            0.7962962962962964,
+            0.92
+          ]
+        },
+        "length_chars_doc": {
+          "auroc": 0.7033492822966507,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.6842105263157895,
+          "n_test": 30
+        },
+        "length_words_doc": {
+          "auroc": 0.6746411483253589,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.6578947368421053,
+          "n_test": 30
+        },
+        "keyword_count_doc": {
+          "auroc": 0.42822966507177035,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.5933014354066986,
+          "n_test": 30
+        },
+        "article_doc_overlap": {
+          "auroc": 0.6746411483253588,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.6220095693779906,
+          "n_test": 30
+        }
+      },
+      "perm_null_tfidf": {
+        "aurocs": [
+          0.6650717703349283,
+          0.6555023923444976,
+          0.49282296650717705,
+          0.3732057416267943,
+          0.4019138755980861
+        ],
+        "mean": 0.5177033492822967
+      },
+      "tfidf_doc_only_cv5_grouped_by_system": {
+        "mean": 0.9752877648667123,
+        "std": 0.020549268871473625,
+        "folds": [
+          0.96,
+          1.0,
+          0.9521531100478469,
+          0.9642857142857143,
+          1.0
+        ]
+      },
+      "tfidf_doc_only_cv5_ungrouped_stratified": {
+        "mean": 0.9354050925925925,
+        "std": 0.03149272164536388,
+        "folds": [
+          0.9851851851851852,
+          0.925925925925926,
+          0.9555555555555555,
+          0.8962962962962964,
+          0.9140625
+        ]
+      },
+      "per_article_tfidf_doc_only": {
+        "Article9": {
+          "auroc": 0.7777777777777778,
+          "n": 6,
+          "p_perm": 0.1955,
+          "p_perm_exact": "391/2000",
+          "bh_threshold_exact": "1/20",
+          "significant_bh_0.05": false
+        },
+        "Article10": {
+          "auroc": 1.0,
+          "n": 6,
+          "p_perm": 0.0665,
+          "p_perm_exact": "133/2000",
+          "bh_threshold_exact": "1/100",
+          "significant_bh_0.05": false
+        },
+        "Article12": {
+          "auroc": 1.0,
+          "n": 6,
+          "p_perm": 0.0665,
+          "p_perm_exact": "133/2000",
+          "bh_threshold_exact": "1/50",
+          "significant_bh_0.05": false
+        },
+        "Article14": {
+          "auroc": 1.0,
+          "n": 6,
+          "p_perm": 0.0665,
+          "p_perm_exact": "133/2000",
+          "bh_threshold_exact": "3/100",
+          "significant_bh_0.05": false
+        },
+        "Article15": {
+          "auroc": 1.0,
+          "n": 6,
+          "p_perm": 0.0665,
+          "p_perm_exact": "133/2000",
+          "bh_threshold_exact": "1/25",
+          "significant_bh_0.05": false
+        }
+      }
+    },
+    "construction": {
+      "label": "profile == Compliance (filename/construction label; SEMI-CIRCULAR \u2014 different files from different prompts)",
+      "n": 300,
+      "base_rate": {
+        "compliant": 100,
+        "violating": 200,
+        "frac_compliant": 0.3333333333333333
+      },
+      "split_sizes": {
+        "train": 120,
+        "val_layer": 60,
+        "val_thresh": 60,
+        "test": 60
+      },
+      "train_class_counts": {
+        "0": 80,
+        "1": 40
+      },
+      "test_class_counts": {
+        "0": 40,
+        "1": 20
+      },
+      "baselines": {
+        "tfidf_doc_only": {
+          "auroc": 1.0,
+          "auroc_grouped_by_system": 1.0,
+          "n_groups_scored": 4,
+          "n_test": 60,
+          "ci95_boot_by_system": [
+            1.0,
+            1.0
+          ]
+        },
+        "tfidf_article_only": {
+          "auroc": 0.5,
+          "auroc_grouped_by_system": 0.5,
+          "n_groups_scored": 4,
+          "n_test": 60,
+          "ci95_boot_by_system": [
+            0.5,
+            0.5
+          ]
+        },
+        "tfidf_article_plus_doc": {
+          "auroc": 0.99875,
+          "auroc_grouped_by_system": 0.995,
+          "n_groups_scored": 4,
+          "n_test": 60,
+          "ci95_boot_by_system": [
+            0.98875,
+            1.0
+          ]
+        },
+        "length_chars_doc": {
+          "auroc": 0.61875,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.60265625,
+          "n_test": 60
+        },
+        "length_words_doc": {
+          "auroc": 0.5993750000000001,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.58703125,
+          "n_test": 60
+        },
+        "keyword_count_doc": {
+          "auroc": 0.43374999999999997,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.57078125,
+          "n_test": 60
+        },
+        "article_doc_overlap": {
+          "auroc": 0.61375,
+          "train_oriented_sign": 1.0,
+          "train_auroc": 0.6034375000000001,
+          "n_test": 60
+        }
+      },
+      "perm_null_tfidf": {
+        "aurocs": [
+          0.43125,
+          0.6287499999999999,
+          0.55125,
+          0.4225,
+          0.49875
+        ],
+        "mean": 0.5065
+      },
+      "tfidf_doc_only_cv5_grouped_by_system": {
+        "mean": 0.99725,
+        "std": 0.0024238399287081656,
+        "folds": [
+          0.99875,
+          0.995,
+          0.99375,
+          0.99875,
+          1.0
+        ]
+      },
+      "tfidf_doc_only_cv5_ungrouped_stratified": {
+        "mean": 0.99475,
+        "std": 0.002000000000000024,
+        "folds": [
+          0.9974999999999999,
+          0.9962500000000001,
+          0.9924999999999999,
+          0.9924999999999999,
+          0.995
+        ]
+      },
+      "per_article_tfidf_doc_only": {
+        "Article9": {
+          "auroc": 1.0,
+          "n": 12,
+          "p_perm": 0.001,
+          "p_perm_exact": "1/1000",
+          "bh_threshold_exact": "1/100",
+          "significant_bh_0.05": true
+        },
+        "Article10": {
+          "auroc": 1.0,
+          "n": 12,
+          "p_perm": 0.001,
+          "p_perm_exact": "1/1000",
+          "bh_threshold_exact": "1/50",
+          "significant_bh_0.05": true
+        },
+        "Article12": {
+          "auroc": 1.0,
+          "n": 12,
+          "p_perm": 0.001,
+          "p_perm_exact": "1/1000",
+          "bh_threshold_exact": "3/100",
+          "significant_bh_0.05": true
+        },
+        "Article14": {
+          "auroc": 1.0,
+          "n": 12,
+          "p_perm": 0.001,
+          "p_perm_exact": "1/1000",
+          "bh_threshold_exact": "1/25",
+          "significant_bh_0.05": true
+        },
+        "Article15": {
+          "auroc": 1.0,
+          "n": 12,
+          "p_perm": 0.001,
+          "p_perm_exact": "1/1000",
+          "bh_threshold_exact": "1/20",
+          "significant_bh_0.05": true
+        }
+      }
+    }
+  },
+  "expert_construction_agreement": 0.95,
+  "human_compliance_means_by_profile": {
+    "Compliance": 4.675,
+    "Violation_1": 1.65,
+    "Violation_2": 1.75
+  },
+  "provenance": {
+    "model": "n/a (lexical/CPU gauntlet)",
+    "seed": 42,
+    "git_commit": "2e7aa27537c7673fe8c69b143278d92027f85c27",
+    "timestamp": "2026-07-17T10:52:02.144672+05:30",
+    "script": "scripts/run_benchmark3_gauntlet.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "pandas": "3.0.3",
+      "python": "3.12.12"
+    },
+    "max_length": "n/a (no model)",
+    "gpu": 0,
+    "orientation": "label 1 = COMPLIANT, score higher = COMPLIANT; every AUROC asserted against sklearn.roc_auc_score to 1e-9",
+    "tfidf_protocol": "TfidfVectorizer(ngram_range=(1,1)) + LogisticRegression(max_iter=1000); fit on train, eval on test; identical to E-B2",
+    "datasets": {
+      "aireg_hf_repo": "camlsys/AIReg-Bench",
+      "aireg_hf_revision": "c656725c22568ef5fa489ea3940d3b6d7ff4b2ff",
+      "aireg_hf_license": "cc-by-4.0",
+      "aireg_github": "https://github.com/camlsys/aireg-bench",
+      "aireg_github_commit": "846d5cc075ad424a2d31dd20e34a7c5fe836f157",
+      "aireg_note": "HF repo lacks the 300 documentation .txt files described in its own README; texts taken from the official GitHub repo.",
+      "complibench_hf": "NOT ON HF HUB (search 'CompliBench', 0 repos, 2026-07-17)",
+      "complibench_github": "https://github.com/UCSB-NLP-Chang/CompliBench",
+      "complibench_github_commit": "593543022f67914e7ec9a312b7fa39c8a75e508a",
+      "complibench_license": "Apache-2.0",
+      "flexbench_hf_repo": "Tommy-DING/FlexBench",
+      "flexbench_hf_revision": "8f73c40bc3f2c272af8ee8d33a4003029ba4282a",
+      "flexbench_hf_license": "apache-2.0"
+    }
+  }
+}

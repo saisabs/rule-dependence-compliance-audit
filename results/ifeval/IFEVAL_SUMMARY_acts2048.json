@@ -1,0 +1,776 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:06:08.972663+05:30",
+    "script": "scripts/run_ifeval_probe.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "torch": "2.11.0+cu130",
+      "transformers": "5.14.1",
+      "python": "3.12.12"
+    },
+    "split_fractions": {
+      "train": 0.4,
+      "val_layer": 0.2,
+      "val_thresh": 0.2,
+      "test": 0.2
+    },
+    "max_length": 512,
+    "max_length_variant_used": "acts2048",
+    "pooling": "last_token",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0",
+    "verifier": "google-research/instruction_following_eval via lm_eval.tasks.ifeval"
+  },
+  "label_convention": "AUROC for detecting VIOLATION (higher score = violation). Probe fit higher=compliant then negated.",
+  "deviations": {
+    "bootstrap": "two-sample stratified (IFEval has NO pairs) \u2014 deviation from the paired-bootstrap brief",
+    "split": "three_way_split applied to UNIQUE PROMPT KEYS, not instances: 33 prompts carry 2-3 same-category instructions sharing one activation vector; instance-level splitting would leak"
+  },
+  "floor_policy": {
+    "honest_floors": [
+      "tfidf",
+      "length_char",
+      "keyword",
+      "format_feats",
+      "refusal_dir",
+      "yesno"
+    ],
+    "excluded_tautological": [
+      "format_oracle"
+    ],
+    "why": "format_oracle is kwargs-aware and re-derives the verifier's arithmetic; beating it is impossible by construction. It is a CEILING measuring how mechanically form-determined the label is."
+  },
+  "truncation": {
+    "max_length": 512,
+    "n_truncated": 180,
+    "rate": 0.33271719038817005,
+    "n_truncated_at_2048": 43
+  },
+  "refusal_direction_check": {
+    "raw": {
+      "max_abs_norm_diff_vs_receipt": 0.0,
+      "receipt": "results/rebuild/floors/refusal_dir_ccpa_seed42.json",
+      "identical": true
+    },
+    "chat": {
+      "max_abs_norm_diff_vs_receipt": 0.0,
+      "receipt": "results/rebuild/floors/refusal_dir_ccpa_seed42.json",
+      "identical": true
+    }
+  },
+  "n_categories_kept": 7,
+  "n_categories_dropped": 2,
+  "dropped": [
+    {
+      "category": "combination",
+      "n": 65,
+      "n_compliant": 10,
+      "n_violating": 55,
+      "reason": "test minority class 2 < 3",
+      "class_counts": {
+        "train": {
+          "n": 26,
+          "n_viol": 22,
+          "n_comp": 4
+        },
+        "val_layer": {
+          "n": 13,
+          "n_viol": 10,
+          "n_comp": 3
+        },
+        "val_thresh": {
+          "n": 13,
+          "n_viol": 12,
+          "n_comp": 1
+        },
+        "test": {
+          "n": 13,
+          "n_viol": 11,
+          "n_comp": 2
+        }
+      }
+    },
+    {
+      "category": "language",
+      "n": 31,
+      "n_compliant": 25,
+      "n_violating": 6,
+      "reason": "slice(s) ['val_layer'] single-class",
+      "class_counts": {
+        "train": {
+          "n": 12,
+          "n_viol": 4,
+          "n_comp": 8
+        },
+        "val_layer": {
+          "n": 6,
+          "n_viol": 0,
+          "n_comp": 6
+        },
+        "val_thresh": {
+          "n": 6,
+          "n_viol": 1,
+          "n_comp": 5
+        },
+        "test": {
+          "n": 7,
+          "n_viol": 1,
+          "n_comp": 6
+        }
+      }
+    }
+  ],
+  "pooled_prompt_level": {
+    "category": "ALL_PROMPTS_pooled",
+    "n": 541,
+    "n_unique_keys": 541,
+    "n_test": 109,
+    "n_test_violating": 52,
+    "n_test_compliant": 57,
+    "n_test_pairs": 2964,
+    "label": "strict",
+    "acts": "acts2048",
+    "probe": 0.6383265856950068,
+    "probe_anchor_layer": 14,
+    "probe_val_layer_auroc": 0.6044880785413744,
+    "probe_threshold_val_thresh": 1.452066421508789,
+    "probe_f1_test": 0.5625,
+    "floors": {
+      "tfidf": 0.4875168690958165,
+      "length_char": 0.5087719298245614,
+      "keyword": 0.5382928475033738,
+      "format_feats": 0.5890688259109311,
+      "refusal_dir": 0.5668016194331984,
+      "yesno": 0.5148448043184886
+    },
+    "tfidf_note": null,
+    "honest_floor_name": "format_feats",
+    "honest_floor": 0.5890688259109311,
+    "margin_vs_honest_floor": 0.04925775978407565,
+    "ci_lo_honest": -0.07154183535762484,
+    "ci_hi_honest": 0.17513495276653154,
+    "p_honest": 0.471,
+    "margin_vs_tfidf": 0.1508097165991903,
+    "ci_lo_tfidf": 0.007042847503373753,
+    "ci_hi_tfidf": 0.2948717948717949,
+    "p_tfidf": 0.044,
+    "format_oracle_ceiling": null,
+    "oracle_note": "UNDEFINED at the pooled prompt level: the label is a conjunction over several different instructions, so there is no single constraint margin. NOT 'at chance' \u2014 omitted.",
+    "classification": [
+      "mixed"
+    ],
+    "perm_null_probe_mean": 0.49826236011866565,
+    "perm_null_probe_sd": 0.04683823965435367,
+    "perm_null_tfidf_mean": 0.491823447341996,
+    "refusal_selected": {
+      "variant": "chat",
+      "layer": 5,
+      "sign": -1.0
+    },
+    "yesno_selected": {
+      "space": "space",
+      "sign": 1.0
+    },
+    "class_counts": {
+      "train": {
+        "n": 216,
+        "n_viol": 115,
+        "n_comp": 101
+      },
+      "val_layer": {
+        "n": 108,
+        "n_viol": 46,
+        "n_comp": 62
+      },
+      "val_thresh": {
+        "n": 108,
+        "n_viol": 47,
+        "n_comp": 61
+      },
+      "test": {
+        "n": 109,
+        "n_viol": 52,
+        "n_comp": 57
+      }
+    },
+    "ceiling_note": null
+  },
+  "pooled_dropped": null,
+  "results": [
+    {
+      "category": "detectable_format",
+      "n": 157,
+      "n_unique_keys": 155,
+      "n_test": 32,
+      "n_test_violating": 12,
+      "n_test_compliant": 20,
+      "n_test_pairs": 240,
+      "label": "strict",
+      "acts": "acts2048",
+      "probe": 0.7291666666666666,
+      "probe_anchor_layer": 15,
+      "probe_val_layer_auroc": 0.6413043478260869,
+      "probe_threshold_val_thresh": 4.1471757888793945,
+      "probe_f1_test": 0.47058823529411764,
+      "floors": {
+        "tfidf": 0.525,
+        "length_char": 0.39166666666666666,
+        "keyword": 0.575,
+        "format_feats": 0.5833333333333334,
+        "format_oracle": 0.7333333333333333,
+        "refusal_dir": 0.5083333333333333,
+        "yesno": 0.4375
+      },
+      "tfidf_note": null,
+      "honest_floor_name": "format_feats",
+      "honest_floor": 0.5833333333333334,
+      "margin_vs_honest_floor": 0.14583333333333326,
+      "ci_lo_honest": -0.17500000000000004,
+      "ci_hi_honest": 0.4625,
+      "p_honest": 0.361,
+      "margin_vs_tfidf": 0.2041666666666666,
+      "ci_lo_tfidf": -0.06260416666666666,
+      "ci_hi_tfidf": 0.49583333333333335,
+      "p_tfidf": 0.148,
+      "format_oracle_ceiling": 0.7333333333333333,
+      "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+      "classification": [
+        "mixed"
+      ],
+      "perm_null_probe_mean": 0.4973857361941601,
+      "perm_null_probe_sd": 0.1002702998830355,
+      "perm_null_tfidf_mean": 0.5268999585609642,
+      "refusal_selected": {
+        "variant": "chat",
+        "layer": 13,
+        "sign": 1.0
+      },
+      "yesno_selected": {
+        "space": "space",
+        "sign": 1.0
+      },
+      "class_counts": {
+        "train": {
+          "n": 63,
+          "n_viol": 17,
+          "n_comp": 46
+        },
+        "val_layer": {
+          "n": 31,
+          "n_viol": 8,
+          "n_comp": 23
+        },
+        "val_thresh": {
+          "n": 31,
+          "n_viol": 8,
+          "n_comp": 23
+        },
+        "test": {
+          "n": 32,
+          "n_viol": 12,
+          "n_comp": 20
+        }
+      },
+      "ceiling_note": null,
+      "q_honest": 0.5502,
+      "q_tfidf": 0.518,
+      "beats_honest_floor": false,
+      "beats_tfidf": false
+    },
+    {
+      "category": "length_constraints",
+      "n": 143,
+      "n_unique_keys": 133,
+      "n_test": 28,
+      "n_test_violating": 12,
+      "n_test_compliant": 16,
+      "n_test_pairs": 192,
+      "label": "strict",
+      "acts": "acts2048",
+      "probe": 0.7239583333333334,
+      "probe_anchor_layer": 12,
+      "probe_val_layer_auroc": 0.5705128205128205,
+      "probe_threshold_val_thresh": 1.0869290828704834,
+      "probe_f1_test": 0.56,
+      "floors": {
+        "tfidf": 0.5364583333333334,
+        "length_char": 0.4635416666666667,
+        "keyword": 0.4010416666666667,
+        "format_feats": 0.5833333333333334,
+        "format_oracle": 0.7135416666666666,
+        "refusal_dir": 0.484375,
+        "yesno": 0.515625
+      },
+      "tfidf_note": null,
+      "honest_floor_name": "format_feats",
+      "honest_floor": 0.5833333333333334,
+      "margin_vs_honest_floor": 0.140625,
+      "ci_lo_honest": -0.1459635416666667,
+      "ci_hi_honest": 0.44791666666666663,
+      "p_honest": 0.393,
+      "margin_vs_tfidf": 0.1875,
+      "ci_lo_tfidf": -0.109375,
+      "ci_hi_tfidf": 0.4895833333333333,
+      "p_tfidf": 0.235,
+      "format_oracle_ceiling": 0.7135416666666666,
+      "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+      "classification": [
+        "mixed"
+      ],
+      "perm_null_probe_mean": 0.5167819789429696,
+      "perm_null_probe_sd": 0.10618179526707262,
+      "perm_null_tfidf_mean": 0.5043420130520004,
+      "refusal_selected": {
+        "variant": "chat",
+        "layer": 3,
+        "sign": -1.0
+      },
+      "yesno_selected": {
+        "space": "nospace",
+        "sign": 1.0
+      },
+      "class_counts": {
+        "train": {
+          "n": 56,
+          "n_viol": 21,
+          "n_comp": 35
+        },
+        "val_layer": {
+          "n": 31,
+          "n_viol": 13,
+          "n_comp": 18
+        },
+        "val_thresh": {
+          "n": 28,
+          "n_viol": 12,
+          "n_comp": 16
+        },
+        "test": {
+          "n": 28,
+          "n_viol": 12,
+          "n_comp": 16
+        }
+      },
+      "ceiling_note": null,
+      "q_honest": 0.5502,
+      "q_tfidf": 0.5483333333333333,
+      "beats_honest_floor": false,
+      "beats_tfidf": false
+    },
+    {
+      "category": "startend",
+      "n": 67,
+      "n_unique_keys": 66,
+      "n_test": 14,
+      "n_test_violating": 6,
+      "n_test_compliant": 8,
+      "n_test_pairs": 48,
+      "label": "strict",
+      "acts": "acts2048",
+      "probe": 0.9166666666666666,
+      "probe_anchor_layer": 4,
+      "probe_val_layer_auroc": 0.9166666666666666,
+      "probe_threshold_val_thresh": 0.5168007016181946,
+      "probe_f1_test": 0.6666666666666666,
+      "floors": {
+        "tfidf": 0.5833333333333334,
+        "length_char": 0.6875,
+        "keyword": 0.4166666666666667,
+        "format_feats": 0.9583333333333334,
+        "format_oracle": 1.0,
+        "refusal_dir": 0.4583333333333333,
+        "yesno": 0.375
+      },
+      "tfidf_note": null,
+      "honest_floor_name": "format_feats",
+      "honest_floor": 0.9583333333333334,
+      "margin_vs_honest_floor": -0.04166666666666674,
+      "ci_lo_honest": -0.25,
+      "ci_hi_honest": 0.125,
+      "p_honest": 0.78,
+      "margin_vs_tfidf": 0.33333333333333326,
+      "ci_lo_tfidf": 0.0,
+      "ci_hi_tfidf": 0.7083333333333333,
+      "p_tfidf": 0.058,
+      "format_oracle_ceiling": 1.0,
+      "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+      "classification": [
+        "form-shortcut-saturated"
+      ],
+      "perm_null_probe_mean": 0.5041371109049682,
+      "perm_null_probe_sd": 0.17037730618759112,
+      "perm_null_tfidf_mean": 0.5568978045763759,
+      "refusal_selected": {
+        "variant": "chat",
+        "layer": 6,
+        "sign": 1.0
+      },
+      "yesno_selected": {
+        "space": "space",
+        "sign": -1.0
+      },
+      "class_counts": {
+        "train": {
+          "n": 27,
+          "n_viol": 13,
+          "n_comp": 14
+        },
+        "val_layer": {
+          "n": 13,
+          "n_viol": 4,
+          "n_comp": 9
+        },
+        "val_thresh": {
+          "n": 13,
+          "n_viol": 6,
+          "n_comp": 7
+        },
+        "test": {
+          "n": 14,
+          "n_viol": 6,
+          "n_comp": 8
+        }
+      },
+      "ceiling_note": null,
+      "q_honest": 0.78,
+      "q_tfidf": 0.406,
+      "beats_honest_floor": false,
+      "beats_tfidf": false
+    },
+    {
+      "category": "punctuation",
+      "n": 66,
+      "n_unique_keys": 66,
+      "n_test": 14,
+      "n_test_violating": 4,
+      "n_test_compliant": 10,
+      "n_test_pairs": 40,
+      "label": "strict",
+      "acts": "acts2048",
+      "probe": 0.9,
+      "probe_anchor_layer": 4,
+      "probe_val_layer_auroc": 1.0,
+      "probe_threshold_val_thresh": -0.2110608071088791,
+      "probe_f1_test": 0.75,
+      "floors": {
+        "tfidf": 0.95,
+        "length_char": 0.9,
+        "keyword": 0.45,
+        "format_feats": 1.0,
+        "format_oracle": 1.0,
+        "refusal_dir": 0.575,
+        "yesno": 0.575
+      },
+      "tfidf_note": null,
+      "honest_floor_name": "format_feats",
+      "honest_floor": 1.0,
+      "margin_vs_honest_floor": -0.09999999999999998,
+      "ci_lo_honest": -0.375,
+      "ci_hi_honest": 0.0,
+      "p_honest": 0.603,
+      "margin_vs_tfidf": -0.04999999999999993,
+      "ci_lo_tfidf": -0.30000000000000004,
+      "ci_hi_tfidf": 0.15000000000000002,
+      "p_tfidf": 0.958,
+      "format_oracle_ceiling": 1.0,
+      "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+      "classification": [
+        "content-shortcut",
+        "form-shortcut-saturated"
+      ],
+      "perm_null_probe_mean": 0.49075421860747953,
+      "perm_null_probe_sd": 0.18400203961772865,
+      "perm_null_tfidf_mean": 0.46883998354586587,
+      "refusal_selected": {
+        "variant": "chat",
+        "layer": 8,
+        "sign": -1.0
+      },
+      "yesno_selected": {
+        "space": "nospace",
+        "sign": -1.0
+      },
+      "class_counts": {
+        "train": {
+          "n": 26,
+          "n_viol": 4,
+          "n_comp": 22
+        },
+        "val_layer": {
+          "n": 13,
+          "n_viol": 1,
+          "n_comp": 12
+        },
+        "val_thresh": {
+          "n": 13,
+          "n_viol": 3,
+          "n_comp": 10
+        },
+        "test": {
+          "n": 14,
+          "n_viol": 4,
+          "n_comp": 10
+        }
+      },
+      "ceiling_note": null,
+      "q_honest": 0.7035,
+      "q_tfidf": 1.0,
+      "beats_honest_floor": false,
+      "beats_tfidf": false
+    },
+    {
+      "category": "keywords",
+      "n": 163,
+      "n_unique_keys": 148,
+      "n_test": 34,
+      "n_test_violating": 10,
+      "n_test_compliant": 24,
+      "n_test_pairs": 240,
+      "label": "strict",
+      "acts": "acts2048",
+      "probe": 0.5354166666666667,
+      "probe_anchor_layer": 3,
+      "probe_val_layer_auroc": 0.7916666666666666,
+      "probe_threshold_val_thresh": -0.5953975915908813,
+      "probe_f1_test": 0.375,
+      "floors": {
+        "tfidf": 0.46458333333333335,
+        "length_char": 0.3770833333333333,
+        "keyword": 0.5,
+        "format_feats": 0.7479166666666667,
+        "format_oracle": 0.8208333333333333,
+        "refusal_dir": 0.47708333333333336,
+        "yesno": 0.5041666666666667
+      },
+      "tfidf_note": null,
+      "honest_floor_name": "format_feats",
+      "honest_floor": 0.7479166666666667,
+      "margin_vs_honest_floor": -0.21250000000000002,
+      "ci_lo_honest": -0.5083333333333333,
+      "ci_hi_honest": 0.08749999999999991,
+      "p_honest": 0.168,
+      "margin_vs_tfidf": 0.0708333333333333,
+      "ci_lo_tfidf": -0.30833333333333335,
+      "ci_hi_tfidf": 0.425,
+      "p_tfidf": 0.7,
+      "format_oracle_ceiling": 0.8208333333333333,
+      "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+      "classification": [
+        "mixed"
+      ],
+      "perm_null_probe_mean": 0.48615007379084074,
+      "perm_null_probe_sd": 0.11578144462333825,
+      "perm_null_tfidf_mean": 0.4983420579547582,
+      "refusal_selected": {
+        "variant": "chat",
+        "layer": 16,
+        "sign": 1.0
+      },
+      "yesno_selected": {
+        "space": "space",
+        "sign": -1.0
+      },
+      "class_counts": {
+        "train": {
+          "n": 66,
+          "n_viol": 21,
+          "n_comp": 45
+        },
+        "val_layer": {
+          "n": 30,
+          "n_viol": 12,
+          "n_comp": 18
+        },
+        "val_thresh": {
+          "n": 33,
+          "n_viol": 8,
+          "n_comp": 25
+        },
+        "test": {
+          "n": 34,
+          "n_viol": 10,
+          "n_comp": 24
+        }
+      },
+      "ceiling_note": null,
+      "q_honest": 0.45733333333333337,
+      "q_tfidf": 0.9799999999999999,
+      "beats_honest_floor": false,
+      "beats_tfidf": false
+    },
+    {
+      "category": "change_case",
+      "n": 89,
+      "n_unique_keys": 84,
+      "n_test": 19,
+      "n_test_violating": 7,
+      "n_test_compliant": 12,
+      "n_test_pairs": 84,
+      "label": "strict",
+      "acts": "acts2048",
+      "probe": 0.5238095238095238,
+      "probe_anchor_layer": 2,
+      "probe_val_layer_auroc": 0.6339285714285714,
+      "probe_threshold_val_thresh": 0.38874560594558716,
+      "probe_f1_test": 0.47058823529411764,
+      "floors": {
+        "tfidf": 0.39285714285714285,
+        "length_char": 0.7619047619047619,
+        "keyword": 0.4583333333333333,
+        "format_feats": 0.35714285714285715,
+        "format_oracle": 0.8928571428571429,
+        "refusal_dir": 0.35714285714285715,
+        "yesno": 0.6190476190476191
+      },
+      "tfidf_note": null,
+      "honest_floor_name": "length_char",
+      "honest_floor": 0.7619047619047619,
+      "margin_vs_honest_floor": -0.23809523809523803,
+      "ci_lo_honest": -0.5595238095238095,
+      "ci_hi_honest": 0.11904761904761907,
+      "p_honest": 0.196,
+      "margin_vs_tfidf": 0.130952380952381,
+      "ci_lo_tfidf": -0.29791666666666666,
+      "ci_hi_tfidf": 0.5714285714285714,
+      "p_tfidf": 0.55,
+      "format_oracle_ceiling": 0.8928571428571429,
+      "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+      "classification": [
+        "mixed"
+      ],
+      "perm_null_probe_mean": 0.5102942612942614,
+      "perm_null_probe_sd": 0.16637211524886586,
+      "perm_null_tfidf_mean": 0.49634240759240766,
+      "refusal_selected": {
+        "variant": "raw",
+        "layer": 10,
+        "sign": 1.0
+      },
+      "yesno_selected": {
+        "space": "space",
+        "sign": 1.0
+      },
+      "class_counts": {
+        "train": {
+          "n": 35,
+          "n_viol": 11,
+          "n_comp": 24
+        },
+        "val_layer": {
+          "n": 18,
+          "n_viol": 4,
+          "n_comp": 14
+        },
+        "val_thresh": {
+          "n": 17,
+          "n_viol": 7,
+          "n_comp": 10
+        },
+        "test": {
+          "n": 19,
+          "n_viol": 7,
+          "n_comp": 12
+        }
+      },
+      "ceiling_note": null,
+      "q_honest": 0.45733333333333337,
+      "q_tfidf": 0.9625000000000001,
+      "beats_honest_floor": false,
+      "beats_tfidf": false
+    },
+    {
+      "category": "detectable_content",
+      "n": 53,
+      "n_unique_keys": 52,
+      "n_test": 12,
+      "n_test_violating": 4,
+      "n_test_compliant": 8,
+      "n_test_pairs": 32,
+      "label": "strict",
+      "acts": "acts2048",
+      "probe": 0.5625,
+      "probe_anchor_layer": 1,
+      "probe_val_layer_auroc": 0.5714285714285714,
+      "probe_threshold_val_thresh": -0.3340890109539032,
+      "probe_f1_test": 0.5714285714285714,
+      "floors": {
+        "tfidf": 0.5625,
+        "length_char": 0.59375,
+        "keyword": 0.375,
+        "format_feats": 0.9375,
+        "format_oracle": 1.0,
+        "refusal_dir": 0.21875,
+        "yesno": 0.53125
+      },
+      "tfidf_note": null,
+      "honest_floor_name": "format_feats",
+      "honest_floor": 0.9375,
+      "margin_vs_honest_floor": -0.375,
+      "ci_lo_honest": -0.8125,
+      "ci_hi_honest": 0.0625,
+      "p_honest": 0.106,
+      "margin_vs_tfidf": 0.0,
+      "ci_lo_tfidf": -0.53125,
+      "ci_hi_tfidf": 0.53125,
+      "p_tfidf": 1.0,
+      "format_oracle_ceiling": 1.0,
+      "oracle_note": "TAUTOLOGICAL: kwargs-aware re-derivation of the verifier's arithmetic. Excluded from both bars by construction.",
+      "classification": [
+        "form-shortcut-saturated"
+      ],
+      "perm_null_probe_mean": 0.5023472017673049,
+      "perm_null_probe_sd": 0.18219442584970819,
+      "perm_null_tfidf_mean": 0.4814188011063011,
+      "refusal_selected": {
+        "variant": "chat",
+        "layer": 16,
+        "sign": -1.0
+      },
+      "yesno_selected": {
+        "space": "space",
+        "sign": 1.0
+      },
+      "class_counts": {
+        "train": {
+          "n": 21,
+          "n_viol": 6,
+          "n_comp": 15
+        },
+        "val_layer": {
+          "n": 10,
+          "n_viol": 3,
+          "n_comp": 7
+        },
+        "val_thresh": {
+          "n": 10,
+          "n_viol": 2,
+          "n_comp": 8
+        },
+        "test": {
+          "n": 12,
+          "n_viol": 4,
+          "n_comp": 8
+        }
+      },
+      "ceiling_note": null,
+      "q_honest": 0.45733333333333337,
+      "q_tfidf": 1.0,
+      "beats_honest_floor": false,
+      "beats_tfidf": false
+    }
+  ]
+}

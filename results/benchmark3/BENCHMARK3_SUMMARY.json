@@ -1,0 +1,168 @@
+{
+  "aireg_bench": {
+    "acquired": "camlsys/AIReg-Bench @ c656725c22568ef5fa489ea3940d3b6d7ff4b2ff",
+    "hf_gap_note": "HF repo lacks the 300 documentation .txt files described in its own README; texts taken from the official GitHub repo.",
+    "n_expert": 120,
+    "n_construction": 300,
+    "base_rate_expert_frac_compliant": 0.36666666666666664,
+    "unit_grouping": "group = (use, system); system outlines are shared across the 5 articles, so a row-level split would leak the same fictional system across train/test. 20 group keys, three_way_split(20, 42).",
+    "gauntlet_expert": {
+      "tfidf_doc_only": 0.9569377990430621,
+      "tfidf_article_only": 0.5,
+      "tfidf_article_plus_doc": 0.8325358851674641,
+      "length_chars_doc": 0.7033492822966507,
+      "length_words_doc": 0.6746411483253589,
+      "keyword_count_doc": 0.42822966507177035,
+      "article_doc_overlap": 0.6746411483253588
+    },
+    "gauntlet_expert_cv5_grouped": 0.9752877648667123,
+    "gauntlet_construction_tfidf_doc_only": 1.0,
+    "perm_null_expert": 0.5177033492822967,
+    "directions_primary_rule_last_2048": {
+      "expert": {
+        "probe": 0.9425837320574163,
+        "probe_grouped": 0.952962962962963,
+        "refusal": 0.7464114832535885
+      },
+      "construction": {
+        "probe": 1.0,
+        "probe_grouped": 1.0,
+        "refusal": 0.755
+      }
+    },
+    "directions_secondary_512": {
+      "expert": {
+        "probe": 0.8660287081339713,
+        "refusal": 0.8181818181818182
+      },
+      "construction": {
+        "probe": 0.95875,
+        "refusal": 0.8400000000000001
+      }
+    },
+    "verdict": "DEGENERATE on the expert-annotated track (tfidf_doc_only 0.957 split / 0.975 grouped 5-fold CV; construction track a perfect 1.000). Probe (0.943 @2048) sits AT but does NOT clear the lexical floor; refusal direction well below (0.746). NOT the second clean testbed \u2014 the provenance-clean, expert-annotated benchmark is still lexically shortcut-able, exactly the outcome-first-synthesis mechanism the paper names."
+  },
+  "complibench": {
+    "acquired": "https://github.com/UCSB-NLP-Chang/CompliBench @ 593543022f67914e7ec9a312b7fa39c8a75e508a (NOT on HF hub; search receipt in provenance)",
+    "n_units": 2713,
+    "base_rate_frac_violating": 0.3059343899741983,
+    "unit_grouping": "conversation (turns share dialogue text); three_way_split over sorted conversation ids",
+    "gauntlet": {
+      "tfidf_turn_only": 0.8791861173127663,
+      "tfidf_guideline_only": 0.9899364048440565,
+      "tfidf_guideline_plus_turn": 0.9808537987957513,
+      "tfidf_guideline_fair_only": 0.5758152357756579,
+      "tfidf_guideline_fair_plus_turn": 0.8371219809214532,
+      "length_chars_turn": 0.5405503687165957,
+      "length_words_turn": 0.5579713821798254,
+      "keyword_count_turn": 0.49604221635883905,
+      "guideline_turn_overlap": 0.5218439212502537
+    },
+    "guideline_metadata_leak": {
+      "n_turns_with_modified_guideline": 825,
+      "n_violating_turns": 830,
+      "n_violating_turns_with_modified_guideline": 823,
+      "n_compliant_turns_with_modified_guideline": 2,
+      "note": "guideline_text == mistakes[].guideline (the modified, violation-inducing directive) on violating turns; the modified text is NOT present in assistant_guidelines, so tfidf_guideline_only is a CONSTRUCTION-METADATA ORACLE, not judge-input degeneracy. The fair arms are the honest rule-aware floors."
+    },
+    "perm_null": 0.487013733847507,
+    "directions_primary_rule_last_1024": {
+      "probe": 0.7004093092483593,
+      "probe_grouped": 0.7143880305518236,
+      "refusal": 0.578834314322441
+    },
+    "directions_secondary_512": {
+      "probe": 0.7147351329409377,
+      "refusal": 0.5903693931398417
+    }
+  },
+  "flexbench": {
+    "acquired": "Tommy-DING/FlexBench @ 8f73c40bc3f2c272af8ee8d33a4003029ba4282a",
+    "strictness_axis": "materialized: 5-tier severity with label_strict/moderate/loose = deterministic severity thresholds",
+    "tracks": {
+      "prompt": {
+        "n_units": 2311,
+        "per_strictness": {
+          "strict": {
+            "frac_flagged": 0.2591951536131545,
+            "tfidf": 0.7332596413657578,
+            "length_words": 0.6477646769835421,
+            "probe_512": 0.7252763448784083,
+            "refusal_512": 0.7304839105870794,
+            "probe_1024": 0.7302382706951609,
+            "refusal_1024": 0.7314664701547532
+          },
+          "moderate": {
+            "frac_flagged": 0.36996971008221546,
+            "tfidf": 0.6838375039594553,
+            "length_words": 0.593492635413367,
+            "probe_512": 0.6940924928729807,
+            "refusal_512": 0.7295494140006336,
+            "probe_1024": 0.6963889768767817,
+            "refusal_1024": 0.7289356984478936
+          },
+          "loose": {
+            "frac_flagged": 0.4963219385547382,
+            "tfidf": 0.7079628661087866,
+            "length_words": 0.5960381799163179,
+            "probe_512": 0.72289674237896,
+            "refusal_512": 0.7315824865511057,
+            "probe_1024": 0.7261842498505677,
+            "refusal_1024": 0.7310034369396294
+          }
+        }
+      },
+      "response": {
+        "n_units": 2278,
+        "per_strictness": {
+          "strict": {
+            "frac_flagged": 0.21949078138718173,
+            "tfidf": 0.8017994255905281,
+            "length_words": 0.660482972862083,
+            "probe_512": 0.8320731492878495,
+            "refusal_512": 0.6646445108727507,
+            "probe_1024": 0.8289666490827033,
+            "refusal_1024": 0.6625637418674168
+          },
+          "moderate": {
+            "frac_flagged": 0.34416154521510095,
+            "tfidf": 0.8021883289124668,
+            "length_words": 0.6059792219274979,
+            "probe_512": 0.8238284703801946,
+            "refusal_512": 0.6824049513704686,
+            "probe_1024": 0.8199823165340407,
+            "refusal_1024": 0.6737842617152963
+          },
+          "loose": {
+            "frac_flagged": 0.4749780509218613,
+            "tfidf": 0.7528498427672956,
+            "length_words": 0.5646029874213836,
+            "probe_512": 0.729127358490566,
+            "refusal_512": 0.6763757861635221,
+            "probe_1024": 0.7354756289308175,
+            "refusal_1024": 0.6737617924528303
+          }
+        }
+      }
+    }
+  },
+  "compass": "YES \u2014 EXISTS. Stays in FINAL_PLAN.",
+  "provenance": {
+    "seed": 42,
+    "git_commit": "2e7aa27537c7673fe8c69b143278d92027f85c27",
+    "timestamp": "2026-07-17T10:52:57.995302+05:30",
+    "script": "scripts/summarize_benchmark3.py",
+    "gpu": 0,
+    "orientation": "label 1 = COMPLIANT, higher = COMPLIANT throughout; AUROCs asserted vs sklearn to 1e-9"
+  },
+  "files": [
+    "BENCHMARK3_SUMMARY.json",
+    "aireg_directions.json",
+    "aireg_gauntlet.json",
+    "compass_existence.json",
+    "complibench_directions.json",
+    "complibench_gauntlet.json",
+    "flexbench_directions.json",
+    "flexbench_gauntlet.json"
+  ]
+}

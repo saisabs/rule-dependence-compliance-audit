@@ -1,0 +1,563 @@
+{
+  "domain": "foundation_rights",
+  "seed": 42,
+  "n_use": 500,
+  "n_test": 100,
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "model_slug": "llama-3.1-8b-instruct",
+  "split_check": {
+    "dump_path": "results/rebuild/splits/foundation_rights_seed42_splits.json",
+    "n_use": 500,
+    "rederived_three_way_split_matches": {
+      "train": true,
+      "val_layer": true,
+      "val_thresh": true,
+      "test": true
+    },
+    "match": true
+  },
+  "donor_split_check": {
+    "dump_path": "results/rebuild/splits/policy_github_seed42_splits.json",
+    "n_use": 500,
+    "rederived_three_way_split_matches": {
+      "train": true,
+      "val_layer": true,
+      "val_thresh": true,
+      "test": true
+    },
+    "match": true
+  },
+  "benchmark_structure_verified": {
+    "n_use": 500,
+    "n_distinct_rules_complies": 183,
+    "n_distinct_rules_violates": 184,
+    "pairs_sharing_a_rule": 4,
+    "frac_pairs_sharing_a_rule": 0.008,
+    "derangement_complete": true,
+    "donor_domain_for_wrong_rule": "policy_github",
+    "n_donor_rules": 406,
+    "wrong_domain_rule_identical_for_both_classes": true
+  },
+  "token_lengths": {
+    "correct": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 113.89,
+        "std": 29.818415450858552,
+        "min": 62,
+        "p25": 90.75,
+        "median": 112.0,
+        "p75": 132.25,
+        "max": 255,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 125.14,
+        "std": 30.79156377971083,
+        "min": 66,
+        "p25": 100.0,
+        "median": 118.5,
+        "p75": 150.25,
+        "max": 215,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 122.881,
+        "std": 33.601024374265734,
+        "min": 49,
+        "p25": 99.0,
+        "median": 118.0,
+        "p75": 142.0,
+        "max": 261,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    },
+    "no_rule": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 80.16,
+        "std": 23.540484277091668,
+        "min": 46,
+        "p25": 64.0,
+        "median": 75.5,
+        "p75": 95.0,
+        "max": 194,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 94.34,
+        "std": 28.046468583406362,
+        "min": 46,
+        "p25": 73.0,
+        "median": 90.0,
+        "p75": 110.0,
+        "max": 168,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 87.952,
+        "std": 29.222349255321685,
+        "min": 32,
+        "p25": 67.0,
+        "median": 83.0,
+        "p75": 104.0,
+        "max": 251,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    },
+    "shuffled_rule": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 113.38,
+        "std": 28.471311877045636,
+        "min": 59,
+        "p25": 94.0,
+        "median": 112.0,
+        "p75": 128.0,
+        "max": 206,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 127.55,
+        "std": 33.88698127600038,
+        "min": 62,
+        "p25": 101.75,
+        "median": 124.5,
+        "p75": 154.0,
+        "max": 207,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 122.881,
+        "std": 35.274393531285554,
+        "min": 44,
+        "p25": 97.0,
+        "median": 118.0,
+        "p75": 145.0,
+        "max": 288,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    },
+    "wrong_domain_rule": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 134.12,
+        "std": 29.309479695143,
+        "min": 75,
+        "p25": 118.5,
+        "median": 132.5,
+        "p75": 151.25,
+        "max": 257,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 148.3,
+        "std": 31.28689821634609,
+        "min": 86,
+        "p25": 127.75,
+        "median": 143.0,
+        "p75": 165.5,
+        "max": 234,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 142.194,
+        "std": 32.49105052164365,
+        "min": 55,
+        "p25": 121.0,
+        "median": 138.0,
+        "p75": 160.0,
+        "max": 284,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    },
+    "rule_only": {
+      "complies": {
+        "n_texts": 100,
+        "mean": 34.45,
+        "std": 17.116293407160324,
+        "min": 7,
+        "p25": 20.0,
+        "median": 32.5,
+        "p75": 48.0,
+        "max": 72,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "violates": {
+        "n_texts": 100,
+        "mean": 31.49,
+        "std": 17.486277476924585,
+        "min": 5,
+        "p25": 17.25,
+        "median": 30.0,
+        "p75": 45.25,
+        "max": 68,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      },
+      "all_slices_pooled": {
+        "n_texts": 1000,
+        "mean": 35.55,
+        "std": 19.15697001093858,
+        "min": 5,
+        "p25": 18.0,
+        "median": 34.0,
+        "p75": 54.0,
+        "max": 72,
+        "n_exceeding_max_length": 0,
+        "frac_exceeding_max_length": 0.0,
+        "max_length": 512
+      }
+    }
+  },
+  "conditions": {
+    "correct": {
+      "anchor_layer": 31,
+      "val_layer_auroc": 0.9014,
+      "auroc": 0.9224,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "receipt_reproduction": {
+        "receipt_path": "results/rebuild/models/llama-3.1-8b-instruct/omni_ablated_foundation_rights_seed42.json",
+        "receipt_probe_raw_auroc": 0.9224000000000001,
+        "rederived_auroc": 0.9224,
+        "abs_diff": 1.1102230246251565e-16,
+        "within_1e-6": true,
+        "receipt_anchor_layer": 31,
+        "rederived_anchor_layer": 31,
+        "anchor_layer_matches": true,
+        "receipt_torch": "2.11.0+cu130",
+        "receipt_transformers": "5.14.1",
+        "note": "soft gate: receipts written under differing transformers versions per model; drift recorded, not aborted; verdict is env-consistent within-run (correct vs the other 4 conditions)."
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.709571,
+        "std": 0.06855731003328529,
+        "p05": 0.60046,
+        "median": 0.70905,
+        "p95": 0.82725,
+        "max": 0.8976
+      },
+      "margin_over_null": 0.21282900000000005,
+      "margin_ci95": [
+        0.17062400000000003,
+        0.24973150000000008
+      ],
+      "tail_p_vs_null": 0.004975124378109453,
+      "tfidf": {
+        "auroc": 0.9024,
+        "null": 0.5,
+        "margin_over_null": 0.4024
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.0,
+        "delta_ci95": [
+          0.0,
+          0.0
+        ],
+        "p_boot": 1.0,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": 0.0,
+        "delta_ci95": [
+          0.0,
+          0.0
+        ],
+        "p_boot": 1.0,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    },
+    "no_rule": {
+      "anchor_layer": 15,
+      "val_layer_auroc": 0.8694,
+      "auroc": 0.9035,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.7216235000000001,
+        "std": 0.06722146679261023,
+        "p05": 0.6225350000000001,
+        "median": 0.7252000000000001,
+        "p95": 0.81838,
+        "max": 0.8974
+      },
+      "margin_over_null": 0.18187649999999989,
+      "margin_ci95": [
+        0.13065649999999987,
+        0.2259789999999999
+      ],
+      "tail_p_vs_null": 0.004975124378109453,
+      "tfidf": {
+        "auroc": 0.9288,
+        "null": 0.5,
+        "margin_over_null": 0.42879999999999996
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.018900000000000028,
+        "delta_ci95": [
+          -0.003599999999999939,
+          0.04699999999999993
+        ],
+        "p_boot": 0.098,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": -0.02639999999999998,
+        "delta_ci95": [
+          -0.04910500000000003,
+          -0.005900000000000016
+        ],
+        "p_boot": 0.01,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    },
+    "shuffled_rule": {
+      "anchor_layer": 31,
+      "val_layer_auroc": 0.9086,
+      "auroc": 0.9299,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.7058834999999999,
+        "std": 0.06866060135004645,
+        "p05": 0.589685,
+        "median": 0.7074,
+        "p95": 0.81325,
+        "max": 0.8837
+      },
+      "margin_over_null": 0.22401650000000006,
+      "margin_ci95": [
+        0.1823090000000001,
+        0.2578165000000001
+      ],
+      "tail_p_vs_null": 0.004975124378109453,
+      "tfidf": {
+        "auroc": 0.9087,
+        "null": 0.5,
+        "margin_over_null": 0.40869999999999995
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": -0.007499999999999951,
+        "delta_ci95": [
+          -0.02090000000000003,
+          0.005899999999999908
+        ],
+        "p_boot": 0.321,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": -0.006299999999999972,
+        "delta_ci95": [
+          -0.04131,
+          0.02680250000000003
+        ],
+        "p_boot": 0.711,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    },
+    "wrong_domain_rule": {
+      "anchor_layer": 32,
+      "val_layer_auroc": 0.8987999999999999,
+      "auroc": 0.9098,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.699118,
+        "std": 0.0697525596376219,
+        "p05": 0.584785,
+        "median": 0.70165,
+        "p95": 0.81251,
+        "max": 0.8688
+      },
+      "margin_over_null": 0.21068200000000004,
+      "margin_ci95": [
+        0.169472,
+        0.2492845
+      ],
+      "tail_p_vs_null": 0.004975124378109453,
+      "tfidf": {
+        "auroc": 0.9148,
+        "null": 0.5,
+        "margin_over_null": 0.41479999999999995
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.012599999999999945,
+        "delta_ci95": [
+          -0.0040025000000000035,
+          0.030002500000000012
+        ],
+        "p_boot": 0.131,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": -0.012399999999999967,
+        "delta_ci95": [
+          -0.037102500000000024,
+          0.011902500000000005
+        ],
+        "p_boot": 0.303,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    },
+    "rule_only": {
+      "anchor_layer": 14,
+      "val_layer_auroc": 0.57165,
+      "auroc": 0.4925,
+      "n_test": 100,
+      "ablation_check": {
+        "dump_ablation_field": "outcome_removed",
+        "n_texts_checked_for_outcome_block": 1000,
+        "n_texts_containing_outcome_block": 0,
+        "n_cases_with_outcome_text_leak_checked50": 0
+      },
+      "null": {
+        "null_name": "probe_budget_layer_argmax_fixed_sign",
+        "n_random_directions": 200,
+        "mean": 0.5075164999999999,
+        "std": 0.040007155331890316,
+        "p05": 0.43888,
+        "median": 0.5065999999999999,
+        "p95": 0.571915,
+        "max": 0.6354
+      },
+      "margin_over_null": -0.015016499999999933,
+      "margin_ci95": [
+        -0.09022399999999992,
+        0.06328725000000003
+      ],
+      "tail_p_vs_null": 0.6417910447761194,
+      "tfidf": {
+        "auroc": 0.5515,
+        "null": 0.5,
+        "margin_over_null": 0.05149999999999999
+      },
+      "paired_vs_correct_probe": {
+        "delta_correct_minus_cond": 0.4299,
+        "delta_ci95": [
+          0.34573125,
+          0.5164
+        ],
+        "p_boot": 0.0005,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      },
+      "paired_vs_correct_tfidf": {
+        "delta_correct_minus_cond": 0.3509,
+        "delta_ci95": [
+          0.2787474999999999,
+          0.4262587499999999
+        ],
+        "p_boot": 0.0005,
+        "B": 2000,
+        "resampling_unit": "test pair (shared indices across all conditions)"
+      }
+    }
+  },
+  "provenance": {
+    "experiment": "E-RULE-MULTI \u2014 does rule-blindness replicate beyond the 1B?",
+    "script": "scripts/run_rule_ablation_multi.py",
+    "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+    "model_slug": "llama-3.1-8b-instruct",
+    "seed": 42,
+    "git_commit": "d611d900cfbe7225729bb8ba08a238f61e87ee5e",
+    "timestamp": "2026-07-18T00:00:49.265197+05:30",
+    "dtype": "bfloat16",
+    "torch_version": "2.11.0+cu130",
+    "transformers_version": "5.12.1",
+    "numpy_version": "2.3.5",
+    "python": "<redacted-path>",
+    "max_length": 512,
+    "extraction": "last_token",
+    "gpu_check": {
+      "pid": 1915471,
+      "gpu0_uuid": "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782",
+      "pid_gpu_uuids": [
+        "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782"
+      ],
+      "cuda_visible_devices": "0",
+      "check": "PASS"
+    },
+    "auroc_matrix_check": {
+      "validated_vs_sklearn": true,
+      "tol": 1e-12,
+      "heavy_tie_case_included": true
+    },
+    "n_random_directions": 200,
+    "B_boot": 2000,
+    "null_rng": "np.random.default_rng(np.random.SeedSequence(42).spawn(20)[sorted(ALL_SPLITS).index(domain)]); one stack of 200 unit directions per domain, SHARED across the 5 conditions",
+    "receipt_source": "results/rebuild/models/llama-3.1-8b-instruct/omni_ablated_*_seed42.json",
+    "orientation": "Probe higher = COMPLIANT on disk; all reported AUROCs are in VIOLATION orientation (Probe negated), matching compute_gate.py"
+  }
+}

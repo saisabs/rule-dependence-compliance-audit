@@ -1,0 +1,276 @@
+{
+  "benchmark": "AIReg-Bench",
+  "n_docs": 300,
+  "grouping": "(use, system); split identical to gauntlet",
+  "layouts": {
+    "rule_last_2048": {
+      "max_length": 2048,
+      "tokenization": {
+        "max_length": 2048,
+        "median_tokens": 1015.0,
+        "p95_tokens": 1431.3000000000002,
+        "frac_truncated": 0.0
+      },
+      "tracks": {
+        "expert": {
+          "n": 120,
+          "split_sizes": {
+            "train": 30,
+            "val_layer": 45,
+            "val_thresh": 15,
+            "test": 30
+          },
+          "refusal_direction": {
+            "auroc": 0.7464114832535885,
+            "selected_variant": "chat",
+            "selected_layer": 9,
+            "selected_sign": -1.0,
+            "selection_auroc": 0.8865546218487395,
+            "auroc_grouped_by_system": 0.7274074074074075,
+            "n_groups_scored": 2
+          },
+          "probe": {
+            "auroc": 0.9425837320574163,
+            "selected_layer": 9,
+            "val_layer_auroc": 0.9600840336134453,
+            "layer_norms": [
+              0.0,
+              0.0295643862336874,
+              0.0417596697807312,
+              0.08417605608701706,
+              0.18176424503326416,
+              0.23455317318439484,
+              0.31228724122047424,
+              0.34746313095092773,
+              0.4292338192462921,
+              0.5598664283752441,
+              0.6739521622657776,
+              0.7789286375045776,
+              0.8935832977294922,
+              1.1682225465774536,
+              1.421191930770874,
+              1.8584208488464355,
+              11.36752700805664
+            ],
+            "budget_null": {
+              "n_random": 200,
+              "budget_null_mean": 0.7076315789473685,
+              "budget_null_std": 0.11439128585146129,
+              "budget_null_q95": 0.8660287081339713
+            },
+            "auroc_grouped_by_system": 0.952962962962963,
+            "n_groups_scored": 2
+          }
+        },
+        "construction": {
+          "n": 300,
+          "split_sizes": {
+            "train": 120,
+            "val_layer": 60,
+            "val_thresh": 60,
+            "test": 60
+          },
+          "refusal_direction": {
+            "auroc": 0.755,
+            "selected_variant": "raw",
+            "selected_layer": 9,
+            "selected_sign": -1.0,
+            "selection_auroc": 0.90125,
+            "auroc_grouped_by_system": 0.75,
+            "n_groups_scored": 4
+          },
+          "probe": {
+            "auroc": 1.0,
+            "selected_layer": 9,
+            "val_layer_auroc": 0.995,
+            "layer_norms": [
+              0.0,
+              0.024123352020978928,
+              0.03346949443221092,
+              0.0688474103808403,
+              0.14341634511947632,
+              0.20550598204135895,
+              0.2704255282878876,
+              0.2978752553462982,
+              0.35844239592552185,
+              0.49525877833366394,
+              0.5671564340591431,
+              0.6457917094230652,
+              0.7395526766777039,
+              0.9483084082603455,
+              1.1558624505996704,
+              1.5168684720993042,
+              9.371563911437988
+            ],
+            "budget_null": {
+              "n_random": 200,
+              "budget_null_mean": 0.71595625,
+              "budget_null_std": 0.09226899525770742,
+              "budget_null_q95": 0.88
+            },
+            "auroc_grouped_by_system": 1.0,
+            "n_groups_scored": 4
+          }
+        }
+      }
+    },
+    "rule_last_512_gate_matched": {
+      "max_length": 512,
+      "tokenization": {
+        "max_length": 512,
+        "median_tokens": 483.0,
+        "p95_tokens": 483.0,
+        "frac_truncated": 0.0
+      },
+      "tracks": {
+        "expert": {
+          "n": 120,
+          "split_sizes": {
+            "train": 30,
+            "val_layer": 45,
+            "val_thresh": 15,
+            "test": 30
+          },
+          "refusal_direction": {
+            "auroc": 0.8181818181818182,
+            "selected_variant": "chat",
+            "selected_layer": 9,
+            "selected_sign": -1.0,
+            "selection_auroc": 0.8382352941176471,
+            "auroc_grouped_by_system": 0.8088888888888889,
+            "n_groups_scored": 2
+          },
+          "probe": {
+            "auroc": 0.8660287081339713,
+            "selected_layer": 6,
+            "val_layer_auroc": 0.9453781512605043,
+            "layer_norms": [
+              0.0,
+              0.028315268456935883,
+              0.03937632590532303,
+              0.08341126888990402,
+              0.17863550782203674,
+              0.22558002173900604,
+              0.2967068552970886,
+              0.3433277904987335,
+              0.4042870104312897,
+              0.5225923657417297,
+              0.6337490677833557,
+              0.7287622690200806,
+              0.82184898853302,
+              1.1331384181976318,
+              1.3804829120635986,
+              1.7383592128753662,
+              11.15683650970459
+            ],
+            "budget_null": {
+              "n_random": 200,
+              "budget_null_mean": 0.6882057416267942,
+              "budget_null_std": 0.12204058883214337,
+              "budget_null_q95": 0.8708133971291865
+            },
+            "auroc_grouped_by_system": 0.8959259259259259,
+            "n_groups_scored": 2
+          }
+        },
+        "construction": {
+          "n": 300,
+          "split_sizes": {
+            "train": 120,
+            "val_layer": 60,
+            "val_thresh": 60,
+            "test": 60
+          },
+          "refusal_direction": {
+            "auroc": 0.8400000000000001,
+            "selected_variant": "chat",
+            "selected_layer": 11,
+            "selected_sign": -1.0,
+            "selection_auroc": 0.8325,
+            "auroc_grouped_by_system": 0.8700000000000001,
+            "n_groups_scored": 4
+          },
+          "probe": {
+            "auroc": 0.95875,
+            "selected_layer": 6,
+            "val_layer_auroc": 0.9550000000000001,
+            "layer_norms": [
+              0.0,
+              0.023664195090532303,
+              0.03225275129079819,
+              0.06750600785017014,
+              0.1368008553981781,
+              0.19286592304706573,
+              0.26266688108444214,
+              0.29979291558265686,
+              0.3588997423648834,
+              0.4588905870914459,
+              0.542095422744751,
+              0.6267892122268677,
+              0.7109361290931702,
+              0.946505606174469,
+              1.145358681678772,
+              1.4560054540634155,
+              9.285017967224121
+            ],
+            "budget_null": {
+              "n_random": 200,
+              "budget_null_mean": 0.69000625,
+              "budget_null_std": 0.097168009828894,
+              "budget_null_q95": 0.8350625
+            },
+            "auroc_grouped_by_system": 0.975,
+            "n_groups_scored": 4
+          }
+        }
+      }
+    }
+  },
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "52a09ce7be8943c43403c2627a62fddb8bbf30ef",
+    "timestamp": "2026-07-25T13:04:28.920636+05:30",
+    "script": "scripts/run_benchmark3_directions.py",
+    "versions": {
+      "torch": "2.11.0+cu130",
+      "transformers": "5.14.1",
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "pooling": "last_token",
+    "dtype": "float16",
+    "gpu": 0,
+    "gpu_uuid_visible": "GPU-b021b5e4-168a-577d-44ca-0b7e8c2ea782",
+    "orientation": "label 1 = COMPLIANT, higher score = COMPLIANT; every AUROC asserted vs sklearn to 1e-9",
+    "refusal_recipe": "E-G6: normalise(mean_harmful - mean_harmless), walledai/AdvBench vs tatsu-lab/alpaca(input==''), seed 42, n=256/side, ZERO task supervision",
+    "datasets": {
+      "aireg_hf_repo": "camlsys/AIReg-Bench",
+      "aireg_hf_revision": "c656725c22568ef5fa489ea3940d3b6d7ff4b2ff",
+      "aireg_hf_license": "cc-by-4.0",
+      "aireg_github": "https://github.com/camlsys/aireg-bench",
+      "aireg_github_commit": "846d5cc075ad424a2d31dd20e34a7c5fe836f157",
+      "aireg_note": "HF repo lacks the 300 documentation .txt files described in its own README; texts taken from the official GitHub repo.",
+      "complibench_hf": "NOT ON HF HUB (search 'CompliBench', 0 repos, 2026-07-17)",
+      "complibench_github": "https://github.com/UCSB-NLP-Chang/CompliBench",
+      "complibench_github_commit": "593543022f67914e7ec9a312b7fa39c8a75e508a",
+      "complibench_license": "Apache-2.0",
+      "flexbench_hf_repo": "Tommy-DING/FlexBench",
+      "flexbench_hf_revision": "8f73c40bc3f2c272af8ee8d33a4003029ba4282a",
+      "flexbench_hf_license": "apache-2.0"
+    },
+    "refusal_identity_check": {
+      "raw": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      },
+      "chat": {
+        "max_abs_diff_raw_norm_per_layer": 0.0,
+        "n_layers": 17,
+        "match": true
+      }
+    }
+  }
+}

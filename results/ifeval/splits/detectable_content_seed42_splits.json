@@ -1,0 +1,506 @@
+{
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:06:22.427207+05:30",
+    "script": "scripts/run_ifeval_probe.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "python": "3.12.12"
+    },
+    "split_fractions": {
+      "train": 0.4,
+      "val_layer": 0.2,
+      "val_thresh": 0.2,
+      "test": 0.2
+    },
+    "max_length": 512,
+    "pooling": "last_token",
+    "generation_config": {
+      "do_sample": false,
+      "temperature": null,
+      "top_p": null,
+      "top_k": null,
+      "num_beams": 1,
+      "max_new_tokens": 2048,
+      "decoding": "greedy",
+      "batch_size": 1,
+      "chat_template_date_string": "01 Jan 2026"
+    },
+    "gpu": "0"
+  },
+  "category": "detectable_content",
+  "n_instances": 53,
+  "n_unique_keys": 52,
+  "label": "loose",
+  "split_source": "src.compliance.splits.three_way_split(n_unique_keys, 42) \u2014 GROUPED by prompt key to prevent shared-activation leakage",
+  "split_key_indices": {
+    "train": [
+      9,
+      23,
+      25,
+      3,
+      21,
+      38,
+      16,
+      39,
+      19,
+      11,
+      46,
+      24,
+      33,
+      29,
+      31,
+      43,
+      4,
+      28,
+      10,
+      26
+    ],
+    "val_layer": [
+      36,
+      0,
+      44,
+      18,
+      42,
+      50,
+      35,
+      48,
+      30,
+      20
+    ],
+    "val_thresh": [
+      22,
+      12,
+      51,
+      32,
+      45,
+      13,
+      41,
+      49,
+      2,
+      27
+    ],
+    "test": [
+      37,
+      5,
+      34,
+      6,
+      8,
+      14,
+      15,
+      17,
+      47,
+      1,
+      7,
+      40
+    ]
+  },
+  "split_instance_indices": {
+    "train": [
+      3,
+      4,
+      9,
+      10,
+      11,
+      12,
+      17,
+      20,
+      22,
+      24,
+      25,
+      26,
+      27,
+      29,
+      30,
+      32,
+      34,
+      39,
+      40,
+      44,
+      47
+    ],
+    "val_layer": [
+      0,
+      19,
+      21,
+      31,
+      36,
+      37,
+      43,
+      45,
+      49,
+      51
+    ],
+    "val_thresh": [
+      2,
+      13,
+      14,
+      23,
+      28,
+      33,
+      42,
+      46,
+      50,
+      52
+    ],
+    "test": [
+      1,
+      5,
+      6,
+      7,
+      8,
+      15,
+      16,
+      18,
+      35,
+      38,
+      41,
+      48
+    ]
+  },
+  "class_counts": {
+    "train": {
+      "n": 21,
+      "n_viol": 6,
+      "n_comp": 15
+    },
+    "val_layer": {
+      "n": 10,
+      "n_viol": 3,
+      "n_comp": 7
+    },
+    "val_thresh": {
+      "n": 10,
+      "n_viol": 2,
+      "n_comp": 8
+    },
+    "test": {
+      "n": 12,
+      "n_viol": 4,
+      "n_comp": 8
+    }
+  },
+  "items": [
+    {
+      "local_idx": 0,
+      "key": 1005,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 1,
+      "key": 1219,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 2,
+      "key": 1246,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 3,
+      "key": 1305,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 1
+    },
+    {
+      "local_idx": 4,
+      "key": 1367,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 5,
+      "key": 1372,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 6,
+      "key": 143,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 7,
+      "key": 1512,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 8,
+      "key": 1537,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 1
+    },
+    {
+      "local_idx": 9,
+      "key": 1619,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 10,
+      "key": 1619,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 11,
+      "key": 1620,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 12,
+      "key": 1705,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 13,
+      "key": 1759,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 14,
+      "key": 1800,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 15,
+      "key": 1825,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 16,
+      "key": 1908,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 1
+    },
+    {
+      "local_idx": 17,
+      "key": 1927,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 1
+    },
+    {
+      "local_idx": 18,
+      "key": 1980,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 19,
+      "key": 2070,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 20,
+      "key": 2136,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 21,
+      "key": 2162,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 22,
+      "key": 2164,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 23,
+      "key": 218,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 1
+    },
+    {
+      "local_idx": 24,
+      "key": 2216,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 1
+    },
+    {
+      "local_idx": 25,
+      "key": 2246,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 26,
+      "key": 2273,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 27,
+      "key": 2284,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 28,
+      "key": 2304,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 29,
+      "key": 2362,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 1
+    },
+    {
+      "local_idx": 30,
+      "key": 2396,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 31,
+      "key": 2439,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 32,
+      "key": 2471,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 1
+    },
+    {
+      "local_idx": 33,
+      "key": 2549,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 34,
+      "key": 2622,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 35,
+      "key": 2628,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 1
+    },
+    {
+      "local_idx": 36,
+      "key": 2765,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 37,
+      "key": 2785,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 1
+    },
+    {
+      "local_idx": 38,
+      "key": 2908,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 39,
+      "key": 2929,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 1
+    },
+    {
+      "local_idx": 40,
+      "key": 3035,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 41,
+      "key": 3069,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 1
+    },
+    {
+      "local_idx": 42,
+      "key": 3126,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 1
+    },
+    {
+      "local_idx": 43,
+      "key": 3131,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 44,
+      "key": 3221,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 45,
+      "key": 3245,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 46,
+      "key": 3280,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 47,
+      "key": 3350,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 48,
+      "key": 3494,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    },
+    {
+      "local_idx": 49,
+      "key": 3619,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 1
+    },
+    {
+      "local_idx": 50,
+      "key": 3710,
+      "instruction_id": "detectable_content:postscript",
+      "violating": 0
+    },
+    {
+      "local_idx": 51,
+      "key": 3743,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 1
+    },
+    {
+      "local_idx": 52,
+      "key": 3744,
+      "instruction_id": "detectable_content:number_placeholders",
+      "violating": 0
+    }
+  ]
+}

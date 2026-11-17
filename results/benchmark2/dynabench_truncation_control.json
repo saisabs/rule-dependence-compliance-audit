@@ -1,0 +1,36 @@
+{
+  "benchmark": "DynaBench",
+  "dataset_revision": "0c94c96a05eb0c6a8331a0ec0c12c1ab4f17097b",
+  "control": "information-matched lexical floor",
+  "why": "71% of transcripts exceed max_length=512, so Probe/refusal-dir see only the first 512 tokens while TF-IDF reads the full text. This control gives TF-IDF the SAME 512-token window.",
+  "variants": {
+    "tfidf_full_text": {
+      "auroc": 0.9648541114058355,
+      "f1_violation_class": 0.8695652173913043,
+      "n_test": 110
+    },
+    "tfidf_truncated_to_512_tokens": {
+      "auroc": 0.8769893899204243,
+      "f1_violation_class": 0.75,
+      "n_test": 110
+    }
+  },
+  "provenance": {
+    "model": "meta-llama/Llama-3.2-1B-Instruct (tokenizer only)",
+    "seed": 42,
+    "git_commit": "122ebe0a96c1115e7644e047c4d42598b8cc9eb2",
+    "timestamp": "2026-07-17T04:10:53.059171+05:30",
+    "script": "scripts/run_benchmark2_truncation_control.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "pandas": "3.0.3",
+      "python": "3.12.12"
+    },
+    "max_length": 512,
+    "pooling": "n/a (lexical)",
+    "gpu": 0,
+    "dataset_source": "montehoover/DynaBench (config=DynaBench, split=test)",
+    "dataset_revision": "0c94c96a05eb0c6a8331a0ec0c12c1ab4f17097b"
+  }
+}

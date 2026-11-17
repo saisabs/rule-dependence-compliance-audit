@@ -1,0 +1,690 @@
+{
+  "dynabench": {
+    "n": 543,
+    "base_rate_frac_compliant": 0.5082872928176796,
+    "headline_tfidf_transcript_only": {
+      "auroc": 0.981763925729443,
+      "ci95": [
+        0.9602048585082459,
+        0.9955848729360306
+      ],
+      "n_test": 110,
+      "resampling_unit": "row"
+    },
+    "gauntlet": {
+      "tfidf_transcript_only": 0.981763925729443,
+      "tfidf_policy_only": 0.9477785145888594,
+      "tfidf_policy_plus_transcript": 0.9648541114058355,
+      "length_chars": 0.6435676392572944,
+      "length_words": 0.5898541114058355,
+      "keyword_count": 0.5502320954907162,
+      "policy_transcript_overlap": 0.8388594164456233
+    },
+    "perm_null_tfidf_mean": 0.528315649867374,
+    "f1_vs_rachmil": {
+      "rachmil_reported_f1": 0.86,
+      "rachmil_citation": "arXiv:2512.03994, activation-space whitening",
+      "note": "F1 for the VIOLATION (FAIL) class. Threshold tuned on train only. Comparability caveats in the summary: their exact split and F1 averaging convention are UNVERIFIED from the dataset card alone.",
+      "tfidf": {
+        "transcript_only": {
+          "f1_violation_class_holdout": 0.8979591836734694,
+          "holdout_threshold_from_train": 0.5299999999999999,
+          "n_holdout": 110,
+          "f1_violation_class_5fold_cv_mean": 0.8748893419648137,
+          "f1_violation_class_5fold_cv_std": 0.021079187862326224,
+          "n_cv": 543
+        },
+        "policy_plus_transcript": {
+          "f1_violation_class_holdout": 0.8695652173913043,
+          "holdout_threshold_from_train": 0.6,
+          "n_holdout": 110,
+          "f1_violation_class_5fold_cv_mean": 0.8568268834840491,
+          "f1_violation_class_5fold_cv_std": 0.025322145243441646,
+          "n_cv": 543
+        }
+      }
+    },
+    "refusal_direction": {
+      "auroc": 0.6259946949602122,
+      "selected_variant": "chat",
+      "selected_layer": 10,
+      "selected_sign": -1.0,
+      "selection_auroc": 0.6135116598079562
+    },
+    "probe": {
+      "auroc": 0.7844827586206897,
+      "selected_layer": 14,
+      "val_layer_auroc": 0.8285322359396434,
+      "layer_norms": [
+        0.12432897090911865,
+        0.2054586261510849,
+        0.3138262629508972,
+        0.3958730399608612,
+        0.5324286222457886,
+        0.6244679093360901,
+        0.6998410820960999,
+        0.765205979347229,
+        0.8353696465492249,
+        0.9204115271568298,
+        1.1968019008636475,
+        1.3370397090911865,
+        1.6305142641067505,
+        1.8792563676834106,
+        2.295687437057495,
+        2.903477907180786,
+        16.8726806640625
+      ]
+    },
+    "tokenization": {
+      "max_length": 512,
+      "median_tokens": 777.0,
+      "p95_tokens": 3635.099999999998,
+      "frac_truncated_at_512": 0.7108655616942909
+    },
+    "truncation_control": {
+      "tfidf_full_text": {
+        "auroc": 0.9648541114058355,
+        "f1_violation_class": 0.8695652173913043,
+        "n_test": 110
+      },
+      "tfidf_truncated_to_512_tokens": {
+        "auroc": 0.8769893899204243,
+        "f1_violation_class": 0.75,
+        "n_test": 110
+      }
+    }
+  },
+  "safepyramid": {
+    "L0": {
+      "n_units": 16114,
+      "frac_violated": 0.34404865334491747,
+      "tfidf_rule_only": {
+        "auroc": 0.920186246564706,
+        "ci95": [
+          0.9093818699601088,
+          0.9311161192467421
+        ],
+        "resampling_unit": "conversation"
+      },
+      "per_domain": {
+        "academic_integrity": {
+          "auroc": 0.9228565365025466,
+          "p_perm": 0.0004997501249375312,
+          "n": 352,
+          "q_bh": 0.0004997501249375312
+        },
+        "content_moderation": {
+          "auroc": 0.9209726443768997,
+          "p_perm": 0.0004997501249375312,
+          "n": 276,
+          "q_bh": 0.0004997501249375312
+        },
+        "critical_infrastructure": {
+          "auroc": 0.9396123561477893,
+          "p_perm": 0.0004997501249375312,
+          "n": 387,
+          "q_bh": 0.0004997501249375312
+        },
+        "defamation": {
+          "auroc": 0.9154456654456655,
+          "p_perm": 0.0004997501249375312,
+          "n": 271,
+          "q_bh": 0.0004997501249375312
+        },
+        "discrimination": {
+          "auroc": 0.9011379800853485,
+          "p_perm": 0.0004997501249375312,
+          "n": 207,
+          "q_bh": 0.0004997501249375312
+        },
+        "fraud": {
+          "auroc": 0.8947338966925961,
+          "p_perm": 0.0004997501249375312,
+          "n": 274,
+          "q_bh": 0.0004997501249375312
+        },
+        "intellectual_property": {
+          "auroc": 0.8949324107886475,
+          "p_perm": 0.0004997501249375312,
+          "n": 371,
+          "q_bh": 0.0004997501249375312
+        },
+        "privacy": {
+          "auroc": 0.9455024422369793,
+          "p_perm": 0.0004997501249375312,
+          "n": 403,
+          "q_bh": 0.0004997501249375312
+        },
+        "sexual_content": {
+          "auroc": 0.9468244907769032,
+          "p_perm": 0.0004997501249375312,
+          "n": 276,
+          "q_bh": 0.0004997501249375312
+        },
+        "specialized_advice": {
+          "auroc": 0.9224843524313913,
+          "p_perm": 0.0004997501249375312,
+          "n": 413,
+          "q_bh": 0.0004997501249375312
+        }
+      },
+      "n_domains_significant_bh_0.05": 10,
+      "n_domains_tested": 10
+    },
+    "L1": {
+      "n_units": 28717,
+      "frac_violated": 0.22018316676533065,
+      "tfidf_rule_only": {
+        "auroc": 0.9015625758708763,
+        "ci95": [
+          0.8946139515802868,
+          0.9083796783310654
+        ],
+        "resampling_unit": "conversation"
+      },
+      "per_domain": {
+        "academic_integrity": {
+          "auroc": 0.9025773195876289,
+          "p_perm": 0.0004997501249375312,
+          "n": 625,
+          "q_bh": 0.0004997501249375312
+        },
+        "content_moderation": {
+          "auroc": 0.914045214045214,
+          "p_perm": 0.0004997501249375312,
+          "n": 488,
+          "q_bh": 0.0004997501249375312
+        },
+        "critical_infrastructure": {
+          "auroc": 0.9062712077416112,
+          "p_perm": 0.0004997501249375312,
+          "n": 691,
+          "q_bh": 0.0004997501249375312
+        },
+        "defamation": {
+          "auroc": 0.9035078534031413,
+          "p_perm": 0.0004997501249375312,
+          "n": 482,
+          "q_bh": 0.0004997501249375312
+        },
+        "discrimination": {
+          "auroc": 0.8616349480968858,
+          "p_perm": 0.0004997501249375312,
+          "n": 369,
+          "q_bh": 0.0004997501249375312
+        },
+        "fraud": {
+          "auroc": 0.9017099681866384,
+          "p_perm": 0.0004997501249375312,
+          "n": 491,
+          "q_bh": 0.0004997501249375312
+        },
+        "intellectual_property": {
+          "auroc": 0.8963624070317782,
+          "p_perm": 0.0004997501249375312,
+          "n": 655,
+          "q_bh": 0.0004997501249375312
+        },
+        "privacy": {
+          "auroc": 0.920036669913482,
+          "p_perm": 0.0004997501249375312,
+          "n": 718,
+          "q_bh": 0.0004997501249375312
+        },
+        "sexual_content": {
+          "auroc": 0.8995803996870778,
+          "p_perm": 0.0004997501249375312,
+          "n": 496,
+          "q_bh": 0.0004997501249375312
+        },
+        "specialized_advice": {
+          "auroc": 0.9026706894625098,
+          "p_perm": 0.0004997501249375312,
+          "n": 727,
+          "q_bh": 0.0004997501249375312
+        }
+      },
+      "n_domains_significant_bh_0.05": 10,
+      "n_domains_tested": 10
+    },
+    "L2": {
+      "n_units": 32924,
+      "frac_violated": 0.2045620216255619,
+      "tfidf_rule_only": {
+        "auroc": 0.903546149891947,
+        "ci95": [
+          0.8942600781116588,
+          0.9127669969347328
+        ],
+        "resampling_unit": "conversation"
+      },
+      "per_domain": {
+        "academic_integrity": {
+          "auroc": 0.9150270984196384,
+          "p_perm": 0.0004997501249375312,
+          "n": 719,
+          "q_bh": 0.0004997501249375312
+        },
+        "content_moderation": {
+          "auroc": 0.914578713968958,
+          "p_perm": 0.0004997501249375312,
+          "n": 563,
+          "q_bh": 0.0004997501249375312
+        },
+        "critical_infrastructure": {
+          "auroc": 0.9102362204724408,
+          "p_perm": 0.0004997501249375312,
+          "n": 783,
+          "q_bh": 0.0004997501249375312
+        },
+        "defamation": {
+          "auroc": 0.9064685314685315,
+          "p_perm": 0.0004997501249375312,
+          "n": 557,
+          "q_bh": 0.0004997501249375312
+        },
+        "discrimination": {
+          "auroc": 0.8856466327738701,
+          "p_perm": 0.0004997501249375312,
+          "n": 429,
+          "q_bh": 0.0004997501249375312
+        },
+        "fraud": {
+          "auroc": 0.8974166039628791,
+          "p_perm": 0.0004997501249375312,
+          "n": 560,
+          "q_bh": 0.0004997501249375312
+        },
+        "intellectual_property": {
+          "auroc": 0.912272386579075,
+          "p_perm": 0.0004997501249375312,
+          "n": 761,
+          "q_bh": 0.0004997501249375312
+        },
+        "privacy": {
+          "auroc": 0.8895454545454546,
+          "p_perm": 0.0004997501249375312,
+          "n": 826,
+          "q_bh": 0.0004997501249375312
+        },
+        "sexual_content": {
+          "auroc": 0.9195689655172414,
+          "p_perm": 0.0004997501249375312,
+          "n": 564,
+          "q_bh": 0.0004997501249375312
+        },
+        "specialized_advice": {
+          "auroc": 0.8944288168551418,
+          "p_perm": 0.0004997501249375312,
+          "n": 819,
+          "q_bh": 0.0004997501249375312
+        }
+      },
+      "n_domains_significant_bh_0.05": 10,
+      "n_domains_tested": 10
+    },
+    "_gauntlet_full_data": {
+      "L0": {
+        "tfidf_rule_only": {
+          "pooled": 0.920186246564706,
+          "grouped": 0.9341297022422023
+        },
+        "tfidf_conversation_only": {
+          "pooled": 0.5190162884863593,
+          "grouped": 0.5
+        },
+        "tfidf_rule_plus_conversation": {
+          "pooled": 0.6887164005271709,
+          "grouped": 0.9023121161246163
+        },
+        "length_chars_rule": {
+          "pooled": 0.6589142683462572,
+          "grouped": 0.6764320367132868
+        },
+        "length_words_rule": {
+          "pooled": 0.6677568510061538,
+          "grouped": 0.683903136909387
+        },
+        "keyword_count_rule": {
+          "pooled": 0.49375708768811105,
+          "grouped": 0.4940253246753247
+        },
+        "rule_conversation_overlap": {
+          "pooled": 0.7153060859615247,
+          "grouped": 0.7582750892625892
+        }
+      },
+      "L1": {
+        "tfidf_rule_only": {
+          "pooled": 0.9015625758708763,
+          "grouped": 0.9068428266431279
+        },
+        "tfidf_conversation_only": {
+          "pooled": 0.5073957274819653,
+          "grouped": 0.5
+        },
+        "tfidf_rule_plus_conversation": {
+          "pooled": 0.7793115625670423,
+          "grouped": 0.8466572009878902
+        },
+        "length_chars_rule": {
+          "pooled": 0.5570498666438299,
+          "grouped": 0.5465595772163252
+        },
+        "length_words_rule": {
+          "pooled": 0.5618470690335584,
+          "grouped": 0.5520558310375503
+        },
+        "keyword_count_rule": {
+          "pooled": 0.6401867780955096,
+          "grouped": 0.6384330857301638
+        },
+        "rule_conversation_overlap": {
+          "pooled": 0.48778067258124747,
+          "grouped": 0.48217581465836434
+        }
+      },
+      "L2": {
+        "tfidf_rule_only": {
+          "pooled": 0.903546149891947,
+          "grouped": 0.9128975945408316
+        },
+        "tfidf_conversation_only": {
+          "pooled": 0.5305516920853398,
+          "grouped": 0.5
+        },
+        "tfidf_rule_plus_conversation": {
+          "pooled": 0.8029900967176072,
+          "grouped": 0.8709898722491692
+        },
+        "length_chars_rule": {
+          "pooled": 0.6447168787898064,
+          "grouped": 0.63776419644202
+        },
+        "length_words_rule": {
+          "pooled": 0.6463791499830658,
+          "grouped": 0.6357690179873419
+        },
+        "keyword_count_rule": {
+          "pooled": 0.7143807626117707,
+          "grouped": 0.7144128269288131
+        },
+        "rule_conversation_overlap": {
+          "pooled": 0.6120981823829197,
+          "grouped": 0.6135669171216683
+        }
+      }
+    },
+    "_oracle_rule_type": {
+      "L0": 0.8940677966101696,
+      "L1": 0.9031961337746461,
+      "L2": 0.9128944822768438
+    },
+    "_perm_null": {
+      "L0": 0.5023612005053757,
+      "L1": 0.4880546596967726,
+      "L2": 0.5007495800804251
+    },
+    "_matched_pair_test": {
+      "n_conversation_rule_pairs": 61641,
+      "n_pairs_with_both_labels_across_levels": 4023,
+      "explanation": "These pairs share an identical conversation AND identical rule text but carry opposite labels at different levels \u2014 the label flips purely because of rule INTERACTIONS (waivers/tightenings) introduced by the level. Any feature computed from (conversation, rule_text) alone assigns both members the same score and is therefore EXACTLY at chance on this contrast, by construction. This is an analytic fact, not an empirical estimate."
+    },
+    "_directions_rule_first_GATE_MATCHED_but_ARTIFACT": {
+      "L0": {
+        "refusal": 0.4670305221685578,
+        "probe": 0.48766622695684014
+      },
+      "L1": {
+        "refusal": 0.4931939834951523,
+        "probe": 0.5212082483010726
+      },
+      "L2": {
+        "refusal": 0.5085000710937715,
+        "probe": 0.5002806333083051
+      }
+    },
+    "_directions_rule_last_FAIR": {
+      "L0": {
+        "refusal_pooled": 0.6639180422927277,
+        "refusal_grouped": 0.7235805860805861,
+        "probe_pooled": 0.8183980898024109,
+        "probe_grouped": 0.8712545787545788
+      },
+      "L1": {
+        "refusal_pooled": 0.689903091853165,
+        "refusal_grouped": 0.6966927501337614,
+        "probe_pooled": 0.69746380545993,
+        "probe_grouped": 0.7130885500267523
+      },
+      "L2": {
+        "refusal_pooled": 0.6678074930340576,
+        "refusal_grouped": 0.6972943722943722,
+        "probe_pooled": 0.7118532025873143,
+        "probe_grouped": 0.7207323232323232
+      }
+    },
+    "_layout_note": "rule_first is gate-matched but DEGENERATE here: conversations are a median 1202 tokens and 100% exceed 512, so last-token pooling reads a conversation token that is near-constant within a conversation => chance by construction. rule_last places the rule at the end so the pooled token actually sees it.",
+    "_hardcore_subsets": {
+      "L0": {
+        "all": {
+          "tfidf_rule_only": {
+            "pooled": 0.920186246564706,
+            "grouped": 0.9341297022422023
+          },
+          "tfidf_rule_plus_conversation": {
+            "pooled": 0.6887164005271709,
+            "grouped": 0.9023121161246163
+          },
+          "tfidf_policy_plus_rule": {
+            "pooled": 0.5880971962553168,
+            "grouped": 0.9077444587819588
+          },
+          "tfidf_policy_plus_rule_plus_conversation": {
+            "pooled": 0.5607638356780171,
+            "grouped": 0.9022889536389536
+          }
+        },
+        "no_distractor": {
+          "tfidf_rule_only": {
+            "pooled": 0.9051999196302994,
+            "grouped": 0.9108571839789458
+          },
+          "tfidf_rule_plus_conversation": {
+            "pooled": 0.7868434800080368,
+            "grouped": 0.8906509581380047
+          },
+          "tfidf_policy_plus_rule": {
+            "pooled": 0.6846011653606591,
+            "grouped": 0.90212085697837
+          },
+          "tfidf_policy_plus_rule_plus_conversation": {
+            "pooled": 0.6537512557765723,
+            "grouped": 0.8960697836993173
+          }
+        }
+      },
+      "L1": {
+        "all": {
+          "tfidf_rule_only": {
+            "pooled": 0.9015625758708763,
+            "grouped": 0.9068428266431279
+          },
+          "tfidf_rule_plus_conversation": {
+            "pooled": 0.7793115625670423,
+            "grouped": 0.8466572009878902
+          },
+          "tfidf_policy_plus_rule": {
+            "pooled": 0.5951117746302799,
+            "grouped": 0.8158992033864538
+          },
+          "tfidf_policy_plus_rule_plus_conversation": {
+            "pooled": 0.5823519596426532,
+            "grouped": 0.8056387110963956
+          }
+        },
+        "no_distractor": {
+          "tfidf_rule_only": {
+            "pooled": 0.8786040930172219,
+            "grouped": 0.8763411583329915
+          },
+          "tfidf_rule_plus_conversation": {
+            "pooled": 0.8405832824514671,
+            "grouped": 0.8696894975725334
+          },
+          "tfidf_policy_plus_rule": {
+            "pooled": 0.6636159168818276,
+            "grouped": 0.8681358890457892
+          },
+          "tfidf_policy_plus_rule_plus_conversation": {
+            "pooled": 0.63827942675761,
+            "grouped": 0.866589058892788
+          }
+        },
+        "exception_conditional_only": {
+          "tfidf_rule_only": {
+            "pooled": 0.9527834083439264,
+            "grouped": 0.9564478056665555
+          },
+          "tfidf_rule_plus_conversation": {
+            "pooled": 0.8723020317482131,
+            "grouped": 0.9370996191308691
+          },
+          "tfidf_policy_plus_rule": {
+            "pooled": 0.6868598128088972,
+            "grouped": 0.9223448426573425
+          },
+          "tfidf_policy_plus_rule_plus_conversation": {
+            "pooled": 0.6558298036636581,
+            "grouped": 0.9138386786824286
+          }
+        }
+      },
+      "L2": {
+        "all": {
+          "tfidf_rule_only": {
+            "pooled": 0.903546149891947,
+            "grouped": 0.9128975945408316
+          },
+          "tfidf_rule_plus_conversation": {
+            "pooled": 0.8029900967176072,
+            "grouped": 0.8709898722491692
+          },
+          "tfidf_policy_plus_rule": {
+            "pooled": 0.564958449309074,
+            "grouped": 0.8460349674362528
+          },
+          "tfidf_policy_plus_rule_plus_conversation": {
+            "pooled": 0.5651439818404483,
+            "grouped": 0.8454256536512027
+          }
+        },
+        "no_distractor": {
+          "tfidf_rule_only": {
+            "pooled": 0.922252315046163,
+            "grouped": 0.9279763888406665
+          },
+          "tfidf_rule_plus_conversation": {
+            "pooled": 0.8758393873183373,
+            "grouped": 0.9118465057342156
+          },
+          "tfidf_policy_plus_rule": {
+            "pooled": 0.5999642016493949,
+            "grouped": 0.9101778342812925
+          },
+          "tfidf_policy_plus_rule_plus_conversation": {
+            "pooled": 0.5984680804502235,
+            "grouped": 0.9110168030179853
+          }
+        },
+        "exception_conditional_only": {
+          "tfidf_rule_only": {
+            "pooled": 0.8960486986950499,
+            "grouped": 0.9195243247800793
+          },
+          "tfidf_rule_plus_conversation": {
+            "pooled": 0.723983013778523,
+            "grouped": 0.9050492225875859
+          },
+          "tfidf_policy_plus_rule": {
+            "pooled": 0.5783844864037326,
+            "grouped": 0.7495357892320809
+          },
+          "tfidf_policy_plus_rule_plus_conversation": {
+            "pooled": 0.5762757891667274,
+            "grouped": 0.7220363864609389
+          }
+        }
+      }
+    },
+    "_hardcore_flip_pairs": {
+      "n_flip_pairs": 4023,
+      "n_units_in_flip_pairs": 8046,
+      "frac_violated": 0.5,
+      "definition": "(conversation, rule_text) pairs carrying BOTH labels across levels. Conversation byte-identical; rule wording identical; label flips ONLY via the policy's waiver / exception structure.",
+      "analytic_expectation": "Any (conversation, rule_text)-only feature is EXACTLY 0.5 within-pair by construction. Only POLICY-inclusive features can deviate.",
+      "features_pooled_and_within_pair": {
+        "tfidf_rule_only": {
+          "auroc_pooled": 0.5,
+          "auroc_within_matched_pair": 0.5,
+          "n_pairs_scored": 784,
+          "n_test": 1568
+        },
+        "tfidf_rule_plus_conversation": {
+          "auroc_pooled": 0.5,
+          "auroc_within_matched_pair": 0.5,
+          "n_pairs_scored": 784,
+          "n_test": 1568
+        },
+        "tfidf_policy_plus_rule": {
+          "auroc_pooled": 0.6035880232194919,
+          "auroc_within_matched_pair": 0.5727040816326531,
+          "n_pairs_scored": 784,
+          "n_test": 1568
+        },
+        "tfidf_policy_plus_rule_plus_conversation": {
+          "auroc_pooled": 0.5957641347355268,
+          "auroc_within_matched_pair": 0.5727040816326531,
+          "n_pairs_scored": 784,
+          "n_test": 1568
+        }
+      },
+      "level_pair_composition": {
+        "L0": 4023,
+        "L1": 4023
+      }
+    }
+  },
+  "omnicompliance_receipted": {
+    "tfidf_full": 0.896,
+    "refusal_dir": 0.863,
+    "yesno_logit": 0.787,
+    "probe": 0.952,
+    "n_domains": 20,
+    "source": "results/rebuild/floors/SUMMARY.md (E-G6/E-G7 completed floor)"
+  },
+  "provenance": {
+    "seed": 42,
+    "git_commit": "550c97aa591ca3584b8167500bb1dfb076ea092a",
+    "timestamp": "2026-07-17T04:16:42.510777+05:30",
+    "script": "scripts/summarize_benchmark2.py",
+    "gpu": 0,
+    "note": "Bootstrap resamples the CONVERSATION for SafePyramid (units within a conversation share text) and the ROW for DynaBench. BH correction is across SafePyramid's 10 domains within a level."
+  },
+  "VERDICT": {
+    "headline": "TF-IDF does NOT collapse on either new benchmark at the task as posed => the single-benchmark/monoculture objection DIES; the degeneracy thesis now holds on THREE independent benchmarks (OmniCompliance, DynaBench, SafePyramid). ADDITIONALLY, SafePyramid s flip-pair core is the first contrast we have found where every trivial baseline IS at chance -- a candidate non-degenerate evaluation target.",
+    "dynabench": "TF-IDF on the transcript ALONE (policy-blind) = 0.982 AUROC [CI95 0.960-0.996]. Violation-class F1 0.875 +- 0.021 (5-fold CV over all 543) vs Rachmil et al. 0.860. HONEST FRAMING: a SUPERVISED lexical baseline (~217-434 labels) MATCHES their few-shot/training-free activation SOTA; it does not beat it under matched supervision. The hit is on measurement practice: they report NO lexical floor at all. Survives the truncation control (TF-IDF on the same 512-token window the probes saw = 0.877, still > Probe 0.784 > refusal-dir 0.626).",
+    "safepyramid": "TWO-PART, and the split is the point. (a) PER-RULE POOLED: TF-IDF on rule text alone = 0.920/0.902/0.904 (L0/L1/L2), 10/10 domains BH-significant. This SURVIVES distractor removal (no_distractor 0.905/0.879/0.922; exception+conditional only 0.953/0.896) so it is NOT merely distractor padding -- the benchmark IS lexically degenerate at the per-rule level: rule WORDING predicts whether that rule gets violated, without reading the conversation. (b) SURFACE-MATCHED HARD CORE (4,023 flip pairs): everything collapses. rule-only and rule+conversation = 0.5000 EXACTLY (analytic), and the best policy-inclusive lexical feature reaches only 0.573. On the interaction-reasoning core -- the contrast that carries the 12.9% -- SafePyramid is NOT lexically degenerate. So BOTH outcomes hold on DIFFERENT contrasts: the pooled per-rule task is a lexical artifact of rule authoring; the waiver/interaction core is a genuine, surface-matched, non-degenerate signal.",
+    "metric_mismatch_caveat": "SafePyramid AUROC (per-rule) and the papers 12.9% (exact-set-match over ~33 rules) are DIFFERENT metrics on DIFFERENT units. High TF-IDF AUROC does NOT rebut 12.9%: per-rule ranking is far easier than exact set identification. The claim is about rule-level signal being lexically recoverable, NOT that SafePyramid is easy.",
+    "flip_pair_caveat": "All 4,023 flip pairs are L0<->L1 (composition L0:4023, L1:4023). NO L2 flip pairs exist, because L2 rewords its rules so (base, rule_text) never matches across L1/L2. The hard core therefore probes L1 dependency reasoning, NOT L2 novel-framework adaptation. 784 pairs land in the test split."
+  },
+  "files": [
+    "dynabench_gauntlet.json",
+    "dynabench_directions.json",
+    "dynabench_truncation_control.json",
+    "safepyramid_gauntlet.json",
+    "safepyramid_directions.json (rule_first, gate-matched, ARTIFACT)",
+    "safepyramid_directions_rulelast.json (rule_last, FAIR)",
+    "BENCHMARK2_SUMMARY.json"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "n_rows": 800,
+  "n_quadruples": 200,
+  "label_rate": 0.5,
+  "tfidf_rule_only_auroc": 0.5,
+  "tfidf_scenario_only_auroc": 0.5,
+  "tfidf_rule_plus_scenario_auroc": 0.5
+}

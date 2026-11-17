@@ -1,0 +1,500 @@
+{
+  "benchmark": "FlexBench",
+  "unit": "unique input text (test+validation pooled, exact-dedup)",
+  "grouping": "none beyond exact-dedup of input text; keys whose duplicates disagree on severity are dropped",
+  "label_structure": "5-tier severity; label_strict/moderate/loose are deterministic thresholds of severity (strict flags >=high, moderate >=moderate, loose >=low). benchmark label 1 = FLAGGED; our y = 1 - label (1 = compliant).",
+  "tracks": {
+    "prompt": {
+      "dedup_report": {
+        "n_raw_rows_test_plus_validation": 2350,
+        "n_exact_duplicate_rows_removed": 37,
+        "n_rows_dropped_for_conflicting_severity_dups": 2,
+        "n_conflicting_keys": 1,
+        "n_units": 2311
+      },
+      "severity_counts": {
+        "benign": 1164,
+        "extreme": 300,
+        "high": 299,
+        "low": 292,
+        "moderate": 256
+      },
+      "source_counts": {
+        "toxic_chat": 890,
+        "openai": 602,
+        "Aegis2.0": 302,
+        "wildguard_adv": 257,
+        "wildguard": 166,
+        "xstest": 94
+      },
+      "split_sizes": {
+        "train": 924,
+        "val_layer": 462,
+        "val_thresh": 462,
+        "test": 463
+      },
+      "strictness": {
+        "strict": {
+          "base_rate": {
+            "compliant": 1712,
+            "flagged": 599,
+            "frac_flagged": 0.2591951536131545
+          },
+          "baselines": {
+            "tfidf_input_only": {
+              "auroc": 0.7332596413657578,
+              "n_test": 463,
+              "ci95_boot_rows": [
+                0.6773204152205737,
+                0.783980538561713
+              ]
+            },
+            "length_chars": {
+              "auroc": 0.6597641857037583,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.3505743895354285
+            },
+            "length_words": {
+              "auroc": 0.6477646769835421,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.35922615143394365
+            },
+            "keyword_count": {
+              "auroc": 0.5148366494718742,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.4921634402153883
+            }
+          },
+          "perm_null_tfidf": {
+            "aurocs": [
+              0.49277818717759764,
+              0.44603291574551707,
+              0.5746990911323999
+            ],
+            "mean": 0.5045033980185049
+          },
+          "per_source_tfidf": {
+            "Aegis2.0": {
+              "auroc": 0.6433333333333333,
+              "n": 56
+            },
+            "openai": {
+              "auroc": 0.6571557971014492,
+              "n": 119
+            },
+            "toxic_chat": {
+              "auroc": 0.6172121212121212,
+              "n": 190
+            },
+            "wildguard": {
+              "auroc": 0.775,
+              "n": 26
+            },
+            "wildguard_adv": {
+              "auroc": 0.5582417582417583,
+              "n": 48
+            },
+            "xstest": {
+              "auroc": 0.45925925925925926,
+              "n": 24
+            }
+          }
+        },
+        "moderate": {
+          "base_rate": {
+            "compliant": 1456,
+            "flagged": 855,
+            "frac_flagged": 0.36996971008221546
+          },
+          "baselines": {
+            "tfidf_input_only": {
+              "auroc": 0.6838375039594553,
+              "n_test": 463,
+              "ci95_boot_rows": [
+                0.6333125729659879,
+                0.7329593308717459
+              ]
+            },
+            "length_chars": {
+              "auroc": 0.5968878682293316,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.37687551738410596
+            },
+            "length_words": {
+              "auroc": 0.593492635413367,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.3811905008278146
+            },
+            "keyword_count": {
+              "auroc": 0.5135413367120684,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.4962386175496688
+            }
+          },
+          "perm_null_tfidf": {
+            "aurocs": [
+              0.4757879315806145,
+              0.495624802027241,
+              0.5419108330693696
+            ],
+            "mean": 0.5044411888924084
+          },
+          "per_source_tfidf": {
+            "Aegis2.0": {
+              "auroc": 0.4489795918367347,
+              "n": 56
+            },
+            "openai": {
+              "auroc": 0.569047619047619,
+              "n": 119
+            },
+            "toxic_chat": {
+              "auroc": 0.669011544011544,
+              "n": 190
+            },
+            "wildguard": {
+              "auroc": 0.7833333333333333,
+              "n": 26
+            },
+            "wildguard_adv": {
+              "auroc": 0.531578947368421,
+              "n": 48
+            },
+            "xstest": {
+              "auroc": 0.5208333333333334,
+              "n": 24
+            }
+          }
+        },
+        "loose": {
+          "base_rate": {
+            "compliant": 1164,
+            "flagged": 1147,
+            "frac_flagged": 0.4963219385547382
+          },
+          "baselines": {
+            "tfidf_input_only": {
+              "auroc": 0.7079628661087866,
+              "n_test": 463,
+              "ci95_boot_rows": [
+                0.6635860954999486,
+                0.7555786913329438
+              ]
+            },
+            "length_chars": {
+              "auroc": 0.5980461745367605,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.4074330769339204
+            },
+            "length_words": {
+              "auroc": 0.5960381799163179,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.40736259450518986
+            },
+            "keyword_count": {
+              "auroc": 0.5027831739390316,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.4992082473839272
+            }
+          },
+          "perm_null_tfidf": {
+            "aurocs": [
+              0.5200145696353855,
+              0.5107684548714884,
+              0.5561024357441722
+            ],
+            "mean": 0.528961820083682
+          },
+          "per_source_tfidf": {
+            "Aegis2.0": {
+              "auroc": 0.4791666666666667,
+              "n": 56
+            },
+            "openai": {
+              "auroc": 0.6272155517438537,
+              "n": 119
+            },
+            "toxic_chat": {
+              "auroc": 0.6600714285714285,
+              "n": 190
+            },
+            "wildguard": {
+              "auroc": 0.6521739130434783,
+              "n": 26
+            },
+            "wildguard_adv": {
+              "auroc": 0.5277777777777778,
+              "n": 48
+            },
+            "xstest": {
+              "auroc": 0.5555555555555556,
+              "n": 24
+            }
+          }
+        }
+      }
+    },
+    "response": {
+      "dedup_report": {
+        "n_raw_rows_test_plus_validation": 2400,
+        "n_exact_duplicate_rows_removed": 68,
+        "n_rows_dropped_for_conflicting_severity_dups": 54,
+        "n_conflicting_keys": 27,
+        "n_units": 2278
+      },
+      "severity_counts": {
+        "benign": 1196,
+        "low": 298,
+        "moderate": 284,
+        "high": 254,
+        "extreme": 246
+      },
+      "source_counts": {
+        "saferlhf": 934,
+        "beavertails": 448,
+        "wildguard": 402,
+        "XSTest": 310,
+        "harmbench": 109,
+        "Aegis2.0": 75
+      },
+      "split_sizes": {
+        "train": 911,
+        "val_layer": 455,
+        "val_thresh": 455,
+        "test": 457
+      },
+      "strictness": {
+        "strict": {
+          "base_rate": {
+            "compliant": 1778,
+            "flagged": 500,
+            "frac_flagged": 0.21949078138718173
+          },
+          "baselines": {
+            "tfidf_input_only": {
+              "auroc": 0.8017994255905281,
+              "n_test": 457,
+              "ci95_boot_rows": [
+                0.7543731494023097,
+                0.8446818056949039
+              ]
+            },
+            "length_chars": {
+              "auroc": 0.6571273665084111,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.3349785281918246
+            },
+            "length_words": {
+              "auroc": 0.660482972862083,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.3338279910302071
+            },
+            "keyword_count": {
+              "auroc": 0.5164263524998535,
+              "train_oriented_sign": 1.0,
+              "train_auroc": 0.5177343944656965
+            }
+          },
+          "perm_null_tfidf": {
+            "aurocs": [
+              0.5009378113826857,
+              0.5534552488130825,
+              0.5446925737061133
+            ],
+            "mean": 0.5330285446339604
+          },
+          "per_source_tfidf": {
+            "Aegis2.0": {
+              "auroc": 0.48571428571428577,
+              "n": 12
+            },
+            "XSTest": {
+              "auroc": 0.8571428571428571,
+              "n": 55
+            },
+            "beavertails": {
+              "auroc": 0.7294117647058823,
+              "n": 96
+            },
+            "harmbench": {
+              "auroc": 0.825,
+              "n": 26
+            },
+            "saferlhf": {
+              "auroc": 0.7982536764705882,
+              "n": 179
+            },
+            "wildguard": {
+              "auroc": 0.8265822784810126,
+              "n": 89
+            }
+          }
+        },
+        "moderate": {
+          "base_rate": {
+            "compliant": 1494,
+            "flagged": 784,
+            "frac_flagged": 0.34416154521510095
+          },
+          "baselines": {
+            "tfidf_input_only": {
+              "auroc": 0.8021883289124668,
+              "n_test": 457,
+              "ci95_boot_rows": [
+                0.7578630959265324,
+                0.8451153624462838
+              ]
+            },
+            "length_chars": {
+              "auroc": 0.6043877099911583,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.411589192639081
+            },
+            "length_words": {
+              "auroc": 0.6059792219274979,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.41381501967875756
+            },
+            "keyword_count": {
+              "auroc": 0.5029509283819629,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.49894160195723863
+            }
+          },
+          "perm_null_tfidf": {
+            "aurocs": [
+              0.5395667550839964,
+              0.5536693191865606,
+              0.5501547303271441
+            ],
+            "mean": 0.5477969348659003
+          },
+          "per_source_tfidf": {
+            "Aegis2.0": {
+              "auroc": 0.5714285714285714,
+              "n": 12
+            },
+            "XSTest": {
+              "auroc": 0.8623693379790941,
+              "n": 55
+            },
+            "beavertails": {
+              "auroc": 0.7737373737373737,
+              "n": 96
+            },
+            "harmbench": {
+              "auroc": 0.7738095238095238,
+              "n": 26
+            },
+            "saferlhf": {
+              "auroc": 0.8208168642951251,
+              "n": 179
+            },
+            "wildguard": {
+              "auroc": 0.7729729729729731,
+              "n": 89
+            }
+          }
+        },
+        "loose": {
+          "base_rate": {
+            "compliant": 1196,
+            "flagged": 1082,
+            "frac_flagged": 0.4749780509218613
+          },
+          "baselines": {
+            "tfidf_input_only": {
+              "auroc": 0.7528498427672956,
+              "n_test": 457,
+              "ci95_boot_rows": [
+                0.7081915378497333,
+                0.7964625616505132
+              ]
+            },
+            "length_chars": {
+              "auroc": 0.5636497641509435,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.44363858116642085
+            },
+            "length_words": {
+              "auroc": 0.5646029874213836,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.4478470675575353
+            },
+            "keyword_count": {
+              "auroc": 0.5162244496855346,
+              "train_oriented_sign": -1.0,
+              "train_auroc": 0.47231220894917997
+            }
+          },
+          "perm_null_tfidf": {
+            "aurocs": [
+              0.5417649371069182,
+              0.48203616352201256,
+              0.545125786163522
+            ],
+            "mean": 0.5229756289308175
+          },
+          "per_source_tfidf": {
+            "Aegis2.0": {
+              "auroc": 0.45714285714285713,
+              "n": 12
+            },
+            "XSTest": {
+              "auroc": 0.8360881542699724,
+              "n": 55
+            },
+            "beavertails": {
+              "auroc": 0.7569930069930071,
+              "n": 96
+            },
+            "harmbench": {
+              "auroc": 0.6121212121212121,
+              "n": 26
+            },
+            "saferlhf": {
+              "auroc": 0.7787399598393574,
+              "n": 179
+            },
+            "wildguard": {
+              "auroc": 0.6422924901185771,
+              "n": 89
+            }
+          }
+        }
+      }
+    }
+  },
+  "provenance": {
+    "model": "n/a (lexical/CPU gauntlet)",
+    "seed": 42,
+    "git_commit": "2e7aa27537c7673fe8c69b143278d92027f85c27",
+    "timestamp": "2026-07-17T10:52:02.144672+05:30",
+    "script": "scripts/run_benchmark3_gauntlet.py",
+    "versions": {
+      "numpy": "2.3.5",
+      "sklearn": "1.9.0",
+      "pandas": "3.0.3",
+      "python": "3.12.12"
+    },
+    "max_length": "n/a (no model)",
+    "gpu": 0,
+    "orientation": "label 1 = COMPLIANT, score higher = COMPLIANT; every AUROC asserted against sklearn.roc_auc_score to 1e-9",
+    "tfidf_protocol": "TfidfVectorizer(ngram_range=(1,1)) + LogisticRegression(max_iter=1000); fit on train, eval on test; identical to E-B2",
+    "datasets": {
+      "aireg_hf_repo": "camlsys/AIReg-Bench",
+      "aireg_hf_revision": "c656725c22568ef5fa489ea3940d3b6d7ff4b2ff",
+      "aireg_hf_license": "cc-by-4.0",
+      "aireg_github": "https://github.com/camlsys/aireg-bench",
+      "aireg_github_commit": "846d5cc075ad424a2d31dd20e34a7c5fe836f157",
+      "aireg_note": "HF repo lacks the 300 documentation .txt files described in its own README; texts taken from the official GitHub repo.",
+      "complibench_hf": "NOT ON HF HUB (search 'CompliBench', 0 repos, 2026-07-17)",
+      "complibench_github": "https://github.com/UCSB-NLP-Chang/CompliBench",
+      "complibench_github_commit": "593543022f67914e7ec9a312b7fa39c8a75e508a",
+      "complibench_license": "Apache-2.0",
+      "flexbench_hf_repo": "Tommy-DING/FlexBench",
+      "flexbench_hf_revision": "8f73c40bc3f2c272af8ee8d33a4003029ba4282a",
+      "flexbench_hf_license": "apache-2.0"
+    }
+  }
+}
